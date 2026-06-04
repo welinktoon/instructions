@@ -372,7 +372,7 @@
         .container,
         .simple-guide {
             background: #ffffff;
-            border: 1px solid var(--line);
+            border: 0;
             border-radius: 8px;
             box-shadow: var(--shadow);
             margin: 24px;
@@ -551,7 +551,7 @@
 
         p {
             color: #475467;
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 13px;
         }
 
@@ -647,9 +647,9 @@
         .link-card,
         .step {
             background: #ffffff;
-            border: 1px solid var(--line);
+            border: 0;
             border-radius: 8px;
-            box-shadow: var(--shadow);
+            box-shadow: none;
         }
 
         .card {
@@ -694,13 +694,13 @@
 
         .step-content h4 {
             color: #101828;
-            font-size: 15.5px;
+            font-size: 16.5px;
             margin-bottom: 6px;
         }
 
         .step-content p {
             color: var(--muted);
-            font-size: 14px;
+            font-size: 15px;
             margin-bottom: 4px;
         }
 
@@ -770,25 +770,25 @@
 
         .instruction-stage {
             background: #ffffff;
-            border: 1px solid var(--line);
+            border: 0;
             border-radius: 8px;
-            box-shadow: var(--shadow);
+            box-shadow: none;
             overflow: hidden;
         }
 
         .stage-header {
             background: #ffffff;
-            border-bottom: 1px solid #e4e7ec;
+            border-bottom: 0;
             border-top: 0;
             display: grid;
             gap: 12px;
             grid-template-columns: 1fr auto;
-            padding: 16px 18px;
+            padding: 16px 0;
         }
 
         .stage-header h2 {
             display: block;
-            font-size: clamp(18px, 2vw, 22px);
+            font-size: clamp(20px, 2vw, 24px);
             margin: 0 0 6px;
         }
 
@@ -816,7 +816,7 @@
         .stage-body {
             display: grid;
             gap: 12px;
-            padding: 16px;
+            padding: 0;
         }
 
         .stage-result {
@@ -832,9 +832,9 @@
 
         .step-media {
             background: #ffffff;
-            border: 1px solid #dde3ea;
+            border: 0;
             border-radius: 8px;
-            box-shadow: var(--shadow);
+            box-shadow: none;
             cursor: zoom-in;
             display: block;
             margin-top: 12px;
@@ -857,6 +857,8 @@
 
         .step-media img {
             background: #f8fafc;
+            border: 0;
+            border-radius: 8px;
             display: block;
             max-height: 360px;
             object-fit: contain;
@@ -864,11 +866,7 @@
         }
 
         .step-media span {
-            color: var(--muted);
-            display: block;
-            font-size: 13px;
-            font-weight: 650;
-            padding: 10px 12px;
+            display: none;
         }
 
         .payment-alert {
