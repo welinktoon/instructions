@@ -332,7 +332,7 @@
             border-radius: 8px;
             display: grid;
             gap: 10px;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             margin-bottom: 28px;
             padding: 8px;
             position: sticky;
@@ -637,51 +637,6 @@
             margin-top: 3px;
         }
 
-        .screenshots-grid {
-            display: grid;
-            gap: 16px;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            margin: 18px 0;
-        }
-
-        .screenshot-item {
-            background: white;
-            border: 0;
-            border-radius: 8px;
-            box-shadow: 0 10px 26px rgba(16, 42, 86, 0.08);
-            cursor: zoom-in;
-            display: block;
-            overflow: hidden;
-            padding: 0;
-            text-align: left;
-            transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-            width: 100%;
-        }
-
-        .screenshot-item:hover,
-        .screenshot-item:focus-visible {
-            border-color: #93c5fd;
-            box-shadow: 0 16px 34px rgba(16, 42, 86, 0.14);
-            outline: none;
-            transform: translateY(-2px);
-        }
-
-        .screenshot-item img {
-            background: #f1f5f9;
-            display: block;
-            height: 220px;
-            object-fit: contain;
-            width: 100%;
-        }
-
-        .screenshot-item span {
-            color: var(--muted);
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            padding: 11px 13px;
-        }
-
         .lightbox {
             align-items: center;
             background: rgba(15, 29, 51, 0.82);
@@ -909,13 +864,6 @@
                 padding: 12px;
             }
 
-            .screenshots-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .screenshot-item img {
-                height: 190px;
-            }
         }
 
         @media (max-width: 420px) {
@@ -1382,11 +1330,6 @@
                                 <span class="tab-title">Чек-лист</span>
                                 <span class="tab-desc">Быстрая проверка перед работой</span>
                             </button>
-                            <button class="tab-button" type="button" data-omni-tab="screenshots">
-                                <span class="tab-index">5</span>
-                                <span class="tab-title">Скриншоты</span>
-                                <span class="tab-desc">Все изображения установки и настройки</span>
-                            </button>
                         </div>
 
 <!-- TAB 1: INSTALLATION -->
@@ -1822,100 +1765,6 @@ claude --version
                 </section>
             </div>
 
-            <!-- TAB 5: SCREENSHOTS -->
-            <div id="screenshots" class="tab-content">
-                <section>
-                    <h2>Скриншоты процесса установки</h2>
-
-                    <div class="screenshots-grid">
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 1">
-                            <img src="./assets/Снимок экрана 2026-04-13 162227.png" alt="Скриншот 1" loading="lazy">
-                            <span>Шаг 1</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 2">
-                            <img src="./assets/Снимок экрана 2026-04-13 162247.png" alt="Скриншот 2" loading="lazy">
-                            <span>Шаг 2</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 3">
-                            <img src="./assets/Снимок экрана 2026-04-13 162328.png" alt="Скриншот 3" loading="lazy">
-                            <span>Шаг 3</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 4">
-                            <img src="./assets/Снимок экрана 2026-04-13 162336.png" alt="Скриншот 4" loading="lazy">
-                            <span>Шаг 4</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 5">
-                            <img src="./assets/Снимок экрана 2026-04-13 162402.png" alt="Скриншот 5" loading="lazy">
-                            <span>Шаг 5</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 6">
-                            <img src="./assets/Снимок экрана 2026-04-13 162416.png" alt="Скриншот 6" loading="lazy">
-                            <span>Шаг 6</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 7">
-                            <img src="./assets/Снимок экрана 2026-04-13 162432.png" alt="Скриншот 7" loading="lazy">
-                            <span>Шаг 7</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 8">
-                            <img src="./assets/Снимок экрана 2026-04-13 162451.png" alt="Скриншот 8" loading="lazy">
-                            <span>Шаг 8</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 9">
-                            <img src="./assets/Снимок экрана 2026-04-13 162527.png" alt="Скриншот 9" loading="lazy">
-                            <span>Шаг 9</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 10">
-                            <img src="./assets/Снимок экрана 2026-04-13 162552.png" alt="Скриншот 10" loading="lazy">
-                            <span>Шаг 10</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 11">
-                            <img src="./assets/Снимок экрана 2026-04-13 162605.png" alt="Скриншот 11" loading="lazy">
-                            <span>Шаг 11</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 12">
-                            <img src="./assets/Снимок экрана 2026-04-13 162632.png" alt="Скриншот 12" loading="lazy">
-                            <span>Шаг 12</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 13">
-                            <img src="./assets/Снимок экрана 2026-04-13 162640.png" alt="Скриншот 13" loading="lazy">
-                            <span>Шаг 13</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 14">
-                            <img src="./assets/Снимок экрана 2026-04-13 162646.png" alt="Скриншот 14" loading="lazy">
-                            <span>Шаг 14</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 15">
-                            <img src="./assets/Снимок экрана 2026-04-13 162658.png" alt="Скриншот 15" loading="lazy">
-                            <span>Шаг 15</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 16">
-                            <img src="./assets/Снимок экрана 2026-04-13 162754.png" alt="Скриншот 16" loading="lazy">
-                            <span>Шаг 16</span>
-                        </button>
-
-                        <button class="screenshot-item" type="button" aria-label="Увеличить скриншот 17">
-                            <img src="./assets/Снимок экрана 2026-04-13 193749.png" alt="Скриншот 17" loading="lazy">
-                            <span>Шаг 17</span>
-                        </button>
-                    </div>
-                </section>
-            </div>
-
                     </div>
 
                     <footer>
@@ -1965,10 +1814,6 @@ claude --version
             checklist: {
                 hash: "omniroute-checklist",
                 title: "Чек-лист OmniRoute | База инструкций",
-            },
-            screenshots: {
-                hash: "omniroute-screenshots",
-                title: "Скриншоты OmniRoute | База инструкций",
             },
         };
 
