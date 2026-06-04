@@ -413,25 +413,42 @@
         }
 
         .code-block {
-            background: #0f1d33;
-            border: 1px solid rgba(147, 197, 253, 0.2);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            border: 1px solid #bfdbfe;
             border-left: 5px solid var(--cyan-500);
             border-radius: 8px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-            color: #dbeafe;
+            box-shadow: 0 10px 24px rgba(16, 42, 86, 0.08);
+            color: #15345f;
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
             font-size: 13.5px;
             line-height: 1.8;
             margin: 13px 0 18px;
             overflow-x: auto;
-            padding: 16px 17px;
+            padding: 38px 17px 15px;
+            position: relative;
             white-space: pre-wrap;
             word-break: break-word;
         }
 
+        .code-block::before {
+            background: #e0f2fe;
+            border: 1px solid #bae6fd;
+            border-radius: 999px;
+            color: var(--blue-800);
+            content: "Код / команда";
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 760;
+            left: 14px;
+            line-height: 1;
+            padding: 6px 9px;
+            position: absolute;
+            top: 10px;
+        }
+
         .code-block code {
             background: transparent;
-            color: #bfdbfe;
+            color: #15345f;
             padding: 0;
         }
 
@@ -645,8 +662,68 @@
 
         .chatgpt-steps {
             display: grid;
-            gap: 14px;
-            margin-top: 20px;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .instruction-stage {
+            background: #ffffff;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 16px 38px rgba(16, 42, 86, 0.09);
+            overflow: hidden;
+        }
+
+        .stage-header {
+            background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
+            border-bottom: 1px solid var(--line);
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 1fr auto;
+            padding: 18px 20px;
+        }
+
+        .stage-header h2 {
+            display: block;
+            font-size: clamp(20px, 2.5vw, 26px);
+            margin: 0 0 6px;
+        }
+
+        .stage-header h2::before {
+            content: none;
+        }
+
+        .stage-header p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .stage-range {
+            align-self: start;
+            background: white;
+            border: 1px solid #bfdbfe;
+            border-radius: 999px;
+            color: var(--blue-800);
+            font-size: 13px;
+            font-weight: 760;
+            padding: 8px 11px;
+            white-space: nowrap;
+        }
+
+        .stage-body {
+            display: grid;
+            gap: 12px;
+            padding: 16px;
+        }
+
+        .stage-result {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            color: #166534;
+            font-size: 14px;
+            font-weight: 680;
+            padding: 12px 14px;
         }
 
         .payment-alert {
@@ -715,6 +792,19 @@
 
             .step {
                 padding: 14px;
+            }
+
+            .stage-header {
+                grid-template-columns: 1fr;
+                padding: 16px;
+            }
+
+            .stage-range {
+                justify-self: start;
+            }
+
+            .stage-body {
+                padding: 12px;
             }
 
             .screenshots-grid {
@@ -813,67 +903,109 @@
                         </div>
 
                         <div class="chatgpt-steps">
-                            <div class="step">
-                                <span class="step-number">1</span>
-                                <div class="step-content">
-                                    <h4>Открыть бота и мини-приложение</h4>
-                                    <p>Перейдите в Telegram-бот <a href="https://t.me/platipomiru_bot" target="_blank" rel="noopener">@platipomiru_bot</a>, нажмите <strong>Старт</strong>, затем <strong>Открыть приложение</strong>. Откроется личный кабинет «Плати по миру».</p>
+                            <div class="instruction-stage">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Этап 1. Подготовить карту</h2>
+                                        <p>От запуска бота до готовой пополненной карты для оплаты подписки.</p>
+                                    </div>
+                                    <span class="stage-range">Шаги 1–3</span>
+                                </div>
+
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Открыть бота и мини-приложение</h4>
+                                            <p>Перейдите в Telegram-бот <a href="https://t.me/platipomiru_bot" target="_blank" rel="noopener">@platipomiru_bot</a>, нажмите <strong>Старт</strong>, затем <strong>Открыть приложение</strong>. Откроется личный кабинет «Плати по миру».</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Выпустить карту для подписок</h4>
+                                            <p>В мини-приложении выберите карту <strong>Для подписок</strong>, нажмите <strong>Выпустить карту</strong> и оплатите выпуск через СБП. После оплаты в кабинете появятся реквизиты карты.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Пополнить карту с запасом</h4>
+                                            <p>Пополните карту рублями через СБП. Баланс карты «Для подписок» отображается в EUR, а оплата ChatGPT может списаться с конвертацией и комиссией сервиса, поэтому лучше держать небольшой запас сверх стоимости подписки.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="stage-result">Результат этапа: у вас есть виртуальная карта «Для подписок» с достаточным балансом для оплаты ChatGPT.</div>
                                 </div>
                             </div>
 
-                            <div class="step">
-                                <span class="step-number">2</span>
-                                <div class="step-content">
-                                    <h4>Выпустить карту для подписок</h4>
-                                    <p>В мини-приложении выберите карту <strong>Для подписок</strong>, нажмите <strong>Выпустить карту</strong> и оплатите выпуск через СБП. После оплаты в кабинете появятся реквизиты карты.</p>
+                            <div class="instruction-stage">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Этап 2. Оплатить подписку в ChatGPT</h2>
+                                        <p>От выбора тарифа до подтверждения платежа картой «Плати по миру».</p>
+                                    </div>
+                                    <span class="stage-range">Шаги 4–6</span>
+                                </div>
+
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Открыть оплату ChatGPT</h4>
+                                            <p>Перейдите на <a href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a>, войдите в нужный аккаунт, нажмите на профиль и выберите <strong>Upgrade Plan</strong>. Выберите нужный тариф, например Plus или Pro.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Ввести реквизиты карты</h4>
+                                            <p>На странице оплаты укажите номер карты, срок действия и CVV из мини-приложения. Если ChatGPT просит данные плательщика или billing address, используйте корректные данные и ориентируйтесь на подсказки ChatGPT и поддержку «Плати по миру».</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Подтвердить платёж</h4>
+                                            <p>Проверьте тариф, сумму и период списания. Если всё верно, подтвердите оплату. При запросе подтверждения операции откройте мини-приложение «Плати по миру» и подтвердите платёж там.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="stage-result">Результат этапа: платёж отправлен и подтверждён, ChatGPT должен показать успешную оплату.</div>
                                 </div>
                             </div>
 
-                            <div class="step">
-                                <span class="step-number">3</span>
-                                <div class="step-content">
-                                    <h4>Пополнить карту с запасом</h4>
-                                    <p>Пополните карту рублями через СБП. Баланс карты «Для подписок» отображается в EUR, а оплата ChatGPT может списаться с конвертацией и комиссией сервиса, поэтому лучше держать небольшой запас сверх стоимости подписки.</p>
+                            <div class="instruction-stage">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Этап 3. Проверить результат</h2>
+                                        <p>Убедиться, что подписка активна, и понять, что делать при отказе платежа.</p>
+                                    </div>
+                                    <span class="stage-range">Шаги 7–8</span>
                                 </div>
-                            </div>
 
-                            <div class="step">
-                                <span class="step-number">4</span>
-                                <div class="step-content">
-                                    <h4>Открыть оплату ChatGPT</h4>
-                                    <p>Перейдите на <a href="https://chatgpt.com/" target="_blank" rel="noopener">chatgpt.com</a>, войдите в нужный аккаунт, нажмите на профиль и выберите <strong>Upgrade Plan</strong>. Выберите нужный тариф, например Plus или Pro.</p>
-                                </div>
-                            </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">7</span>
+                                        <div class="step-content">
+                                            <h4>Проверить подписку и управление оплатой</h4>
+                                            <p>После успешной оплаты в ChatGPT откройте <strong>Settings → Billing</strong>. Там можно проверить активный план, историю платежей и управление подпиской.</p>
+                                        </div>
+                                    </div>
 
-                            <div class="step">
-                                <span class="step-number">5</span>
-                                <div class="step-content">
-                                    <h4>Ввести реквизиты карты</h4>
-                                    <p>На странице оплаты укажите номер карты, срок действия и CVV из мини-приложения. Если ChatGPT просит данные плательщика или billing address, используйте корректные данные и ориентируйтесь на подсказки ChatGPT и поддержку «Плати по миру».</p>
-                                </div>
-                            </div>
+                                    <div class="step">
+                                        <span class="step-number">8</span>
+                                        <div class="step-content">
+                                            <h4>Если платёж не проходит</h4>
+                                            <p>Проверьте баланс с учётом комиссии и конвертации, статус карты, правильность реквизитов и ограничения тарифа. Если отказ повторяется, обратитесь в поддержку «Плати по миру» через бот и приложите текст ошибки или скрин оплаты.</p>
+                                        </div>
+                                    </div>
 
-                            <div class="step">
-                                <span class="step-number">6</span>
-                                <div class="step-content">
-                                    <h4>Подтвердить платёж</h4>
-                                    <p>Проверьте тариф, сумму и период списания. Если всё верно, подтвердите оплату. При запросе подтверждения операции откройте мини-приложение «Плати по миру» и подтвердите платёж там.</p>
-                                </div>
-                            </div>
-
-                            <div class="step">
-                                <span class="step-number">7</span>
-                                <div class="step-content">
-                                    <h4>Проверить подписку и управление оплатой</h4>
-                                    <p>После успешной оплаты в ChatGPT откройте <strong>Settings → Billing</strong>. Там можно проверить активный план, историю платежей и управление подпиской.</p>
-                                </div>
-                            </div>
-
-                            <div class="step">
-                                <span class="step-number">8</span>
-                                <div class="step-content">
-                                    <h4>Если платёж не проходит</h4>
-                                    <p>Проверьте баланс с учётом комиссии и конвертации, статус карты, правильность реквизитов и ограничения тарифа. Если отказ повторяется, обратитесь в поддержку «Плати по миру» через бот и приложите текст ошибки или скрин оплаты.</p>
+                                    <div class="stage-result">Результат этапа: подписка активна или понятно, какой пункт нужно исправить перед повторной оплатой.</div>
                                 </div>
                             </div>
                         </div>
