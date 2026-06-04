@@ -12,14 +12,14 @@
             --blue-700: #1d4ed8;
             --sky-100: #e0f2fe;
             --sky-50: #f0f9ff;
-            --cyan-500: #06b6d4;
-            --green-600: #16a34a;
-            --accent-800: #115e59;
-            --accent-700: #0f766e;
-            --accent-600: #0d9488;
-            --accent-100: #ccfbf1;
-            --accent-50: #f0fdfa;
-            --amber-500: #f59e0b;
+            --accent-900: #7c2d12;
+            --accent-800: #9a3412;
+            --accent-700: #c2410c;
+            --accent-600: #ea580c;
+            --accent-200: #fed7aa;
+            --accent-100: #ffedd5;
+            --accent-50: #fff7ed;
+            --amber-500: #d97706;
             --amber-50: #fffbeb;
             --ink: #172033;
             --muted: #5d6980;
@@ -41,8 +41,8 @@
         body {
             min-height: 100vh;
             background:
-                radial-gradient(circle at 16% 6%, rgba(15, 118, 110, 0.11), transparent 28rem),
-                linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f8fbff 100%);
+                radial-gradient(circle at 16% 6%, rgba(194, 65, 12, 0.10), transparent 28rem),
+                linear-gradient(135deg, #f8fbff 0%, #eef6ff 54%, #fff7ed 100%);
             color: var(--ink);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.65;
@@ -129,6 +129,7 @@
         .guide-card {
             background: var(--panel);
             border: 1px solid rgba(219, 230, 243, 0.95);
+            border-top: 4px solid var(--blue-800);
             border-radius: 8px;
             box-shadow: 0 18px 48px rgba(16, 42, 86, 0.10);
             color: inherit;
@@ -144,7 +145,7 @@
 
         .guide-card:hover,
         .guide-card:focus-visible {
-            border-color: rgba(30, 64, 175, 0.45);
+            border-color: rgba(30, 64, 175, 0.42);
             box-shadow: var(--shadow);
             outline: none;
             transform: translateY(-3px);
@@ -159,7 +160,7 @@
 
         .guide-number {
             align-items: center;
-            background: var(--accent-700);
+            background: var(--blue-800);
             border-radius: 6px;
             color: white;
             display: inline-flex;
@@ -178,6 +179,22 @@
             font-size: 13px;
             font-weight: 700;
             padding: 7px 11px;
+        }
+
+        .guide-open {
+            align-items: center;
+            color: var(--blue-800);
+            display: inline-flex;
+            font-size: 14px;
+            font-weight: 780;
+            gap: 8px;
+            margin-top: 2px;
+        }
+
+        .guide-open::after {
+            content: "→";
+            font-size: 17px;
+            line-height: 1;
         }
 
         .guide-card h2 {
@@ -234,6 +251,47 @@
             gap: 12px;
             justify-content: space-between;
             margin-bottom: 16px;
+        }
+
+        .guide-switcher {
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            display: grid;
+            gap: 8px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-bottom: 18px;
+            padding: 8px;
+            position: sticky;
+            top: 10px;
+            z-index: 70;
+        }
+
+        .guide-switcher button {
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            color: #40506a;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 760;
+            min-height: 42px;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        .guide-switcher button:hover,
+        .guide-switcher button:focus-visible {
+            border-color: #bfdbfe;
+            color: var(--blue-800);
+            outline: none;
+        }
+
+        .guide-switcher button.is-current {
+            background: var(--blue-800);
+            border-color: var(--blue-800);
+            color: white;
+            box-shadow: 0 10px 22px rgba(30, 64, 175, 0.16);
         }
 
         .back-button,
@@ -313,30 +371,59 @@
             background: #f8fafc;
             border: 1px solid var(--line);
             border-radius: 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             margin-bottom: 28px;
             padding: 8px;
             position: sticky;
-            top: 10px;
+            top: 76px;
             z-index: 50;
         }
 
         .tab-button {
-            align-items: center;
+            align-items: flex-start;
             background: white;
             border: 1px solid transparent;
             border-radius: 8px;
             color: #536078;
             cursor: pointer;
-            display: inline-flex;
-            font-size: 15px;
+            display: grid;
+            gap: 3px;
+            grid-template-columns: auto 1fr;
+            font-size: 14px;
             font-weight: 720;
-            justify-content: center;
-            min-height: 42px;
-            padding: 10px 15px;
+            min-height: 74px;
+            padding: 11px 12px;
+            text-align: left;
             transition: background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .tab-index {
+            align-items: center;
+            background: #eff6ff;
+            border-radius: 6px;
+            color: var(--blue-800);
+            display: inline-flex;
+            font-size: 12px;
+            font-weight: 820;
+            grid-row: span 2;
+            height: 26px;
+            justify-content: center;
+            width: 26px;
+        }
+
+        .tab-title {
+            color: var(--blue-950);
+            font-weight: 780;
+            line-height: 1.2;
+        }
+
+        .tab-desc {
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 620;
+            line-height: 1.25;
         }
 
         .tab-button:hover,
@@ -347,10 +434,15 @@
         }
 
         .tab-button.active {
-            background: #e0f2fe;
-            border-color: #93c5fd;
+            background: #eff6ff;
+            border-color: var(--blue-800);
             box-shadow: 0 8px 18px rgba(30, 64, 175, 0.11);
             color: var(--blue-800);
+        }
+
+        .tab-button.active .tab-index {
+            background: var(--blue-800);
+            color: white;
         }
 
         .tab-content {
@@ -382,7 +474,7 @@
         }
 
         h2::before {
-            background: var(--accent-700);
+            background: var(--blue-800);
             border-radius: 999px;
             content: "";
             flex: 0 0 auto;
@@ -481,10 +573,10 @@
         }
 
         .success {
-            background: var(--accent-50);
-            border: 1px solid var(--accent-100);
-            border-left: 5px solid var(--accent-700);
-            color: var(--accent-800);
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 5px solid var(--blue-800);
+            color: #1e3a8a;
         }
 
         .note p,
@@ -539,7 +631,7 @@
 
         .step-number {
             align-items: center;
-            background: var(--accent-700);
+            background: var(--blue-800);
             border-radius: 6px;
             color: white;
             display: inline-flex;
@@ -683,7 +775,7 @@
         .stage-header {
             background: #f8fafc;
             border-bottom: 1px solid var(--line);
-            border-top: 4px solid var(--accent-700);
+            border-top: 4px solid var(--blue-800);
             display: grid;
             gap: 12px;
             grid-template-columns: 1fr auto;
@@ -708,9 +800,9 @@
         .stage-range {
             align-self: start;
             background: white;
-            border: 1px solid var(--accent-100);
+            border: 1px solid #bfdbfe;
             border-radius: 6px;
-            color: var(--accent-800);
+            color: var(--blue-800);
             font-size: 13px;
             font-weight: 760;
             padding: 8px 11px;
@@ -725,7 +817,7 @@
 
         .stage-result {
             background: var(--accent-50);
-            border: 1px solid var(--accent-100);
+            border: 1px solid var(--accent-200);
             border-radius: 8px;
             color: var(--accent-800);
             font-size: 14px;
@@ -754,7 +846,7 @@
 
         .step-media:hover,
         .step-media:focus-visible {
-            border-color: var(--accent-100);
+            border-color: #93c5fd;
             outline: none;
         }
 
@@ -805,6 +897,11 @@
             .guide-card {
                 min-height: 230px;
             }
+
+            .tabs {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                top: 74px;
+            }
         }
 
         @media (max-width: 640px) {
@@ -828,14 +925,12 @@
             }
 
             .tabs {
-                overflow-x: visible;
                 position: static;
-                flex-wrap: wrap;
+                grid-template-columns: 1fr;
             }
 
             .tab-button {
-                flex: 1 1 calc(50% - 8px);
-                min-width: 132px;
+                min-height: 62px;
             }
 
             .step {
@@ -878,8 +973,9 @@
                 flex-direction: column;
             }
 
-            .tab-button {
-                flex-basis: 100%;
+            .guide-switcher {
+                grid-template-columns: 1fr;
+                position: static;
             }
 
             .back-button,
@@ -909,6 +1005,7 @@
                         <h2>Оплата подписки ChatGPT</h2>
                         <p>Как выпустить карту в @platipomiru_bot, пополнить её через СБП и оплатить подписку ChatGPT на сайте.</p>
                     </div>
+                    <span class="guide-open">Открыть инструкцию</span>
                     <div class="guide-meta">
                         <span>ChatGPT</span>
                         <span>Плати по миру</span>
@@ -925,6 +1022,7 @@
                         <h2>OmniRoute и Claude Code</h2>
                         <p>Полное руководство по настройке на Windows: зависимости, API ключ, провайдеры, проблемы, чек-лист и скриншоты.</p>
                     </div>
+                    <span class="guide-open">Открыть инструкцию</span>
                     <div class="guide-meta">
                         <span>Windows</span>
                         <span>Node.js</span>
@@ -938,6 +1036,11 @@
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
                     <a class="primary-action" href="https://t.me/platipomiru_bot" target="_blank" rel="noopener">Открыть @platipomiru_bot</a>
                 </div>
+
+                <nav class="guide-switcher" aria-label="Навигация по базе инструкций">
+                    <button class="is-current" type="button" data-guide="chatgpt">1. Оплата ChatGPT</button>
+                    <button type="button" data-guide="omniroute">2. OmniRoute и Claude Code</button>
+                </nav>
 
                 <article class="simple-guide">
                     <header>
@@ -1301,8 +1404,12 @@
             <section id="omniroute-guide" class="guide-panel is-hidden" aria-label="OmniRoute и Claude Code">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
-                    <a class="primary-action" href="#installation">К установке</a>
                 </div>
+
+                <nav class="guide-switcher" aria-label="Навигация по базе инструкций">
+                    <button type="button" data-guide="chatgpt">1. Оплата ChatGPT</button>
+                    <button class="is-current" type="button" data-guide="omniroute">2. OmniRoute и Claude Code</button>
+                </nav>
 
                 <div class="container">
                     <header>
@@ -1316,11 +1423,31 @@
                         </div>
 
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции OmniRoute">
-                            <button class="tab-button active" type="button" onclick="switchTab(event, 'installation')">Установка</button>
-                            <button class="tab-button" type="button" onclick="switchTab(event, 'configuration')">Настройка</button>
-                            <button class="tab-button" type="button" onclick="switchTab(event, 'troubleshooting')">Проблемы</button>
-                            <button class="tab-button" type="button" onclick="switchTab(event, 'checklist')">Чек-лист</button>
-                            <button class="tab-button" type="button" onclick="switchTab(event, 'screenshots')">Скриншоты</button>
+                            <button class="tab-button active" type="button" data-omni-tab="installation">
+                                <span class="tab-index">1</span>
+                                <span class="tab-title">Установка</span>
+                                <span class="tab-desc">Терминал, Git, Node.js, Claude Code и OmniRoute</span>
+                            </button>
+                            <button class="tab-button" type="button" data-omni-tab="configuration">
+                                <span class="tab-index">2</span>
+                                <span class="tab-title">Настройка</span>
+                                <span class="tab-desc">API ключ, settings.json и провайдеры</span>
+                            </button>
+                            <button class="tab-button" type="button" data-omni-tab="troubleshooting">
+                                <span class="tab-index">3</span>
+                                <span class="tab-title">Проблемы</span>
+                                <span class="tab-desc">Ошибки запуска, порт и подключение</span>
+                            </button>
+                            <button class="tab-button" type="button" data-omni-tab="checklist">
+                                <span class="tab-index">4</span>
+                                <span class="tab-title">Чек-лист</span>
+                                <span class="tab-desc">Быстрая проверка перед работой</span>
+                            </button>
+                            <button class="tab-button" type="button" data-omni-tab="screenshots">
+                                <span class="tab-index">5</span>
+                                <span class="tab-title">Скриншоты</span>
+                                <span class="tab-desc">Все изображения установки и настройки</span>
+                            </button>
                         </div>
 
 <!-- TAB 1: INSTALLATION -->
@@ -1883,6 +2010,28 @@ claude --version
                 title: "Установка OmniRoute и Claude Code | База инструкций",
             },
         };
+        const omniTabs = {
+            installation: {
+                hash: "omniroute-install",
+                title: "Установка OmniRoute и Claude Code | База инструкций",
+            },
+            configuration: {
+                hash: "omniroute-setup",
+                title: "Настройка OmniRoute | База инструкций",
+            },
+            troubleshooting: {
+                hash: "omniroute-problems",
+                title: "Проблемы OmniRoute | База инструкций",
+            },
+            checklist: {
+                hash: "omniroute-checklist",
+                title: "Чек-лист OmniRoute | База инструкций",
+            },
+            screenshots: {
+                hash: "omniroute-screenshots",
+                title: "Скриншоты OmniRoute | База инструкций",
+            },
+        };
 
         function showPicker(updateUrl = true) {
             hero.classList.remove("is-hidden");
@@ -1895,7 +2044,7 @@ claude --version
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
-        function openGuide(name, updateUrl = true) {
+        function openGuide(name, updateUrl = true, shouldScroll = true) {
             hero.classList.add("is-hidden");
             picker.classList.add("is-hidden");
             Object.entries(guidePanels).forEach(([key, panel]) => {
@@ -1907,7 +2056,12 @@ claude --version
                     history.pushState(null, "", `#${guideRoutes[name].hash}`);
                 }
             }
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            if (name === "omniroute") {
+                activateOmniTab("installation", false, false);
+            }
+            if (shouldScroll) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            }
         }
 
         document.querySelectorAll("[data-guide]").forEach((card) => {
@@ -1919,9 +2073,17 @@ claude --version
         });
 
         function openFromHash() {
-            const route = Object.entries(guideRoutes).find(([, value]) => value.hash === window.location.hash.slice(1));
+            const hash = window.location.hash.slice(1);
+            const tabRoute = Object.entries(omniTabs).find(([, value]) => value.hash === hash);
+            if (tabRoute) {
+                openGuide("omniroute", false, false);
+                activateOmniTab(tabRoute[0], false, false);
+                return;
+            }
+
+            const route = Object.entries(guideRoutes).find(([, value]) => value.hash === hash);
             if (route) {
-                openGuide(route[0], false);
+                openGuide(route[0], false, false);
             } else {
                 showPicker(false);
             }
@@ -1931,15 +2093,38 @@ claude --version
         window.addEventListener("hashchange", openFromHash);
         openFromHash();
 
-        function switchTab(event, tabName) {
+        function activateOmniTab(tabName, updateUrl = true, shouldScroll = true) {
             const contents = document.querySelectorAll("#omniroute-guide .tab-content");
             contents.forEach((content) => content.classList.remove("active"));
 
             const buttons = document.querySelectorAll("#omniroute-guide .tab-button");
             buttons.forEach((button) => button.classList.remove("active"));
 
-            document.getElementById(tabName).classList.add("active");
-            event.currentTarget.classList.add("active");
+            const content = document.getElementById(tabName);
+            const button = document.querySelector(`[data-omni-tab="${tabName}"]`);
+            if (!content || !button) return;
+
+            content.classList.add("active");
+            button.classList.add("active");
+
+            const route = omniTabs[tabName];
+            if (route) {
+                document.title = route.title;
+                if (updateUrl) {
+                    history.pushState(null, "", `#${route.hash}`);
+                }
+            }
+            if (shouldScroll) {
+                document.querySelector("#omniroute-guide .container").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        document.querySelectorAll("[data-omni-tab]").forEach((button) => {
+            button.addEventListener("click", () => activateOmniTab(button.dataset.omniTab));
+        });
+
+        function switchTab(event, tabName) {
+            activateOmniTab(tabName);
         }
 
         const lightbox = document.getElementById("lightbox");
