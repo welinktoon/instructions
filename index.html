@@ -816,8 +816,38 @@
 
         .chatgpt-steps {
             display: grid;
-            gap: 16px;
-            margin-top: 18px;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        #chatgpt-guide .chatgpt-steps > .instruction-stage {
+            display: none;
+        }
+
+        #chatgpt-guide .chatgpt-steps > .instruction-stage.active {
+            display: block;
+        }
+
+        #chatgpt-guide .tabs {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        #chatgpt-guide .stage-body {
+            gap: 4px;
+        }
+
+        #chatgpt-guide .step {
+            margin-bottom: 0;
+            padding: 10px 16px;
+        }
+
+        #chatgpt-guide .step-content h4 {
+            margin-bottom: 4px;
+        }
+
+        #chatgpt-guide .step-content p {
+            line-height: 1.45;
+            margin-bottom: 0;
         }
 
         .instruction-stage {
@@ -942,6 +972,10 @@
                 grid-template-columns: repeat(2, minmax(0, 1fr));
                 top: 74px;
             }
+
+            #chatgpt-guide .tabs {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 640px) {
@@ -974,6 +1008,10 @@
                 grid-template-columns: 1fr;
             }
 
+            #chatgpt-guide .tabs {
+                grid-template-columns: 1fr;
+            }
+
             .tab-button {
                 min-height: 62px;
             }
@@ -981,6 +1019,10 @@
             .step {
                 gap: 12px;
                 padding: 14px;
+            }
+
+            #chatgpt-guide .step {
+                padding: 10px 2px;
             }
 
             .stage-header {
@@ -1124,8 +1166,31 @@
                     </header>
 
                     <div class="simple-content">
+                        <div class="tabs chatgpt-stage-tabs" role="tablist" aria-label="Разделы инструкции оплаты ChatGPT">
+                            <button class="tab-button active" type="button" data-chatgpt-stage="prep">
+                                <span class="tab-index">1</span>
+                                <span class="tab-title">Подготовка</span>
+                                <span class="tab-desc">Карта, баланс и аккаунт ChatGPT</span>
+                            </button>
+                            <button class="tab-button" type="button" data-chatgpt-stage="plus">
+                                <span class="tab-index">2</span>
+                                <span class="tab-title">Plus и Pro</span>
+                                <span class="tab-desc">VPN, тариф, карта и подтверждение</span>
+                            </button>
+                            <button class="tab-button" type="button" data-chatgpt-stage="go">
+                                <span class="tab-index">3</span>
+                                <span class="tab-title">Go</span>
+                                <span class="tab-desc">Отдельный сценарий оплаты тарифа</span>
+                            </button>
+                            <button class="tab-button" type="button" data-chatgpt-stage="issues">
+                                <span class="tab-index">4</span>
+                                <span class="tab-title">Проблемы</span>
+                                <span class="tab-desc">Если платёж не проходит</span>
+                            </button>
+                        </div>
+
                         <div class="chatgpt-steps">
-                            <div class="instruction-stage">
+                            <div class="instruction-stage active" data-chatgpt-panel="prep">
                                 <div class="stage-header">
                                     <div>
                                         <h2>Этап 1. Подготовка перед оплатой</h2>
@@ -1178,7 +1243,7 @@
                                 </div>
                             </div>
 
-                            <div class="instruction-stage">
+                            <div class="instruction-stage" data-chatgpt-panel="plus">
                                 <div class="stage-header">
                                     <div>
                                         <h2>Этап 2. Оплата тарифов Plus и Pro</h2>
@@ -1275,7 +1340,7 @@
                                 </div>
                             </div>
 
-                            <div class="instruction-stage">
+                            <div class="instruction-stage" data-chatgpt-panel="go">
                                 <div class="stage-header">
                                     <div>
                                         <h2>Этап 3. Оплата тарифа Go</h2>
@@ -1368,7 +1433,7 @@
                                 </div>
                             </div>
 
-                            <div class="instruction-stage">
+                            <div class="instruction-stage" data-chatgpt-panel="issues">
                                 <div class="stage-header">
                                     <div>
                                         <h2>Этап 4. Если платёж не проходит</h2>
@@ -1914,6 +1979,24 @@ npm -v</div>
                 title: "Проблемы OmniRoute | База инструкций",
             },
         };
+        const chatgptStages = {
+            prep: {
+                hash: "chatgpt-payment",
+                title: "Оплата ChatGPT: подготовка | База инструкций",
+            },
+            plus: {
+                hash: "chatgpt-plus-pro",
+                title: "Оплата ChatGPT Plus и Pro | База инструкций",
+            },
+            go: {
+                hash: "chatgpt-go",
+                title: "Оплата ChatGPT Go | База инструкций",
+            },
+            issues: {
+                hash: "chatgpt-payment-issues",
+                title: "Проблемы оплаты ChatGPT | База инструкций",
+            },
+        };
 
         function showPicker(updateUrl = true) {
             hero.classList.remove("is-hidden");
@@ -1945,6 +2028,9 @@ npm -v</div>
             if (name === "omniroute") {
                 activateOmniTab("installation", false, false);
             }
+            if (name === "chatgpt") {
+                activateChatgptStage("prep", false, false);
+            }
             if (shouldScroll) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
@@ -1960,6 +2046,13 @@ npm -v</div>
 
         function openFromHash() {
             const hash = window.location.hash.slice(1);
+            const chatgptRoute = Object.entries(chatgptStages).find(([, value]) => value.hash === hash);
+            if (chatgptRoute) {
+                openGuide("chatgpt", false, false);
+                activateChatgptStage(chatgptRoute[0], false, false);
+                return;
+            }
+
             const tabRoute = Object.entries(omniTabs).find(([, value]) => value.hash === hash);
             if (tabRoute) {
                 openGuide("omniroute", false, false);
@@ -2007,6 +2100,36 @@ npm -v</div>
 
         document.querySelectorAll("[data-omni-tab]").forEach((button) => {
             button.addEventListener("click", () => activateOmniTab(button.dataset.omniTab));
+        });
+
+        function activateChatgptStage(stageName, updateUrl = true, shouldScroll = true) {
+            const stages = document.querySelectorAll("#chatgpt-guide [data-chatgpt-panel]");
+            stages.forEach((stage) => stage.classList.remove("active"));
+
+            const buttons = document.querySelectorAll("#chatgpt-guide [data-chatgpt-stage]");
+            buttons.forEach((button) => button.classList.remove("active"));
+
+            const stage = document.querySelector(`#chatgpt-guide [data-chatgpt-panel="${stageName}"]`);
+            const button = document.querySelector(`#chatgpt-guide [data-chatgpt-stage="${stageName}"]`);
+            if (!stage || !button) return;
+
+            stage.classList.add("active");
+            button.classList.add("active");
+
+            const route = chatgptStages[stageName];
+            if (route) {
+                document.title = route.title;
+                if (updateUrl) {
+                    history.pushState(null, "", `#${route.hash}`);
+                }
+            }
+            if (shouldScroll) {
+                document.querySelector("#chatgpt-guide .simple-guide").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        document.querySelectorAll("[data-chatgpt-stage]").forEach((button) => {
+            button.addEventListener("click", () => activateChatgptStage(button.dataset.chatgptStage));
         });
 
         function switchTab(event, tabName) {
