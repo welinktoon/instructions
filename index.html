@@ -253,46 +253,6 @@
             margin-bottom: 16px;
         }
 
-        .guide-switcher {
-            background: rgba(255, 255, 255, 0.88);
-            border: 0;
-            border-radius: 8px;
-            display: grid;
-            gap: 8px;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            margin-bottom: 18px;
-            padding: 8px;
-            position: sticky;
-            top: 10px;
-            z-index: 70;
-        }
-
-        .guide-switcher button {
-            background: transparent;
-            border: 0;
-            border-radius: 7px;
-            color: #40506a;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 760;
-            min-height: 42px;
-            padding: 10px 12px;
-            text-align: center;
-        }
-
-        .guide-switcher button:hover,
-        .guide-switcher button:focus-visible {
-            background: #eff6ff;
-            color: var(--blue-800);
-            outline: none;
-        }
-
-        .guide-switcher button.is-current {
-            background: var(--blue-800);
-            color: white;
-            box-shadow: 0 10px 22px rgba(30, 64, 175, 0.16);
-        }
-
         .back-button,
         .primary-action {
             align-items: center;
@@ -972,11 +932,6 @@
                 flex-direction: column;
             }
 
-            .guide-switcher {
-                grid-template-columns: 1fr;
-                position: static;
-            }
-
             .back-button,
             .primary-action {
                 width: 100%;
@@ -1035,11 +990,6 @@
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
                     <a class="primary-action" href="https://t.me/platipomiru_bot" target="_blank" rel="noopener">Открыть @platipomiru_bot</a>
                 </div>
-
-                <nav class="guide-switcher" aria-label="Навигация по базе инструкций">
-                    <button class="is-current" type="button" data-guide="chatgpt">1. Оплата ChatGPT</button>
-                    <button type="button" data-guide="omniroute">2. OmniRoute и Claude Code</button>
-                </nav>
 
                 <article class="simple-guide">
                     <header>
@@ -1399,11 +1349,6 @@
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
                 </div>
-
-                <nav class="guide-switcher" aria-label="Навигация по базе инструкций">
-                    <button type="button" data-guide="chatgpt">1. Оплата ChatGPT</button>
-                    <button class="is-current" type="button" data-guide="omniroute">2. OmniRoute и Claude Code</button>
-                </nav>
 
                 <div class="container">
                     <header>
