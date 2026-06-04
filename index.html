@@ -332,7 +332,7 @@
             border-radius: 8px;
             display: grid;
             gap: 10px;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             margin-bottom: 28px;
             padding: 8px;
             position: sticky;
@@ -554,8 +554,7 @@
 
         .card,
         .link-card,
-        .step,
-        .checklist {
+        .step {
             background: #ffffff;
             border: 0;
             border-radius: 8px;
@@ -1325,11 +1324,6 @@
                                 <span class="tab-title">Проблемы</span>
                                 <span class="tab-desc">Ошибки запуска, порт и подключение</span>
                             </button>
-                            <button class="tab-button" type="button" data-omni-tab="checklist">
-                                <span class="tab-index">4</span>
-                                <span class="tab-title">Чек-лист</span>
-                                <span class="tab-desc">Быстрая проверка перед работой</span>
-                            </button>
                         </div>
 
 <!-- TAB 1: INSTALLATION -->
@@ -1706,65 +1700,6 @@ npm -v</div>
                 </section>
             </div>
 
-            <!-- TAB 4: CHECKLIST -->
-            <div id="checklist" class="tab-content">
-
-                <section>
-                    <h2>Важные примечания</h2>
-
-                    <div class="note">
-                        OmniRoute должен быть запущен перед использованием Claude Code
-                    </div>
-
-                    <div class="note">
-                        По умолчанию OmniRoute работает на порту 20128
-                    </div>
-
-                    <div class="note">
-                        Рекомендуемая версия Node.js: 22.22.2 (наиболее стабильная для работы с OmniRoute)
-                    </div>
-
-                    <div class="note">
-                        Все модели доступны через единый эндпоинт http://localhost:20128/v1
-                    </div>
-
-                    <h3>Проверенные версии</h3>
-                    <p>Эти версии работают хорошо и совместимы друг с другом:</p>
-                    <div class="code-block">git --version
-git version 2.53.0.windows.2
-
-node -v
-v22.22.2
-
-npm -v
-10.9.7
-
-claude --version
-2.1.104 (Claude Code)</div>
-                </section>
-
-                <section>
-                    <h2>Полезные ссылки</h2>
-
-                    <div class="links">
-                        <a href="https://git-scm.com/install/windows" class="link-card" target="_blank">
-                            <strong>Git для Windows</strong>
-                            <span>Скачать установщик</span>
-                        </a>
-
-                        <a href="https://nodejs.org/en/download" class="link-card" target="_blank">
-                            <strong>Node.js</strong>
-                            <span>Скачать LTS версию</span>
-                        </a>
-
-                        <a href="http://localhost:20128" class="link-card" target="_blank">
-                            <strong>OmniRoute Dashboard</strong>
-                            <span>Панель управления (после запуска)</span>
-                        </a>
-                    </div>
-                </section>
-            </div>
-
                     </div>
 
                     <footer>
@@ -1810,10 +1745,6 @@ claude --version
             troubleshooting: {
                 hash: "omniroute-problems",
                 title: "Проблемы OmniRoute | База инструкций",
-            },
-            checklist: {
-                hash: "omniroute-checklist",
-                title: "Чек-лист OmniRoute | База инструкций",
             },
         };
 
