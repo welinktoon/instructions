@@ -203,6 +203,58 @@
             margin: 24px;
         }
 
+        .quick-ai {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin: 0 24px 24px;
+            padding: 20px;
+        }
+
+        .quick-ai h2 {
+            margin-bottom: 8px;
+        }
+
+        .quick-ai h2::before {
+            display: none;
+        }
+
+        .quick-ai p {
+            margin-bottom: 16px;
+        }
+
+        .quick-ai-grid {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .quick-ai-link {
+            background: #f9fafb;
+            border-radius: 8px;
+            color: #101828;
+            display: block;
+            padding: 14px;
+        }
+
+        .quick-ai-link:hover,
+        .quick-ai-link:focus-visible {
+            background: #eef4ff;
+            color: #101828;
+            outline: none;
+        }
+
+        .quick-ai-link strong,
+        .quick-ai-link span {
+            display: block;
+        }
+
+        .quick-ai-link span {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
         .guide-card {
             background: var(--panel);
             border: 1px solid var(--line);
@@ -819,17 +871,6 @@
             padding: 0;
         }
 
-        .stage-result {
-            background: var(--accent-50);
-            border: 1px solid var(--accent-200);
-            border-left: 4px solid var(--accent-700);
-            border-radius: 8px;
-            color: var(--accent-800);
-            font-size: 14px;
-            font-weight: 680;
-            padding: 12px 14px;
-        }
-
         .step-media {
             background: #ffffff;
             border: 0;
@@ -869,24 +910,6 @@
             display: none;
         }
 
-        .payment-alert {
-            background: var(--amber-50);
-            border: 0;
-            border-left: 5px solid var(--amber-500);
-            border-radius: 8px;
-            color: #5f4215;
-            padding: 16px 18px;
-        }
-
-        footer {
-            background: #ffffff;
-            border-top: 1px solid var(--line);
-            color: #667085;
-            font-size: 13px;
-            padding: 18px 30px;
-            text-align: center;
-        }
-
         @media (max-width: 900px) {
             .site-shell {
                 display: block;
@@ -905,6 +928,10 @@
             .guide-picker {
                 grid-template-columns: 1fr;
                 margin: 16px;
+            }
+
+            .quick-ai {
+                margin: 0 16px 16px;
             }
 
             .guide-card {
@@ -995,12 +1022,8 @@
 <body>
     <div class="site-shell">
         <aside class="app-sidebar" aria-label="Навигация">
-            <a class="app-brand" href="./">Insapp</a>
+            <a class="app-brand" href="./">База инструкций</a>
             <nav class="side-nav" aria-label="Инструкции">
-                <button type="button" data-back>
-                    <span class="side-dot">0</span>
-                    База инструкций
-                </button>
                 <button type="button" data-guide="chatgpt">
                     <span class="side-dot">1</span>
                     Оплата ChatGPT
@@ -1013,7 +1036,6 @@
         </aside>
         <header id="site-hero" class="site-hero">
             <div>
-                <p class="eyebrow">База инструкций</p>
                 <h1>Выберите инструкцию</h1>
             </div>
         </header>
@@ -1055,6 +1077,41 @@
                 </button>
             </section>
 
+            <section id="quick-ai" class="quick-ai" aria-label="Бесплатные ИИ для быстрого использования">
+                <h2>Бесплатные ИИ для быстрого использования</h2>
+                <p>Сервисы, которые можно открыть сразу в браузере и использовать для поиска ответов, текста, кода и проверки идей.</p>
+                <div class="quick-ai-grid">
+                    <a class="quick-ai-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener">
+                        <strong>DeepSeek Chat</strong>
+                        <span>Универсальный чат для вопросов, текста и кода.</span>
+                    </a>
+                    <a class="quick-ai-link" href="https://chat.qwen.ai/" target="_blank" rel="noopener">
+                        <strong>Qwen Chat</strong>
+                        <span>Хорошо подходит для кода, перевода и рабочих задач.</span>
+                    </a>
+                    <a class="quick-ai-link" href="https://gemini.google.com/" target="_blank" rel="noopener">
+                        <strong>Google Gemini</strong>
+                        <span>Поиск, документы, объяснения и быстрые ответы.</span>
+                    </a>
+                    <a class="quick-ai-link" href="https://www.kimi.com/" target="_blank" rel="noopener">
+                        <strong>Kimi</strong>
+                        <span>Работа с длинными текстами, файлами и вопросами.</span>
+                    </a>
+                    <a class="quick-ai-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+                        <strong>Perplexity</strong>
+                        <span>Быстрый поиск по интернету с краткими ответами.</span>
+                    </a>
+                    <a class="quick-ai-link" href="https://claude.ai/" target="_blank" rel="noopener">
+                        <strong>Claude</strong>
+                        <span>Тексты, анализ, объяснения и рабочие задачи.</span>
+                    </a>
+                    <a class="quick-ai-link" href="https://chatgpt.com/" target="_blank" rel="noopener">
+                        <strong>ChatGPT</strong>
+                        <span>Универсальный чат для быстрых задач и идей.</span>
+                    </a>
+                </div>
+            </section>
+
             <section id="chatgpt-guide" class="guide-panel is-hidden" aria-label="Оплата подписки ChatGPT">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
@@ -1067,10 +1124,6 @@
                     </header>
 
                     <div class="simple-content">
-                        <div class="payment-alert">
-                            Инструкция основана на документации «Плати по миру» по оплате ChatGPT картой «Для подписок». ChatGPT и API оплачиваются отдельно: для подписки ChatGPT используйте сайт ChatGPT и раздел Billing, а не billing в OpenAI Platform.
-                        </div>
-
                         <div class="chatgpt-steps">
                             <div class="instruction-stage">
                                 <div class="stage-header">
@@ -1122,7 +1175,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="stage-result">Результат этапа: карта выпущена и пополнена, аккаунт ChatGPT готов к оплате, выбран подходящий сценарий: Plus/Pro или Go.</div>
                                 </div>
                             </div>
 
@@ -1220,7 +1272,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="stage-result">Результат этапа: тариф Plus или Pro оплачен, подписка активна в ChatGPT.</div>
                                 </div>
                             </div>
 
@@ -1314,7 +1365,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="stage-result">Результат этапа: тариф Go оплачен или понятно, что нужен альтернативный сценарий оплаты.</div>
                                 </div>
                             </div>
 
@@ -1360,7 +1410,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="stage-result">Результат этапа: либо платёж повторно проходит, либо выбран альтернативный способ оплаты и есть данные для поддержки.</div>
                                 </div>
                             </div>
                         </div>
@@ -1408,9 +1457,6 @@
                         </section>
                     </div>
 
-                    <footer>
-                        <p>Инструкция по оплате подписки ChatGPT</p>
-                    </footer>
                 </article>
             </section>
 
@@ -1426,10 +1472,6 @@
                     </header>
 
                     <div class="content">
-                        <div class="note" style="margin-bottom: 20px;">
-                            <p><strong>Примечание:</strong> Для поиска ответов на вопросы можно использовать <a href="https://chat.deepseek.com/" target="_blank" rel="noopener">https://chat.deepseek.com/</a> - мощный инструмент для поиска информации и решения задач.</p>
-                        </div>
-
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции OmniRoute">
                             <button class="tab-button active" type="button" data-omni-tab="installation">
                                 <span class="tab-index">1</span>
@@ -1530,7 +1572,6 @@ npm -v</div>
                                     </div>
                                 </div>
 
-                                <div class="stage-result">Результат этапа: терминал открыт с нужными правами, Git, Node.js и npm установлены и проверены.</div>
                             </div>
                         </div>
 
@@ -1570,7 +1611,6 @@ npm -v</div>
                                     </div>
                                 </div>
 
-                                <div class="stage-result">Результат этапа: Claude Code установлен и отвечает на команду проверки версии.</div>
                             </div>
                         </div>
 
@@ -1621,7 +1661,6 @@ npm -v</div>
                                     <li>123456</li>
                                 </ul>
 
-                                <div class="stage-result">Результат этапа: OmniRoute установлен, запущен и доступен на локальном адресе.</div>
                             </div>
                         </div>
                     </div>
@@ -1824,9 +1863,6 @@ npm -v</div>
 
                     </div>
 
-                    <footer>
-                        <p>Руководство по установке OmniRoute и Claude Code на Windows</p>
-                    </footer>
                 </div>
             </section>
         </main>
@@ -1841,6 +1877,7 @@ npm -v</div>
     <script>
         const hero = document.getElementById("site-hero");
         const picker = document.getElementById("guide-picker");
+        const quickAi = document.getElementById("quick-ai");
         const guidePanels = {
             chatgpt: document.getElementById("chatgpt-guide"),
             omniroute: document.getElementById("omniroute-guide"),
@@ -1881,6 +1918,7 @@ npm -v</div>
         function showPicker(updateUrl = true) {
             hero.classList.remove("is-hidden");
             picker.classList.remove("is-hidden");
+            quickAi.classList.remove("is-hidden");
             Object.values(guidePanels).forEach((panel) => panel.classList.add("is-hidden"));
             document.title = "База инструкций";
             setSideNavCurrent("home");
@@ -1893,6 +1931,7 @@ npm -v</div>
         function openGuide(name, updateUrl = true, shouldScroll = true) {
             hero.classList.add("is-hidden");
             picker.classList.add("is-hidden");
+            quickAi.classList.add("is-hidden");
             Object.entries(guidePanels).forEach(([key, panel]) => {
                 panel.classList.toggle("is-hidden", key !== name);
             });
