@@ -750,6 +750,10 @@
             margin-bottom: 6px;
         }
 
+        .step-content {
+            min-width: 0;
+        }
+
         .step-content p {
             color: var(--muted);
             font-size: 15px;
@@ -940,6 +944,63 @@
             display: none;
         }
 
+        @media (max-width: 1180px) {
+            .site-shell {
+                grid-template-columns: 188px minmax(0, 1fr);
+            }
+
+            .app-sidebar {
+                padding: 16px 10px;
+            }
+
+            .side-nav button {
+                font-size: 13px;
+                padding: 9px 10px;
+            }
+
+            .guide-picker {
+                gap: 12px;
+            }
+
+            .container,
+            .simple-guide,
+            .guide-picker,
+            .quick-ai {
+                margin-left: 18px;
+                margin-right: 18px;
+            }
+
+            .content,
+            .simple-content {
+                padding: 20px;
+            }
+
+            .tab-button {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .site-shell {
+                display: block;
+            }
+
+            .app-sidebar {
+                display: none;
+            }
+
+            .site-hero {
+                border-bottom: 1px solid var(--line);
+                min-height: 92px;
+                padding: 18px 20px;
+            }
+
+            .tabs,
+            #chatgpt-guide .tabs {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
         @media (max-width: 900px) {
             .site-shell {
                 display: block;
@@ -952,6 +1013,7 @@
             .site-hero {
                 border-bottom: 1px solid var(--line);
                 grid-template-columns: 1fr;
+                min-height: 92px;
                 padding: 18px 20px;
             }
 
@@ -970,10 +1032,15 @@
 
             .tabs {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 8px;
                 top: 74px;
             }
 
             #chatgpt-guide .tabs {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .quick-ai-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
@@ -987,15 +1054,19 @@
                 font-size: 28px;
             }
 
+            .panel-topbar {
+                padding: 10px 16px;
+            }
+
             .guide-card,
             .content,
             .simple-content {
-                padding: 16px;
+                padding: 14px;
             }
 
             .container,
             .simple-guide {
-                margin: 16px;
+                margin: 16px 12px;
             }
 
             .container header,
@@ -1006,6 +1077,8 @@
             .tabs {
                 position: static;
                 grid-template-columns: 1fr;
+                margin-bottom: 18px;
+                padding: 8px;
             }
 
             #chatgpt-guide .tabs {
@@ -1018,16 +1091,16 @@
 
             .step {
                 gap: 12px;
-                padding: 14px;
+                padding: 12px 0;
             }
 
             #chatgpt-guide .step {
-                padding: 10px 2px;
+                padding: 10px 0;
             }
 
             .stage-header {
                 grid-template-columns: 1fr;
-                padding: 16px;
+                padding: 14px 0;
             }
 
             .stage-range {
@@ -1035,7 +1108,20 @@
             }
 
             .stage-body {
-                padding: 12px;
+                padding: 0;
+            }
+
+            .step-media {
+                margin-top: 10px;
+                max-width: 100%;
+            }
+
+            .step-media img {
+                max-height: 280px;
+            }
+
+            .quick-ai-grid {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -1047,6 +1133,30 @@
 
             .guide-card h2 {
                 font-size: 24px;
+            }
+
+            .container header h1,
+            .simple-guide header h1 {
+                font-size: 24px;
+            }
+
+            .container header p,
+            .simple-guide header p {
+                font-size: 14px;
+            }
+
+            .tab-button {
+                min-height: 56px;
+                padding: 10px;
+            }
+
+            .tab-desc {
+                font-size: 12px;
+            }
+
+            .step-number {
+                height: 30px;
+                width: 30px;
             }
 
             .panel-topbar {
