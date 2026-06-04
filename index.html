@@ -1326,67 +1326,180 @@
 <!-- TAB 1: INSTALLATION -->
             <div id="installation" class="tab-content active">
                 <section>
-                    <h2>Установка зависимостей</h2>
+                    <h2>Установка</h2>
 
-                    <h3>Git</h3>
-                    <p><strong>Способ 1 — через winget (рекомендуется):</strong></p>
-                    <div class="code-block">winget install --id Git.Git -e --source winget</div>
+                    <div class="chatgpt-steps">
+                        <div class="instruction-stage">
+                            <div class="stage-header">
+                                <div>
+                                    <h2>Этап 1. Подготовить терминал и зависимости</h2>
+                                    <p>Открыть PowerShell/Windows Terminal с правами администратора, установить Git и Node.js.</p>
+                                </div>
+                                <span class="stage-range">Шаги 1–5</span>
+                            </div>
 
-                    <p><strong>Способ 2 — через установщик:</strong></p>
-                    <p>Скачать с <a href="#">https://git-scm.com/install/windows</a></p>
+                            <div class="stage-body">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h4>Открыть терминал от администратора</h4>
+                                        <p>Откройте меню Windows, найдите <strong>Windows PowerShell</strong> или <strong>Windows Terminal</strong> и выберите запуск от имени администратора. Это нужно для глобальной установки пакетов.</p>
+                                        <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин запуска терминала администратором">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162227.png" alt="Запуск Windows PowerShell от имени администратора" loading="lazy">
+                                            <span>Запуск терминала от имени администратора</span>
+                                        </button>
+                                    </div>
+                                </div>
 
-                    <p><strong>Проверка установки:</strong></p>
-                    <div class="code-block">git --version</div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h4>Установить Git через winget</h4>
+                                        <p>В терминале администратора выполните команду установки Git.</p>
+                                        <div class="code-block">winget install --id Git.Git -e --source winget</div>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин установки Git">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162247.png" alt="Установка Git через winget в терминале" loading="lazy">
+                                            <span>Установка Git через winget</span>
+                                        </button>
+                                        <p><small>Альтернатива: скачать установщик с <a href="https://git-scm.com/install/windows" target="_blank" rel="noopener">git-scm.com/install/windows</a>.</small></p>
+                                    </div>
+                                </div>
 
-                    <h3>Node.js</h3>
-                    <p>Скачать с <a href="#">https://nodejs.org/en/download</a></p>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h4>Скачать Node.js</h4>
+                                        <p>Откройте страницу загрузки Node.js и скачайте установщик для Windows. Рекомендуемая версия для этой инструкции: <strong>Node.js 22.22.2</strong>.</p>
+                                        <p><a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a></p>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин страницы загрузки Node.js">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162328.png" alt="Страница загрузки Node.js для Windows" loading="lazy">
+                                            <span>Страница загрузки Node.js</span>
+                                        </button>
+                                    </div>
+                                </div>
 
-                    <p><strong>Рекомендуемые версии:</strong></p>
-                    <div class="grid">
-                        <div class="card">
-                            <h4>Node.js 22.22.2</h4>
-                            <p>Оптимальная, самая стабильная для OmniRoute</p>
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <h4>Запустить скачанный установщик Node.js</h4>
+                                        <p>После загрузки откройте скачанный файл Node.js и пройдите установку с настройками по умолчанию.</p>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин скачанного установщика Node.js">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162336.png" alt="Скачанный установщик Node.js в браузере" loading="lazy">
+                                            <span>Скачанный установщик Node.js</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-content">
+                                        <h4>Проверить Git, Node.js и npm</h4>
+                                        <p>Закройте и заново откройте терминал, затем проверьте версии.</p>
+                                        <div class="code-block">git --version
+node -v
+npm -v</div>
+                                        <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин проверки версий">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162402.png" alt="Проверка версий Git, Node.js и npm в PowerShell" loading="lazy">
+                                            <span>Проверка версий Git, Node.js и npm</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="stage-result">Результат этапа: терминал открыт с нужными правами, Git, Node.js и npm установлены и проверены.</div>
+                            </div>
                         </div>
-                        <div class="card">
-                            <h4>Node.js 20.20.2</h4>
-                            <p>Если нужна более старая LTS</p>
+
+                        <div class="instruction-stage">
+                            <div class="stage-header">
+                                <div>
+                                    <h2>Этап 2. Установить Claude Code</h2>
+                                    <p>Глобальная установка Claude Code через npm и проверка версии.</p>
+                                </div>
+                                <span class="stage-range">Шаги 6–7</span>
+                            </div>
+
+                            <div class="stage-body">
+                                <div class="step">
+                                    <span class="step-number">6</span>
+                                    <div class="step-content">
+                                        <h4>Установить Claude Code</h4>
+                                        <p>Выполните команду глобальной установки.</p>
+                                        <div class="code-block">npm install -g @anthropic-ai/claude-code</div>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин установки Claude Code">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162432.png" alt="Установка и проверка Claude Code в терминале" loading="lazy">
+                                            <span>Установка Claude Code</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">7</span>
+                                    <div class="step-content">
+                                        <h4>Проверить Claude Code</h4>
+                                        <p>Проверьте, что команда <code>claude</code> доступна.</p>
+                                        <div class="code-block">claude --version</div>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин проверки Claude Code">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162416.png" alt="Проверка версии Claude Code" loading="lazy">
+                                            <span>Проверка Claude Code</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="stage-result">Результат этапа: Claude Code установлен и отвечает на команду проверки версии.</div>
+                            </div>
                         </div>
-                        <div class="card">
-                            <h4>Node.js 24.14.1</h4>
-                            <p>Если нужна новейшая версия</p>
+
+                        <div class="instruction-stage">
+                            <div class="stage-header">
+                                <div>
+                                    <h2>Этап 3. Установить и запустить OmniRoute</h2>
+                                    <p>Установка OmniRoute, первый запуск и проверка локальной панели управления.</p>
+                                </div>
+                                <span class="stage-range">Шаги 8–9</span>
+                            </div>
+
+                            <div class="stage-body">
+                                <div class="step">
+                                    <span class="step-number">8</span>
+                                    <div class="step-content">
+                                        <h4>Установить OmniRoute</h4>
+                                        <p>Установите OmniRoute глобально через npm.</p>
+                                        <div class="code-block">npm install -g omniroute</div>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин установки OmniRoute">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162451.png" alt="Установка OmniRoute через npm" loading="lazy">
+                                            <span>Установка OmniRoute</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">9</span>
+                                    <div class="step-content">
+                                        <h4>Запустить OmniRoute</h4>
+                                        <p>Запустите OmniRoute и дождитесь сообщения, что панель управления доступна локально.</p>
+                                        <div class="code-block">omniroute</div>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин запуска OmniRoute">
+                                            <img src="./assets/Снимок экрана 2026-04-13 162527.png" alt="Запуск OmniRoute в терминале" loading="lazy">
+                                            <span>Запуск OmniRoute и локальная панель</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="success">
+                                    После запуска панель управления доступна по адресу <code>http://localhost:20128</code>
+                                </div>
+
+                                <p><strong>Пароль по умолчанию:</strong></p>
+                                <ul>
+                                    <li>CHANGEME</li>
+                                    <li>admin123</li>
+                                    <li>123456</li>
+                                </ul>
+
+                                <div class="stage-result">Результат этапа: OmniRoute установлен, запущен и доступен на локальном адресе.</div>
+                            </div>
                         </div>
                     </div>
-
-                    <p><strong>Проверка установки:</strong></p>
-                    <div class="code-block">node -v<br>npm -v</div>
-                </section>
-
-                <section>
-                    <h2>Установка Claude Code</h2>
-                    <p>Если Claude Code ещё не установлен, выполните команду:</p>
-                    <div class="code-block">npm install -g @anthropic-ai/claude-code</div>
-
-                    <p><strong>Проверка установки:</strong></p>
-                    <div class="code-block">claude --version</div>
-                </section>
-
-                <section>
-                    <h2>Установка OmniRoute</h2>
-                    <div class="code-block">npm install -g omniroute</div>
-
-                    <h3>Запуск OmniRoute</h3>
-                    <div class="code-block">omniroute</div>
-
-                    <div class="success">
-                        После запуска: Панель управления доступна по адресу <code>http://localhost:20128</code>
-                    </div>
-
-                    <p><strong>Пароль по умолчанию:</strong></p>
-                    <ul>
-                        <li>CHANGEME</li>
-                        <li>admin123</li>
-                        <li>123456</li>
-                    </ul>
                 </section>
             </div>
 
