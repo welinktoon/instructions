@@ -135,6 +135,29 @@
             margin-top: 6px;
         }
 
+        .icon {
+            display: inline-block;
+            flex: 0 0 auto;
+            height: 18px;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 2;
+            vertical-align: -3px;
+            width: 18px;
+        }
+
+        .icon-box {
+            align-items: center;
+            background: var(--sky-100);
+            border-radius: 7px;
+            color: var(--blue-800);
+            display: inline-flex;
+            height: 34px;
+            justify-content: center;
+            width: 34px;
+        }
+
         .site-shell {
             display: grid;
             grid-template-columns: 220px minmax(0, 1fr);
@@ -184,16 +207,25 @@
         }
 
         .theme-toggle button {
+            align-items: center;
             background: transparent;
             border: 0;
             border-radius: 6px;
             color: var(--text-soft);
             cursor: pointer;
+            display: inline-flex;
             font-size: 12px;
             font-weight: 720;
+            gap: 6px;
+            justify-content: center;
             min-width: 70px;
             min-height: 30px;
             padding: 0 10px;
+        }
+
+        .theme-toggle .icon {
+            height: 14px;
+            width: 14px;
         }
 
         .theme-toggle button:hover,
@@ -227,6 +259,12 @@
             min-height: 40px;
             padding: 10px 12px;
             text-align: left;
+        }
+
+        .side-nav .icon {
+            color: var(--blue-800);
+            height: 17px;
+            width: 17px;
         }
 
         .side-nav button:hover,
@@ -332,7 +370,17 @@
             border-radius: 8px;
             color: #101828;
             display: block;
-            padding: 14px;
+            padding: 14px 38px 14px 14px;
+            position: relative;
+        }
+
+        .quick-ai-link .icon {
+            color: var(--blue-800);
+            height: 15px;
+            position: absolute;
+            right: 14px;
+            top: 15px;
+            width: 15px;
         }
 
         .quick-ai-link:hover,
@@ -385,6 +433,12 @@
             gap: 14px;
         }
 
+        .guide-card-kicker {
+            align-items: center;
+            display: inline-flex;
+            gap: 10px;
+        }
+
         .guide-number {
             align-items: center;
             background: var(--blue-800);
@@ -419,9 +473,7 @@
         }
 
         .guide-open::after {
-            content: "→";
-            font-size: 17px;
-            line-height: 1;
+            content: none;
         }
 
         .guide-card h2 {
@@ -494,6 +546,7 @@
             display: inline-flex;
             font-size: 14px;
             font-weight: 650;
+            gap: 8px;
             justify-content: center;
             min-height: 40px;
             padding: 0 14px;
@@ -590,6 +643,19 @@
             padding: 11px 12px;
             text-align: left;
             transition: background 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+        }
+
+        .tab-title-row {
+            align-items: center;
+            display: inline-flex;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .tab-title-row .icon {
+            color: var(--blue-800);
+            height: 16px;
+            width: 16px;
         }
 
         .tab-index {
@@ -733,7 +799,7 @@
             border: 1px solid #dde3ea;
             border-radius: 6px;
             color: #475467;
-            content: "Команда или код";
+            content: "⌘ Команда или код";
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             font-size: 12px;
             font-weight: 760;
@@ -879,7 +945,17 @@
         .link-card {
             color: var(--blue-800);
             display: block;
-            padding: 17px;
+            padding: 17px 42px 17px 17px;
+            position: relative;
+        }
+
+        .link-card .icon {
+            color: var(--blue-800);
+            height: 16px;
+            position: absolute;
+            right: 16px;
+            top: 18px;
+            width: 16px;
         }
 
         .link-card:hover {
@@ -1431,16 +1507,67 @@
     </style>
 </head>
 <body>
+    <svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+        <symbol id="icon-arrow-left" viewBox="0 0 24 24" fill="none">
+            <path d="m12 19-7-7 7-7"></path>
+            <path d="M19 12H5"></path>
+        </symbol>
+        <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+        </symbol>
+        <symbol id="icon-card" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <path d="M3 10h18"></path>
+        </symbol>
+        <symbol id="icon-route" viewBox="0 0 24 24" fill="none">
+            <circle cx="6" cy="19" r="3"></circle>
+            <circle cx="18" cy="5" r="3"></circle>
+            <path d="M12 19h2a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h2"></path>
+        </symbol>
+        <symbol id="icon-sun" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+        </symbol>
+        <symbol id="icon-moon" viewBox="0 0 24 24" fill="none">
+            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 7 7 0 1 0 20.5 14.5Z"></path>
+        </symbol>
+        <symbol id="icon-tool" viewBox="0 0 24 24" fill="none">
+            <path d="M14.7 6.3a4 4 0 0 0 5 5L11 20H6v-5l8.7-8.7Z"></path>
+        </symbol>
+        <symbol id="icon-list" viewBox="0 0 24 24" fill="none">
+            <path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path>
+            <path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path>
+        </symbol>
+        <symbol id="icon-slash" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="m5 19 14-14"></path>
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 24 24" fill="none">
+            <path d="M10.3 3.8 2.4 17.5A2 2 0 0 0 4.1 20h15.8a2 2 0 0 0 1.7-2.5L13.7 3.8a2 2 0 0 0-3.4 0Z"></path>
+            <path d="M12 9v4"></path><path d="M12 17h.01"></path>
+        </symbol>
+        <symbol id="icon-external" viewBox="0 0 24 24" fill="none">
+            <path d="M15 3h6v6"></path>
+            <path d="M10 14 21 3"></path>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+        </symbol>
+    </svg>
     <div class="site-shell">
         <aside class="app-sidebar" aria-label="Навигация">
             <a class="app-brand" href="./">База инструкций</a>
             <nav class="side-nav" aria-label="Инструкции">
                 <button type="button" data-guide="chatgpt">
                     <span class="side-dot">1</span>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>
                     Оплата ChatGPT
                 </button>
                 <button type="button" data-guide="omniroute">
                     <span class="side-dot">2</span>
+                    <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
                     OmniRoute
                 </button>
             </nav>
@@ -1451,8 +1578,8 @@
             </div>
             <div class="site-hero-actions">
                 <div class="theme-toggle" role="group" aria-label="Тема сайта">
-                    <button type="button" data-theme-choice="light">Светлая</button>
-                    <button type="button" data-theme-choice="dark">Тёмная</button>
+                    <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                    <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
                 </div>
             </div>
         </header>
@@ -1461,14 +1588,14 @@
             <section id="guide-picker" class="guide-picker" aria-label="Выбор инструкции">
                 <button class="guide-card" type="button" data-guide="chatgpt">
                     <div class="guide-card-top">
-                        <span class="guide-number">1</span>
+                        <span class="guide-card-kicker"><span class="guide-number">1</span><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg></span></span>
                         <span class="guide-badge">Оплата</span>
                     </div>
                     <div>
                         <h2>Оплата подписки ChatGPT</h2>
                         <p>Как выпустить карту в @platipomiru_bot, пополнить её через СБП и оплатить подписку ChatGPT на сайте.</p>
                     </div>
-                    <span class="guide-open">Открыть инструкцию</span>
+                    <span class="guide-open">Открыть инструкцию <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
                     <div class="guide-meta">
                         <span>ChatGPT</span>
                         <span>Плати по миру</span>
@@ -1478,14 +1605,14 @@
 
                 <button class="guide-card" type="button" data-guide="omniroute">
                     <div class="guide-card-top">
-                        <span class="guide-number">2</span>
+                        <span class="guide-card-kicker"><span class="guide-number">2</span><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span></span>
                         <span class="guide-badge">Установка</span>
                     </div>
                     <div>
                         <h2>OmniRoute и Claude Code</h2>
                         <p>Полное руководство по настройке на Windows: зависимости, API ключ, провайдеры и проблемы запуска.</p>
                     </div>
-                    <span class="guide-open">Открыть инструкцию</span>
+                    <span class="guide-open">Открыть инструкцию <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
                     <div class="guide-meta">
                         <span>Windows</span>
                         <span>Node.js</span>
@@ -1499,30 +1626,37 @@
                 <p>Сервисы, которые можно открыть сразу в браузере и использовать для поиска ответов, текста, кода и проверки идей.</p>
                 <div class="quick-ai-grid">
                     <a class="quick-ai-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>DeepSeek Chat</strong>
                         <span>Универсальный чат для вопросов, текста и кода.</span>
                     </a>
                     <a class="quick-ai-link" href="https://chat.qwen.ai/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>Qwen Chat</strong>
                         <span>Хорошо подходит для кода, перевода и рабочих задач.</span>
                     </a>
                     <a class="quick-ai-link" href="https://gemini.google.com/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>Google Gemini</strong>
                         <span>Поиск, документы, объяснения и быстрые ответы.</span>
                     </a>
                     <a class="quick-ai-link" href="https://www.kimi.com/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>Kimi</strong>
                         <span>Работа с длинными текстами, файлами и вопросами.</span>
                     </a>
                     <a class="quick-ai-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>Perplexity</strong>
                         <span>Быстрый поиск по интернету с краткими ответами.</span>
                     </a>
                     <a class="quick-ai-link" href="https://claude.ai/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>Claude</strong>
                         <span>Тексты, анализ, объяснения и рабочие задачи.</span>
                     </a>
                     <a class="quick-ai-link" href="https://chatgpt.com/" target="_blank" rel="noopener">
+                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                         <strong>ChatGPT</strong>
                         <span>Универсальный чат для быстрых задач и идей.</span>
                     </a>
@@ -1531,10 +1665,10 @@
 
             <section id="chatgpt-guide" class="guide-panel is-hidden" aria-label="Оплата подписки ChatGPT">
                 <div class="panel-topbar">
-                    <button class="back-button" type="button" data-back>Назад к выбору</button>
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
                     <div class="theme-toggle" role="group" aria-label="Тема сайта">
-                        <button type="button" data-theme-choice="light">Светлая</button>
-                        <button type="button" data-theme-choice="dark">Тёмная</button>
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
                     </div>
                 </div>
 
@@ -1548,22 +1682,22 @@
                         <div class="tabs chatgpt-stage-tabs" role="tablist" aria-label="Разделы инструкции оплаты ChatGPT">
                             <button class="tab-button active" type="button" data-chatgpt-stage="prep">
                                 <span class="tab-index">1</span>
-                                <span class="tab-title">Подготовка</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Подготовка</span>
                                 <span class="tab-desc">Карта, баланс и аккаунт ChatGPT</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="go">
                                 <span class="tab-index">2</span>
-                                <span class="tab-title">Без комиссии</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-slash"></use></svg>Без комиссии</span>
                                 <span class="tab-desc">Нидерланды + регион без комиссии</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="plus">
                                 <span class="tab-index">3</span>
-                                <span class="tab-title">Официальный вариант</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Официальный вариант</span>
                                 <span class="tab-desc">Новая Зеландия/Испания + billing</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="issues">
                                 <span class="tab-index">4</span>
-                                <span class="tab-title">Проблемы</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
                                 <span class="tab-desc">Если платёж не проходит</span>
                             </button>
                         </div>
@@ -1802,38 +1936,47 @@
                             <h2>Полезные ссылки</h2>
                             <div class="links">
                                 <a href="https://t.me/platipomiru_bot" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Telegram-бот Плати по миру</strong>
                                     <span>Запуск мини-приложения и выпуск карты</span>
                                 </a>
                                 <a href="https://help.platipomiru.com/razdely/publish-your-docs/vypusk-karty" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Выпуск карты</strong>
                                     <span>Официальная инструкция «Плати по миру»</span>
                                 </a>
                                 <a href="https://help.platipomiru.com/razdely/karta-dlya-podpisok" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Карта для подписок</strong>
                                     <span>Условия, комиссии, ограничения и поддержка</span>
                                 </a>
                                 <a href="https://help.platipomiru.com/razdely/karta-dlya-podpisok/oplata-populyarnykh-servisov-kartoi-dlya-podpisok/instrukciya-po-oplate-chatgpt" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Инструкция ChatGPT от Плати по миру</strong>
                                     <span>Официальные нюансы оплаты через карту сервиса</span>
                                 </a>
                                 <a href="https://help.platipomiru.com/razdely/karta-dlya-podpisok/oplata-populyarnykh-servisov-kartoi-dlya-podpisok/instrukciya-po-oplate-chatgpt/oplata-tarifa-go-chatgpt-cherez-apple-id" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Go через Apple ID</strong>
                                     <span>Альтернативный сценарий оплаты через Apple ID</span>
                                 </a>
                                 <a href="https://help.platipomiru.com/razdely/karta-dlya-podpisok/oplata-populyarnykh-servisov-kartoi-dlya-podpisok/instrukciya-po-oplate-chatgpt/instrukciya-po-oplate-tarifa-go-i-tarifa-plus-s-besplatnym-periodom-s-pomoshyu-paypal" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Go/Plus с пробным периодом</strong>
                                     <span>Отдельная инструкция через PayPal</span>
                                 </a>
                                 <a href="https://help.openai.com/en/articles/6950777-chatgpt-plus" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Что такое ChatGPT Plus</strong>
                                     <span>Описание тарифа и входа через Upgrade Plan</span>
                                 </a>
                                 <a href="https://help.openai.com/en/articles/9039756-managing-billing-settings-on-chatgpt-web-and-platform" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Настройки оплаты</strong>
                                     <span>Billing для ChatGPT Web и API Platform</span>
                                 </a>
                                 <a href="https://help.openai.com/en/articles/20001043-how-do-i-avoid-being-charged-twice-if-i-subscribe-to-chatgpt-on-ios-android-and-the-web" class="link-card" target="_blank" rel="noopener">
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                     <strong>Как избежать двойной оплаты</strong>
                                     <span>Web, iOS и Android могут управляться отдельно</span>
                                 </a>
@@ -1846,10 +1989,10 @@
 
             <section id="omniroute-guide" class="guide-panel is-hidden" aria-label="OmniRoute и Claude Code">
                 <div class="panel-topbar">
-                    <button class="back-button" type="button" data-back>Назад к выбору</button>
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
                     <div class="theme-toggle" role="group" aria-label="Тема сайта">
-                        <button type="button" data-theme-choice="light">Светлая</button>
-                        <button type="button" data-theme-choice="dark">Тёмная</button>
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
                     </div>
                 </div>
 
@@ -1863,17 +2006,17 @@
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции OmniRoute">
                             <button class="tab-button active" type="button" data-omni-tab="installation">
                                 <span class="tab-index">1</span>
-                                <span class="tab-title">Установка</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>Установка</span>
                                 <span class="tab-desc">Терминал, Git, Node.js, Claude Code и OmniRoute</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="configuration">
                                 <span class="tab-index">2</span>
-                                <span class="tab-title">Настройка</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Настройка</span>
                                 <span class="tab-desc">API ключ, settings.json и провайдеры</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="troubleshooting">
                                 <span class="tab-index">3</span>
-                                <span class="tab-title">Проблемы</span>
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
                                 <span class="tab-desc">Ошибки запуска, порт и подключение</span>
                             </button>
                         </div>
