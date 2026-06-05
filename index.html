@@ -279,23 +279,6 @@
             color: var(--blue-800);
         }
 
-        .side-dot {
-            align-items: center;
-            background: #f2f4f7;
-            border-radius: 6px;
-            display: inline-flex;
-            font-size: 12px;
-            font-weight: 750;
-            height: 24px;
-            justify-content: center;
-            width: 24px;
-        }
-
-        .side-nav button.is-current .side-dot {
-            background: var(--blue-800);
-            color: #ffffff;
-        }
-
         .site-hero {
             align-items: center;
             background: #ffffff;
@@ -431,25 +414,6 @@
             display: flex;
             justify-content: space-between;
             gap: 14px;
-        }
-
-        .guide-card-kicker {
-            align-items: center;
-            display: inline-flex;
-            gap: 10px;
-        }
-
-        .guide-number {
-            align-items: center;
-            background: var(--blue-800);
-            border-radius: 6px;
-            color: white;
-            display: inline-flex;
-            font-size: 15px;
-            font-weight: 800;
-            height: 32px;
-            justify-content: center;
-            width: 32px;
         }
 
         .guide-badge {
@@ -636,7 +600,7 @@
             cursor: pointer;
             display: grid;
             gap: 3px;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr;
             font-size: 14px;
             font-weight: 720;
             min-height: 64px;
@@ -656,20 +620,6 @@
             color: var(--blue-800);
             height: 16px;
             width: 16px;
-        }
-
-        .tab-index {
-            align-items: center;
-            background: #eef4ff;
-            border-radius: 6px;
-            color: var(--blue-800);
-            display: inline-flex;
-            font-size: 12px;
-            font-weight: 820;
-            grid-row: span 2;
-            height: 26px;
-            justify-content: center;
-            width: 26px;
         }
 
         .tab-title {
@@ -698,11 +648,6 @@
             border-color: #b8ccff;
             box-shadow: none;
             color: var(--blue-800);
-        }
-
-        .tab-button.active .tab-index {
-            background: var(--blue-800);
-            color: white;
         }
 
         .tab-content {
@@ -1198,7 +1143,6 @@
         :root[data-theme="dark"] .quick-ai-link,
         :root[data-theme="dark"] .guide-meta span,
         :root[data-theme="dark"] .guide-badge,
-        :root[data-theme="dark"] .side-dot,
         :root[data-theme="dark"] .step-media img {
             background: var(--panel-soft);
         }
@@ -1231,8 +1175,7 @@
         :root[data-theme="dark"] .tab-button.active,
         :root[data-theme="dark"] .note,
         :root[data-theme="dark"] .success,
-        :root[data-theme="dark"] .stage-range,
-        :root[data-theme="dark"] .tab-index {
+        :root[data-theme="dark"] .stage-range {
             background: var(--active);
             border-color: var(--active-line);
             color: var(--blue-800);
@@ -1561,12 +1504,10 @@
             <a class="app-brand" href="./">База инструкций</a>
             <nav class="side-nav" aria-label="Инструкции">
                 <button type="button" data-guide="chatgpt">
-                    <span class="side-dot">1</span>
                     <svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>
                     Оплата ChatGPT
                 </button>
                 <button type="button" data-guide="omniroute">
-                    <span class="side-dot">2</span>
                     <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
                     OmniRoute
                 </button>
@@ -1588,7 +1529,7 @@
             <section id="guide-picker" class="guide-picker" aria-label="Выбор инструкции">
                 <button class="guide-card" type="button" data-guide="chatgpt">
                     <div class="guide-card-top">
-                        <span class="guide-card-kicker"><span class="guide-number">1</span><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg></span></span>
+                        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg></span>
                         <span class="guide-badge">Оплата</span>
                     </div>
                     <div>
@@ -1605,7 +1546,7 @@
 
                 <button class="guide-card" type="button" data-guide="omniroute">
                     <div class="guide-card-top">
-                        <span class="guide-card-kicker"><span class="guide-number">2</span><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span></span>
+                        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span>
                         <span class="guide-badge">Установка</span>
                     </div>
                     <div>
@@ -1681,22 +1622,18 @@
                     <div class="simple-content">
                         <div class="tabs chatgpt-stage-tabs" role="tablist" aria-label="Разделы инструкции оплаты ChatGPT">
                             <button class="tab-button active" type="button" data-chatgpt-stage="prep">
-                                <span class="tab-index">1</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Подготовка</span>
                                 <span class="tab-desc">Карта, баланс и аккаунт ChatGPT</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="go">
-                                <span class="tab-index">2</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-slash"></use></svg>Без комиссии</span>
                                 <span class="tab-desc">Нидерланды + регион без комиссии</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="plus">
-                                <span class="tab-index">3</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Официальный вариант</span>
                                 <span class="tab-desc">Новая Зеландия/Испания + billing</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="issues">
-                                <span class="tab-index">4</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
                                 <span class="tab-desc">Если платёж не проходит</span>
                             </button>
@@ -2005,17 +1942,14 @@
                     <div class="content">
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции OmniRoute">
                             <button class="tab-button active" type="button" data-omni-tab="installation">
-                                <span class="tab-index">1</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>Установка</span>
                                 <span class="tab-desc">Терминал, Git, Node.js, Claude Code и OmniRoute</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="configuration">
-                                <span class="tab-index">2</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Настройка</span>
                                 <span class="tab-desc">API ключ, settings.json и провайдеры</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="troubleshooting">
-                                <span class="tab-index">3</span>
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
                                 <span class="tab-desc">Ошибки запуска, порт и подключение</span>
                             </button>
