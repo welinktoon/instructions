@@ -318,7 +318,7 @@
         .guide-picker {
             display: grid;
             gap: 16px;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             margin: 24px;
         }
 
@@ -831,6 +831,58 @@
             margin: 0;
         }
 
+        .info-table {
+            display: grid;
+            gap: 8px;
+            margin: 16px 0 20px;
+        }
+
+        .info-row {
+            align-items: start;
+            background: #f9fafb;
+            border-radius: 8px;
+            display: grid;
+            gap: 12px;
+            grid-template-columns: minmax(150px, 220px) 1fr;
+            padding: 12px 14px;
+        }
+
+        .info-row strong {
+            color: #101828;
+        }
+
+        .info-row span {
+            color: var(--muted);
+        }
+
+        .protocol-list {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin: 16px 0 20px;
+        }
+
+        .protocol-card {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        .protocol-card strong,
+        .protocol-card span {
+            display: block;
+        }
+
+        .protocol-card strong {
+            color: #101828;
+            margin-bottom: 4px;
+        }
+
+        .protocol-card span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
         .step {
             align-items: flex-start;
             display: flex;
@@ -973,6 +1025,10 @@
             grid-template-columns: repeat(4, minmax(0, 1fr));
         }
 
+        #vpn-guide .tabs {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
         #chatgpt-guide .stage-body {
             gap: 8px;
         }
@@ -1112,6 +1168,8 @@
 
         :root[data-theme="dark"] .site-hero h1,
         :root[data-theme="dark"] .guide-card h2,
+        :root[data-theme="dark"] .info-row strong,
+        :root[data-theme="dark"] .protocol-card strong,
         :root[data-theme="dark"] .container header h1,
         :root[data-theme="dark"] .simple-guide header h1,
         :root[data-theme="dark"] h2,
@@ -1134,6 +1192,8 @@
         :root[data-theme="dark"] .stage-header p,
         :root[data-theme="dark"] .quick-ai-link span,
         :root[data-theme="dark"] .link-card span,
+        :root[data-theme="dark"] .info-row span,
+        :root[data-theme="dark"] .protocol-card span,
         :root[data-theme="dark"] .card p,
         :root[data-theme="dark"] small {
             color: var(--muted);
@@ -1143,6 +1203,8 @@
         :root[data-theme="dark"] .quick-ai-link,
         :root[data-theme="dark"] .guide-meta span,
         :root[data-theme="dark"] .guide-badge,
+        :root[data-theme="dark"] .info-row,
+        :root[data-theme="dark"] .protocol-card,
         :root[data-theme="dark"] .step-media img {
             background: var(--panel-soft);
         }
@@ -1258,7 +1320,8 @@
             }
 
             .tabs,
-            #chatgpt-guide .tabs {
+            #chatgpt-guide .tabs,
+            #vpn-guide .tabs {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
@@ -1306,7 +1369,8 @@
                 top: 74px;
             }
 
-            #chatgpt-guide .tabs {
+            #chatgpt-guide .tabs,
+            #vpn-guide .tabs {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
@@ -1351,7 +1415,8 @@
                 padding: 8px;
             }
 
-            #chatgpt-guide .tabs {
+            #chatgpt-guide .tabs,
+            #vpn-guide .tabs {
                 grid-template-columns: 1fr;
             }
 
@@ -1395,6 +1460,10 @@
             }
 
             .quick-ai-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-row {
                 grid-template-columns: 1fr;
             }
 
@@ -1511,6 +1580,10 @@
                     <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
                     OmniRoute
                 </button>
+                <button type="button" data-guide="vpn">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>
+                    VPN на сервере
+                </button>
             </nav>
         </aside>
         <header id="site-hero" class="site-hero">
@@ -1558,6 +1631,23 @@
                         <span>Windows</span>
                         <span>Node.js</span>
                         <span>Claude Code</span>
+                    </div>
+                </button>
+
+                <button class="guide-card" type="button" data-guide="vpn">
+                    <div class="guide-card-top">
+                        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg></span>
+                        <span class="guide-badge">VPN</span>
+                    </div>
+                    <div>
+                        <h2>VPN через AmneziaVPN</h2>
+                        <p>Как купить виртуальный сервер, выбрать страну и установить self-hosted VPN через AmneziaVPN.</p>
+                    </div>
+                    <span class="guide-open">Открыть инструкцию <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                    <div class="guide-meta">
+                        <span>VDS</span>
+                        <span>AmneziaVPN</span>
+                        <span>Self-hosted</span>
                     </div>
                 </button>
             </section>
@@ -2351,6 +2441,244 @@ npm -v</div>
 
                 </div>
             </section>
+            <section id="vpn-guide" class="guide-panel is-hidden" aria-label="VPN через AmneziaVPN">
+                <div class="panel-topbar">
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
+                    </div>
+                </div>
+
+                <article class="simple-guide">
+                    <header>
+                        <h1>VPN через AmneziaVPN</h1>
+                        <p>Инструкция нужна, чтобы купить VDS, установить на него VPN через AmneziaVPN и выбрать подходящий протокол подключения.</p>
+                    </header>
+
+                    <div class="simple-content">
+                        <div class="tabs" role="tablist" aria-label="Разделы инструкции VPN">
+                            <button class="tab-button active" type="button" data-vpn-stage="server">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Сервер</span>
+                                <span class="tab-desc">Покупка VDS, страна, тариф и Ubuntu</span>
+                            </button>
+                            <button class="tab-button" type="button" data-vpn-stage="amnezia">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>AmneziaVPN</span>
+                                <span class="tab-desc">Self-hosted VPN и SSH-доступ</span>
+                            </button>
+                            <button class="tab-button" type="button" data-vpn-stage="protocols">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Протоколы</span>
+                                <span class="tab-desc">Скорость, маскировка и совместимость</span>
+                            </button>
+                            <button class="tab-button" type="button" data-vpn-stage="issues">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
+                                <span class="tab-desc">Если сервер или VPN не подключается</span>
+                            </button>
+                        </div>
+
+                        <div class="chatgpt-steps">
+                            <div class="instruction-stage active" data-vpn-panel="server">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Купить виртуальный сервер</h2>
+                                        <p>Берём минимальный VDS, выбираем страну и устанавливаем Ubuntu 24.04 без предустановленного ПО.</p>
+                                    </div>
+                                    <span class="stage-range">Шаги 1–7</span>
+                                </div>
+
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Открыть раздел виртуальных серверов</h4>
+                                            <p>Перейдите в биллинг <a href="https://my.serv.host/billmgr#/vds/list" target="_blank" rel="noopener">my.serv.host</a>. В меню откройте <strong>Товары/Услуги</strong> → <strong>Виртуальные серверы</strong>.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Заказать новый сервер</h4>
+                                            <p>Нажмите <strong>Заказать</strong> или кнопку заказа новой услуги. Откроется форма выбора дата-центра, периода оплаты и параметров сервера.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Выбрать страну сервера</h4>
+                                            <p>Для VPN лучше выбирать страну ближе к вам и к нужным сервисам. Чем ближе дата-центр, тем ниже задержка.</p>
+                                            <div class="info-table">
+                                                <div class="info-row"><strong>Россия, Москва</strong><span>Примерно 5–25 мс из Москвы и центральной России. Самый быстрый вариант, но не подходит, если нужен зарубежный IP.</span></div>
+                                                <div class="info-row"><strong>Ближайшая Европа</strong><span>Финляндия, Эстония, Латвия, Литва, Польша: примерно 35–70 мс.</span></div>
+                                                <div class="info-row"><strong>Западная и Северная Европа</strong><span>Нидерланды, Норвегия, Чехия, Австрия, Дания, Италия, Бельгия, Швейцария, Швеция, Франция: примерно 45–90 мс.</span></div>
+                                                <div class="info-row"><strong>Северная Америка</strong><span>Канада и США: примерно 120–190 мс. Брать только если нужен именно американский или канадский IP.</span></div>
+                                            </div>
+                                            <p>В списке на скрине доступны варианты AMD EPYC и AMD Ryzen для Нидерландов, Финляндии, Норвегии, Чехии, Австрии, Дании, Италии, Польши, Эстонии, Литвы, Латвии, Бельгии, Швейцарии, Швеции, Франции, Канады и США.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Выбрать период оплаты</h4>
+                                            <p>Для проверки достаточно оплаты на месяц. На скрине пример цены: <strong>360 RUB/месяц</strong>, при оплате на 3 месяца, полгода или год обычно применяется скидка.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Поставить Ubuntu 24.04</h4>
+                                            <p>В поле <strong>Операционная система</strong> выберите <strong>Другое → Ubuntu 24.04</strong>. Предустановленное ПО оставьте <strong>не установлен</strong>.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Оставить минимальные ресурсы</h4>
+                                            <p>Для личного VPN обычно достаточно минимального тарифа: <strong>25 ГБ диск</strong>, <strong>2 ГБ RAM</strong>, <strong>1 CPU</strong>, <strong>1 публичный IPv4</strong>. IPv6 можно оставить включённым, если он идёт бесплатно.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">7</span>
+                                        <div class="step-content">
+                                            <h4>Оплатить и дождаться доступа</h4>
+                                            <p>После оплаты дождитесь создания сервера. В карточке услуги появятся IP-адрес, логин <code>root</code> и пароль или данные для SSH.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="instruction-stage" data-vpn-panel="amnezia">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Установить VPN через AmneziaVPN</h2>
+                                        <p>AmneziaVPN сама подключится к серверу по SSH, установит нужные пакеты и настроит VPN.</p>
+                                    </div>
+                                    <span class="stage-range">Шаги 1–5</span>
+                                </div>
+
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Открыть Self-hosted VPN</h4>
+                                            <p>Запустите AmneziaVPN и выберите плитку <strong>Self-hosted VPN</strong>. Это режим настройки VPN на собственном сервере.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Ввести данные сервера</h4>
+                                            <p>Укажите IP-адрес сервера, имя пользователя <code>root</code> и пароль от сервера. Если SSH работает на нестандартном порту, укажите IP в формате <code>IP:порт</code>.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Нажать «Продолжить»</h4>
+                                            <p>AmneziaVPN проверит доступ по SSH и начнёт подготовку сервера. Обычно дальше нужно просто ждать: приложение само установит компоненты и создаст конфигурацию.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Выбрать VPN-протокол</h4>
+                                            <p>Если приложение предложит выбрать протокол, начните с <strong>AmneziaWG</strong> или <strong>WireGuard</strong> для скорости. Если важнее маскировка трафика, выберите <strong>XRay</strong> или <strong>OpenVPN over Cloak</strong>.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Подключиться и проверить работу</h4>
+                                            <p>После завершения установки нажмите подключение в AmneziaVPN и проверьте, что внешний IP изменился. Для проверки можно открыть 2ip.ru или любой похожий сервис.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="instruction-stage" data-vpn-panel="protocols">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Выбрать протокол</h2>
+                                        <p>Протокол влияет на скорость, устойчивость к блокировкам и совместимость с устройствами.</p>
+                                    </div>
+                                    <span class="stage-range">Список</span>
+                                </div>
+
+                                <div class="protocol-list">
+                                    <div class="protocol-card"><strong>AmneziaWG</strong><span>Оптимальный вариант для self-hosted VPN: быстрый, похож на WireGuard, но лучше маскирует трафик.</span></div>
+                                    <div class="protocol-card"><strong>WireGuard</strong><span>Очень быстрый и простой протокол. Хорош для скорости, но может легче определяться фильтрами.</span></div>
+                                    <div class="protocol-card"><strong>XRay VLESS Reality</strong><span>Хороший вариант, когда нужна маскировка под обычный веб-трафик и устойчивость к блокировкам.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN</strong><span>Классический протокол с широкой совместимостью, но обычно медленнее WireGuard.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN over Cloak</strong><span>OpenVPN с маскировкой трафика. Подходит, если обычные VPN-протоколы плохо проходят.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN over Shadowsocks</strong><span>Маскирует VPN-трафик через Shadowsocks. Может помочь, но не всегда устойчив к анализу трафика.</span></div>
+                                    <div class="protocol-card"><strong>IKEv2/IPsec</strong><span>Стабильный протокол, хорошо переживает смену сети, но на части устройств поддержка ограничена.</span></div>
+                                </div>
+                            </div>
+
+                            <div class="instruction-stage" data-vpn-panel="issues">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Если не получается подключиться</h2>
+                                        <p>Что проверить, если сервер не создаётся, SSH не работает или VPN не поднимается.</p>
+                                    </div>
+                                    <span class="stage-range">Проверка</span>
+                                </div>
+
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Проверить IP, логин и пароль</h4>
+                                            <p>Убедитесь, что IP сервера скопирован без пробелов, логин указан <code>root</code>, а пароль взят именно от созданного VDS.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Дождаться установки Ubuntu</h4>
+                                            <p>Сразу после оплаты сервер может ещё устанавливаться. Подождите несколько минут и повторите подключение в AmneziaVPN.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Проверить SSH-доступ</h4>
+                                            <p>Если AmneziaVPN не подключается, попробуйте зайти на сервер через терминал командой <code>ssh root@IP_СЕРВЕРА</code>. Если SSH не пускает, проблема в доступах или сервере, а не в AmneziaVPN.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Сменить протокол</h4>
+                                            <p>Если подключение создаётся, но плохо работает, попробуйте другой протокол. Для скорости — AmneziaWG или WireGuard, для маскировки — XRay или OpenVPN over Cloak.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Выбрать ближний дата-центр</h4>
+                                            <p>Если пинг высокий, создайте сервер ближе к вашему региону. Для России обычно быстрее Москва, Финляндия, Эстония, Латвия, Литва или Польша.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </main>
     </div>
 
@@ -2367,6 +2695,7 @@ npm -v</div>
         const guidePanels = {
             chatgpt: document.getElementById("chatgpt-guide"),
             omniroute: document.getElementById("omniroute-guide"),
+            vpn: document.getElementById("vpn-guide"),
         };
         const themeButtons = document.querySelectorAll("[data-theme-choice]");
 
@@ -2394,6 +2723,10 @@ npm -v</div>
             omniroute: {
                 hash: "omniroute-install",
                 title: "Установка OmniRoute и Claude Code | База инструкций",
+            },
+            vpn: {
+                hash: "vpn-server",
+                title: "VPN через AmneziaVPN | База инструкций",
             },
         };
 
@@ -2436,6 +2769,24 @@ npm -v</div>
                 title: "Проблемы оплаты ChatGPT | База инструкций",
             },
         };
+        const vpnStages = {
+            server: {
+                hash: "vpn-server",
+                title: "Покупка сервера для VPN | База инструкций",
+            },
+            amnezia: {
+                hash: "vpn-amnezia",
+                title: "Настройка AmneziaVPN | База инструкций",
+            },
+            protocols: {
+                hash: "vpn-protocols",
+                title: "Протоколы AmneziaVPN | База инструкций",
+            },
+            issues: {
+                hash: "vpn-problems",
+                title: "Проблемы VPN через AmneziaVPN | База инструкций",
+            },
+        };
 
         function showPicker(updateUrl = true) {
             hero.classList.remove("is-hidden");
@@ -2470,6 +2821,9 @@ npm -v</div>
             if (name === "chatgpt") {
                 activateChatgptStage("prep", false, false);
             }
+            if (name === "vpn") {
+                activateVpnStage("server", false, false);
+            }
             if (shouldScroll) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
@@ -2496,6 +2850,13 @@ npm -v</div>
             if (tabRoute) {
                 openGuide("omniroute", false, false);
                 activateOmniTab(tabRoute[0], false, false);
+                return;
+            }
+
+            const vpnRoute = Object.entries(vpnStages).find(([, value]) => value.hash === hash);
+            if (vpnRoute) {
+                openGuide("vpn", false, false);
+                activateVpnStage(vpnRoute[0], false, false);
                 return;
             }
 
@@ -2574,6 +2935,36 @@ npm -v</div>
 
         document.querySelectorAll("[data-chatgpt-stage]").forEach((button) => {
             button.addEventListener("click", () => activateChatgptStage(button.dataset.chatgptStage));
+        });
+
+        function activateVpnStage(stageName, updateUrl = true, shouldScroll = true) {
+            const stages = document.querySelectorAll("#vpn-guide [data-vpn-panel]");
+            stages.forEach((stage) => stage.classList.remove("active"));
+
+            const buttons = document.querySelectorAll("#vpn-guide [data-vpn-stage]");
+            buttons.forEach((button) => button.classList.remove("active"));
+
+            const stage = document.querySelector(`#vpn-guide [data-vpn-panel="${stageName}"]`);
+            const button = document.querySelector(`#vpn-guide [data-vpn-stage="${stageName}"]`);
+            if (!stage || !button) return;
+
+            stage.classList.add("active");
+            button.classList.add("active");
+
+            const route = vpnStages[stageName];
+            if (route) {
+                document.title = route.title;
+                if (updateUrl) {
+                    history.pushState(null, "", `#${route.hash}`);
+                }
+            }
+            if (shouldScroll) {
+                document.querySelector("#vpn-guide .simple-guide").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        document.querySelectorAll("[data-vpn-stage]").forEach((button) => {
+            button.addEventListener("click", () => activateVpnStage(button.dataset.vpnStage));
         });
 
         function switchTab(event, tabName) {
