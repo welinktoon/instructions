@@ -127,11 +127,12 @@
 
         ul {
             color: var(--muted);
-            margin: 0.6rem 0 0.8rem 1.3rem;
+            margin: 6px 0 12px 20px;
+            padding: 0;
         }
 
         li + li {
-            margin-top: 0.35rem;
+            margin-top: 6px;
         }
 
         .site-shell {
@@ -701,7 +702,8 @@
         p {
             color: #475467;
             font-size: 15px;
-            margin-bottom: 13px;
+            line-height: 1.55;
+            margin-bottom: 10px;
         }
 
         small {
@@ -718,7 +720,7 @@
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
             font-size: 13px;
             line-height: 1.8;
-            margin: 13px 0 18px;
+            margin: 12px 0 16px;
             overflow-x: auto;
             padding: 38px 17px 15px;
             position: relative;
@@ -822,8 +824,8 @@
             align-items: flex-start;
             display: flex;
             gap: 14px;
-            margin-bottom: 10px;
-            padding: 16px;
+            margin-bottom: 8px;
+            padding: 14px 16px;
         }
 
         .step-number {
@@ -849,12 +851,29 @@
 
         .step-content {
             min-width: 0;
+            width: 100%;
         }
 
         .step-content p {
             color: var(--muted);
             font-size: 15px;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            max-width: 980px;
+        }
+
+        .step-content p:last-child,
+        .step-content ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-content p + ul,
+        .content p + ul,
+        .simple-content p + ul {
+            margin-top: 2px;
+        }
+
+        .credential-line {
+            margin-top: 8px;
         }
 
         .link-card {
@@ -934,12 +953,12 @@
         }
 
         #chatgpt-guide .stage-body {
-            gap: 4px;
+            gap: 8px;
         }
 
         #chatgpt-guide .step {
             margin-bottom: 0;
-            padding: 10px 16px;
+            padding: 12px 16px;
         }
 
         #chatgpt-guide .step-content h4 {
@@ -947,7 +966,7 @@
         }
 
         #chatgpt-guide .step-content p {
-            line-height: 1.45;
+            line-height: 1.5;
             margin-bottom: 0;
         }
 
@@ -968,9 +987,9 @@
             border-bottom: 0;
             border-top: 0;
             display: grid;
-            gap: 12px;
+            gap: 14px;
             grid-template-columns: 1fr auto;
-            padding: 16px 0;
+            padding: 18px 0 16px;
         }
 
         .stage-header h2 {
@@ -986,6 +1005,7 @@
         .stage-header p {
             color: var(--muted);
             margin: 0;
+            max-width: 900px;
         }
 
         .stage-range {
@@ -1013,7 +1033,7 @@
             box-shadow: none;
             cursor: zoom-in;
             display: block;
-            margin-top: 12px;
+            margin-top: 10px;
             max-width: 620px;
             overflow: hidden;
             padding: 0;
@@ -1023,6 +1043,10 @@
 
         .step-media.compact {
             max-width: 360px;
+        }
+
+        .step-media + .step-media {
+            margin-top: 12px;
         }
 
         .step-media:hover,
@@ -2016,12 +2040,7 @@ npm -v</div>
 
                                 <p>После запуска панель управления доступна по адресу <code>http://localhost:20128</code>.</p>
 
-                                <p><strong>Пароль по умолчанию:</strong></p>
-                                <ul>
-                                    <li>CHANGEME</li>
-                                    <li>admin123</li>
-                                    <li>123456</li>
-                                </ul>
+                                <p class="credential-line"><strong>Пароль по умолчанию:</strong> попробуйте <code>CHANGEME</code>, <code>admin123</code> или <code>123456</code>.</p>
 
                             </div>
                         </div>
