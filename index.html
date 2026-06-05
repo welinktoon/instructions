@@ -1122,6 +1122,14 @@
             max-width: 360px;
         }
 
+        .step-media.tiny {
+            max-width: 280px;
+        }
+
+        .step-media.phone {
+            max-width: 390px;
+        }
+
         .step-media + .step-media {
             margin-top: 12px;
         }
@@ -2492,6 +2500,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Открыть раздел виртуальных серверов</h4>
                                             <p>Перейдите в биллинг <a href="https://my.serv.host/billmgr#/vds/list" target="_blank" rel="noopener">my.serv.host</a>. В меню откройте <strong>Товары/Услуги</strong> → <strong>Виртуальные серверы</strong>.</p>
+                                            <button class="step-media tiny zoomable-media" type="button" aria-label="Увеличить скрин меню виртуальных серверов">
+                                                <img src="./assets/vpn-amnezia/server-menu.png" alt="Меню биллинга с разделом Виртуальные серверы" loading="lazy">
+                                                <span>Раздел виртуальных серверов</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2500,6 +2512,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Заказать новый сервер</h4>
                                             <p>Нажмите <strong>Заказать</strong> или кнопку заказа новой услуги. Откроется форма выбора дата-центра, периода оплаты и параметров сервера.</p>
+                                            <button class="step-media tiny zoomable-media" type="button" aria-label="Увеличить скрин кнопки заказа сервера">
+                                                <img src="./assets/vpn-amnezia/order-button.png" alt="Кнопка заказа новой услуги в биллинге" loading="lazy">
+                                                <span>Кнопка заказа сервера</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2514,6 +2530,10 @@ npm -v</div>
                                                 <div class="info-row"><strong>Северная Америка</strong><span>Канада и США: примерно 120–190 мс. Брать только если нужен именно американский или канадский IP.</span></div>
                                             </div>
                                             <p>В списке на скрине доступны варианты AMD EPYC и AMD Ryzen для Нидерландов, Финляндии, Норвегии, Чехии, Австрии, Дании, Италии, Польши, Эстонии, Литвы, Латвии, Бельгии, Швейцарии, Швеции, Франции, Канады и США.</p>
+                                            <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин выбора дата-центра">
+                                                <img src="./assets/vpn-amnezia/datacenter-list.png" alt="Список доступных дата-центров для VDS" loading="lazy">
+                                                <span>Выбор дата-центра</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2522,6 +2542,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Выбрать период оплаты</h4>
                                             <p>Для проверки достаточно оплаты на месяц. На скрине пример цены: <strong>360 RUB/месяц</strong>, при оплате на 3 месяца, полгода или год обычно применяется скидка.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин выбора периода оплаты">
+                                                <img src="./assets/vpn-amnezia/billing-period.png" alt="Выбор периода оплаты сервера и скидки" loading="lazy">
+                                                <span>Период оплаты</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2530,6 +2554,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Поставить Ubuntu 24.04</h4>
                                             <p>В поле <strong>Операционная система</strong> выберите <strong>Другое → Ubuntu 24.04</strong>. Предустановленное ПО оставьте <strong>не установлен</strong>.</p>
+                                            <button class="step-media tiny zoomable-media" type="button" aria-label="Увеличить скрин выбора Ubuntu 24.04">
+                                                <img src="./assets/vpn-amnezia/ubuntu-2404.png" alt="Выбор Ubuntu 24.04 в настройках сервера" loading="lazy">
+                                                <span>Ubuntu 24.04</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2538,6 +2566,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Оставить минимальные ресурсы</h4>
                                             <p>Для личного VPN обычно достаточно минимального тарифа: <strong>25 ГБ диск</strong>, <strong>2 ГБ RAM</strong>, <strong>1 CPU</strong>, <strong>1 публичный IPv4</strong>. IPv6 можно оставить включённым, если он идёт бесплатно.</p>
+                                            <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин ресурсов сервера">
+                                                <img src="./assets/vpn-amnezia/server-resources.png" alt="Минимальные ресурсы VDS для VPN" loading="lazy">
+                                                <span>Ресурсы сервера</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2566,6 +2598,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Открыть Self-hosted VPN</h4>
                                             <p>Запустите AmneziaVPN и выберите плитку <strong>Self-hosted VPN</strong>. Это режим настройки VPN на собственном сервере.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин Self-hosted VPN">
+                                                <img src="./assets/vpn-amnezia/self-hosted-vpn.png" alt="Плитка Self-hosted VPN в AmneziaVPN" loading="lazy">
+                                                <span>Self-hosted VPN</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2574,6 +2610,10 @@ npm -v</div>
                                         <div class="step-content">
                                             <h4>Ввести данные сервера</h4>
                                             <p>Укажите IP-адрес сервера, имя пользователя <code>root</code> и пароль от сервера. Если SSH работает на нестандартном порту, укажите IP в формате <code>IP:порт</code>.</p>
+                                            <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин формы SSH в AmneziaVPN">
+                                                <img src="./assets/vpn-amnezia/ssh-form.png" alt="Форма ввода IP, root и пароля SSH в AmneziaVPN" loading="lazy">
+                                                <span>Данные сервера в AmneziaVPN</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -2621,6 +2661,14 @@ npm -v</div>
                                     <div class="protocol-card"><strong>OpenVPN over Shadowsocks</strong><span>Маскирует VPN-трафик через Shadowsocks. Может помочь, но не всегда устойчив к анализу трафика.</span></div>
                                     <div class="protocol-card"><strong>IKEv2/IPsec</strong><span>Стабильный протокол, хорошо переживает смену сети, но на части устройств поддержка ограничена.</span></div>
                                 </div>
+                                <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин верхней части списка протоколов">
+                                    <img src="./assets/vpn-amnezia/protocols-top.png" alt="Список протоколов WireGuard, OpenVPN, OpenVPN over Cloak и OpenVPN over Shadowsocks" loading="lazy">
+                                    <span>Верхняя часть списка протоколов</span>
+                                </button>
+                                <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин нижней части списка протоколов">
+                                    <img src="./assets/vpn-amnezia/protocols-bottom.png" alt="Список протоколов OpenVPN over Cloak, OpenVPN over Shadowsocks, IPsec и XRay" loading="lazy">
+                                    <span>Нижняя часть списка протоколов</span>
+                                </button>
                             </div>
 
                             <div class="instruction-stage" data-vpn-panel="issues">
