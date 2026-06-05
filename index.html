@@ -2014,9 +2014,7 @@ npm -v</div>
                                     </div>
                                 </div>
 
-                                <div class="success">
-                                    После запуска панель управления доступна по адресу <code>http://localhost:20128</code>
-                                </div>
+                                <p>После запуска панель управления доступна по адресу <code>http://localhost:20128</code>.</p>
 
                                 <p><strong>Пароль по умолчанию:</strong></p>
                                 <ul>
@@ -2077,6 +2075,10 @@ npm -v</div>
                     <h2>Авторизация в бесплатных провайдерах (Providers)</h2>
 
                     <p>OmniRoute поддерживает множество бесплатных провайдеров AI. Вот как настроить некоторых из них:</p>
+                    <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин раздела Providers">
+                        <img src="./assets/Снимок экрана 2026-04-13 162552.png" alt="Раздел Providers в панели OmniRoute" loading="lazy">
+                        <span>Раздел Providers</span>
+                    </button>
 
                     <h3>Kiro AI (Claude FREE)</h3>
                     <p>Предоставляет бесплатный доступ к моделям Claude Sonnet и Haiku:</p>
@@ -2086,6 +2088,10 @@ npm -v</div>
                             <h4>Подключение через Kiro</h4>
                             <p>В панели управления: <strong>Dashboard → Connect Kiro</strong></p>
                             <p><small>Нажмите кнопку для начала подключения</small></p>
+                            <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин подключения Kiro">
+                                <img src="./assets/Снимок экрана 2026-04-13 162605.png" alt="Экран подключения Kiro AI в OmniRoute" loading="lazy">
+                                <span>Подключение Kiro AI</span>
+                            </button>
                         </div>
                     </div>
 
@@ -2095,6 +2101,18 @@ npm -v</div>
                             <h4>Авторизация</h4>
                             <p>Использовать <strong>AWS Builder ID</strong> или <strong>Google/GitHub</strong> для входа</p>
                             <p><small>Выберите удобный способ входа</small></p>
+                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин выбора способа авторизации Kiro">
+                                <img src="./assets/Снимок экрана 2026-04-13 162632.png" alt="Выбор способа авторизации Kiro через AWS Builder ID" loading="lazy">
+                                <span>Выбор авторизации</span>
+                            </button>
+                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин подтверждения AWS">
+                                <img src="./assets/Снимок экрана 2026-04-13 162640.png" alt="Подтверждение кода AWS Builder ID" loading="lazy">
+                                <span>Подтверждение AWS</span>
+                            </button>
+                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин разрешения доступа AWS">
+                                <img src="./assets/Снимок экрана 2026-04-13 162646.png" alt="Разрешение доступа для Kiro OAuth client" loading="lazy">
+                                <span>Разрешение доступа</span>
+                            </button>
                         </div>
                     </div>
 
@@ -2108,6 +2126,10 @@ npm -v</div>
                                 <li><code>kr/claude-haiku-4.5</code></li>
                             </ul>
                             <p><small>Модели готовы к использованию</small></p>
+                            <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин подключённых моделей Kiro">
+                                <img src="./assets/Снимок экрана 2026-04-13 162658.png" alt="Подключённый Kiro AI и доступные модели Claude" loading="lazy">
+                                <span>Подключённые модели</span>
+                            </button>
                         </div>
                     </div>
 
@@ -2120,10 +2142,8 @@ npm -v</div>
                     <h3>Gemini CLI</h3>
                     <p>Инструмент командной строки для работы с моделями Gemini (устаревший, но все еще доступен).</p>
 
-                    <div class="note">
-                        <p>Для большинства бесплатных провайдеров авторизация происходит через панель управления OmniRoute. После подключения они становятся доступны через единый API endpoint.</p>
-                        <p>Все эти провайдеры входят в состав OmniRoute и не требуют дополнительных API ключей от вас.</p>
-                    </div>
+                    <p>Для большинства бесплатных провайдеров авторизация происходит через панель управления OmniRoute. После подключения они становятся доступны через единый API endpoint.</p>
+                    <p>Эти провайдеры входят в состав OmniRoute и не требуют дополнительных API ключей от вас.</p>
                 </section>
 
                 <section>
@@ -2149,9 +2169,11 @@ npm -v</div>
   }
 }</div>
 
-                    <div class="note">
-                        В полях ANTHROPIC_DEFAULT_HAIKU_MODEL, ANTHROPIC_DEFAULT_SONNET_MODEL и ANTHROPIC_DEFAULT_OPUS_MODEL вы сами задаёте модели, которые вам нужны
-                    </div>
+                    <p>В полях <code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code>, <code>ANTHROPIC_DEFAULT_SONNET_MODEL</code> и <code>ANTHROPIC_DEFAULT_OPUS_MODEL</code> вы сами задаёте модели, которые вам нужны.</p>
+                    <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин settings.json">
+                        <img src="./assets/Снимок экрана 2026-04-13 162754.png" alt="Пример настройки settings.json для Claude Code" loading="lazy">
+                        <span>Настройка settings.json</span>
+                    </button>
 
                     <h3>Подтверждение API ключа при первом запуске</h3>
                     <p>После настройки файла конфигурации при первом запуске Claude Code может появиться вопрос:</p>
@@ -2159,6 +2181,10 @@ npm -v</div>
                     <p>Необходимо подтвердить использование ключа:</p>
                     <div class="code-block">1. Yes</div>
                     <p><small>Это действие подтверждает использование API ключа из настроек и позволяет Claude Code корректно подключиться к OmniRoute.</small></p>
+                    <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин подтверждения API ключа в Claude Code">
+                        <img src="./assets/Снимок экрана 2026-04-13 193749.png" alt="Подтверждение API ключа при запуске Claude Code" loading="lazy">
+                        <span>Подтверждение API ключа</span>
+                    </button>
                 </section>
             </div>
 
