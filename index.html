@@ -854,7 +854,7 @@
             margin-bottom: 0;
         }
 
-        #chatgpt-guide .chatgpt-steps + section {
+        #chatgpt-guide .issues-links {
             margin-top: 48px;
         }
 
@@ -1115,7 +1115,7 @@
                 padding: 0;
             }
 
-            #chatgpt-guide .chatgpt-steps + section {
+            #chatgpt-guide .issues-links {
                 margin-top: 38px;
             }
 
@@ -1554,7 +1554,7 @@
                             </div>
                         </div>
 
-                        <section>
+                        <section id="chatgpt-links" class="issues-links is-hidden">
                             <h2>Полезные ссылки</h2>
                             <div class="links">
                                 <a href="https://t.me/platipomiru_bot" class="link-card" target="_blank" rel="noopener">
@@ -2190,6 +2190,11 @@ npm -v</div>
 
             stage.classList.add("active");
             button.classList.add("active");
+
+            const links = document.getElementById("chatgpt-links");
+            if (links) {
+                links.classList.toggle("is-hidden", stageName !== "issues");
+            }
 
             const route = chatgptStages[stageName];
             if (route) {
