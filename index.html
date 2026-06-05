@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>База инструкций</title>
+    <script>
+        (() => {
+            const theme = localStorage.getItem("instruction-theme") === "dark" ? "dark" : "light";
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
     <style>
         :root {
+            color-scheme: light;
             --blue-950: #101828;
             --blue-900: #344054;
             --blue-800: #0b5cff;
@@ -21,11 +28,58 @@
             --accent-50: #fffaeb;
             --amber-500: #f79009;
             --amber-50: #fffbeb;
+            --bg: #f3f5f8;
             --ink: #101828;
             --muted: #667085;
+            --text-soft: #475467;
             --line: #dde3ea;
+            --line-strong: #cfd8e3;
             --panel: #ffffff;
+            --panel-soft: #f9fafb;
+            --panel-muted: #f3f5f8;
+            --hover: #f8faff;
+            --active: #eef4ff;
+            --active-line: #b8ccff;
+            --code-bg: #eef4ff;
+            --code-fg: #0b5cff;
+            --warning-bg: #fffbeb;
+            --warning-fg: #92400e;
             --shadow: 0 1px 2px rgba(16, 24, 40, 0.08);
+        }
+
+        :root[data-theme="dark"] {
+            color-scheme: dark;
+            --blue-950: #f3f6fb;
+            --blue-900: #d8e2f0;
+            --blue-800: #7aa7ff;
+            --blue-700: #a9c4ff;
+            --sky-100: #172a46;
+            --sky-50: #111a2a;
+            --accent-900: #f4c172;
+            --accent-800: #fdb022;
+            --accent-700: #f79009;
+            --accent-600: #fdb022;
+            --accent-200: #5b3c13;
+            --accent-100: #2a2112;
+            --accent-50: #211a10;
+            --amber-50: #211a10;
+            --bg: #0f1218;
+            --ink: #f3f6fb;
+            --muted: #aab4c3;
+            --text-soft: #c5cedb;
+            --line: #293241;
+            --line-strong: #3a4657;
+            --panel: #171b24;
+            --panel-soft: #1d2430;
+            --panel-muted: #111722;
+            --hover: #1f2937;
+            --active: #182b4d;
+            --active-line: #365f9f;
+            --code-bg: #101826;
+            --code-fg: #8fb4ff;
+            --warning-bg: #2a2112;
+            --warning-fg: #f4c172;
+            --shadow: none;
         }
 
         * {
@@ -40,7 +94,7 @@
 
         body {
             min-height: 100vh;
-            background: #f3f5f8;
+            background: var(--bg);
             color: var(--ink);
             font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.55;
@@ -64,8 +118,8 @@
 
         code {
             border-radius: 6px;
-            background: #eef4ff;
-            color: #0b5cff;
+            background: var(--code-bg);
+            color: var(--code-fg);
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
             font-size: 0.94em;
             padding: 0.12rem 0.34rem;
@@ -108,6 +162,54 @@
             font-size: 14px;
             font-weight: 700;
             padding: 0 12px;
+        }
+
+        .theme-toggle {
+            align-items: center;
+            background: var(--panel-muted);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            display: inline-grid;
+            gap: 3px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 3px;
+        }
+
+        .app-sidebar .theme-toggle {
+            margin: 0 4px;
+            width: calc(100% - 8px);
+        }
+
+        .site-hero-actions {
+            align-items: center;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .theme-toggle button {
+            background: transparent;
+            border: 0;
+            border-radius: 6px;
+            color: var(--text-soft);
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 720;
+            min-width: 70px;
+            min-height: 30px;
+            padding: 0 10px;
+        }
+
+        .theme-toggle button:hover,
+        .theme-toggle button:focus-visible {
+            background: var(--hover);
+            color: var(--ink);
+            outline: none;
+        }
+
+        .theme-toggle button.active {
+            background: var(--blue-800);
+            color: #ffffff;
         }
 
         .side-nav {
@@ -948,6 +1050,124 @@
             display: none;
         }
 
+        :root[data-theme="dark"] .app-sidebar,
+        :root[data-theme="dark"] .site-hero,
+        :root[data-theme="dark"] .quick-ai,
+        :root[data-theme="dark"] .guide-card,
+        :root[data-theme="dark"] .panel-topbar,
+        :root[data-theme="dark"] .container,
+        :root[data-theme="dark"] .simple-guide,
+        :root[data-theme="dark"] .container header,
+        :root[data-theme="dark"] .simple-guide header,
+        :root[data-theme="dark"] .content,
+        :root[data-theme="dark"] .simple-content,
+        :root[data-theme="dark"] .instruction-stage,
+        :root[data-theme="dark"] .stage-header,
+        :root[data-theme="dark"] .step,
+        :root[data-theme="dark"] .card,
+        :root[data-theme="dark"] .link-card,
+        :root[data-theme="dark"] .step-media {
+            background: var(--panel);
+        }
+
+        :root[data-theme="dark"] .site-hero h1,
+        :root[data-theme="dark"] .guide-card h2,
+        :root[data-theme="dark"] .container header h1,
+        :root[data-theme="dark"] .simple-guide header h1,
+        :root[data-theme="dark"] h2,
+        :root[data-theme="dark"] h3,
+        :root[data-theme="dark"] .tab-title,
+        :root[data-theme="dark"] .step-content h4,
+        :root[data-theme="dark"] .quick-ai-link,
+        :root[data-theme="dark"] .code-block,
+        :root[data-theme="dark"] .code-block code {
+            color: var(--ink);
+        }
+
+        :root[data-theme="dark"] p,
+        :root[data-theme="dark"] .site-hero p,
+        :root[data-theme="dark"] .container header p,
+        :root[data-theme="dark"] .simple-guide header p,
+        :root[data-theme="dark"] .guide-card p,
+        :root[data-theme="dark"] .tab-desc,
+        :root[data-theme="dark"] .step-content p,
+        :root[data-theme="dark"] .stage-header p,
+        :root[data-theme="dark"] .quick-ai-link span,
+        :root[data-theme="dark"] .link-card span,
+        :root[data-theme="dark"] .card p,
+        :root[data-theme="dark"] small {
+            color: var(--muted);
+        }
+
+        :root[data-theme="dark"] .tabs,
+        :root[data-theme="dark"] .quick-ai-link,
+        :root[data-theme="dark"] .guide-meta span,
+        :root[data-theme="dark"] .guide-badge,
+        :root[data-theme="dark"] .side-dot,
+        :root[data-theme="dark"] .step-media img {
+            background: var(--panel-soft);
+        }
+
+        :root[data-theme="dark"] .tab-button,
+        :root[data-theme="dark"] .back-button,
+        :root[data-theme="dark"] .code-block::before {
+            background: var(--panel);
+            color: var(--text-soft);
+        }
+
+        :root[data-theme="dark"] .side-nav button {
+            color: var(--text-soft);
+        }
+
+        :root[data-theme="dark"] .side-nav button:hover,
+        :root[data-theme="dark"] .side-nav button:focus-visible,
+        :root[data-theme="dark"] .quick-ai-link:hover,
+        :root[data-theme="dark"] .quick-ai-link:focus-visible,
+        :root[data-theme="dark"] .guide-card:hover,
+        :root[data-theme="dark"] .guide-card:focus-visible,
+        :root[data-theme="dark"] .link-card:hover,
+        :root[data-theme="dark"] .tab-button:hover,
+        :root[data-theme="dark"] .tab-button:focus-visible {
+            background: var(--hover);
+            color: var(--ink);
+        }
+
+        :root[data-theme="dark"] .side-nav button.is-current,
+        :root[data-theme="dark"] .tab-button.active,
+        :root[data-theme="dark"] .note,
+        :root[data-theme="dark"] .success,
+        :root[data-theme="dark"] .stage-range,
+        :root[data-theme="dark"] .tab-index {
+            background: var(--active);
+            border-color: var(--active-line);
+            color: var(--blue-800);
+        }
+
+        :root[data-theme="dark"] .warning {
+            background: var(--warning-bg);
+            color: var(--warning-fg);
+        }
+
+        :root[data-theme="dark"] .code-block {
+            background: var(--code-bg);
+            border-color: var(--line);
+            border-left-color: var(--blue-800);
+        }
+
+        :root[data-theme="dark"] .app-sidebar,
+        :root[data-theme="dark"] .site-hero,
+        :root[data-theme="dark"] .panel-topbar,
+        :root[data-theme="dark"] .container header,
+        :root[data-theme="dark"] .simple-guide header,
+        :root[data-theme="dark"] .tabs,
+        :root[data-theme="dark"] .tab-button,
+        :root[data-theme="dark"] .guide-card,
+        :root[data-theme="dark"] .guide-meta span,
+        :root[data-theme="dark"] .back-button,
+        :root[data-theme="dark"] .code-block::before {
+            border-color: var(--line);
+        }
+
         @media (max-width: 1180px) {
             .site-shell {
                 grid-template-columns: 188px minmax(0, 1fr);
@@ -1015,10 +1235,18 @@
             }
 
             .site-hero {
+                align-items: flex-start;
                 border-bottom: 1px solid var(--line);
+                flex-direction: column;
+                gap: 12px;
                 grid-template-columns: 1fr;
                 min-height: 92px;
                 padding: 18px 20px;
+            }
+
+            .site-hero-actions {
+                justify-content: flex-start;
+                width: 100%;
             }
 
             .guide-picker {
@@ -1172,6 +1400,10 @@
                 flex-direction: column;
             }
 
+            .panel-topbar .theme-toggle {
+                width: 100%;
+            }
+
             .back-button,
             .primary-action {
                 width: 100%;
@@ -1183,6 +1415,10 @@
     <div class="site-shell">
         <aside class="app-sidebar" aria-label="Навигация">
             <a class="app-brand" href="./">База инструкций</a>
+            <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                <button type="button" data-theme-choice="light">Светлая</button>
+                <button type="button" data-theme-choice="dark">Тёмная</button>
+            </div>
             <nav class="side-nav" aria-label="Инструкции">
                 <button type="button" data-guide="chatgpt">
                     <span class="side-dot">1</span>
@@ -1197,6 +1433,12 @@
         <header id="site-hero" class="site-hero">
             <div>
                 <h1>Выберите инструкцию</h1>
+            </div>
+            <div class="site-hero-actions">
+                <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                    <button type="button" data-theme-choice="light">Светлая</button>
+                    <button type="button" data-theme-choice="dark">Тёмная</button>
+                </div>
             </div>
         </header>
 
@@ -1275,6 +1517,10 @@
             <section id="chatgpt-guide" class="guide-panel is-hidden" aria-label="Оплата подписки ChatGPT">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light">Светлая</button>
+                        <button type="button" data-theme-choice="dark">Тёмная</button>
+                    </div>
                 </div>
 
                 <article class="simple-guide">
@@ -1603,6 +1849,10 @@
             <section id="omniroute-guide" class="guide-panel is-hidden" aria-label="OmniRoute и Claude Code">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light">Светлая</button>
+                        <button type="button" data-theme-choice="dark">Тёмная</button>
+                    </div>
                 </div>
 
                 <div class="container">
@@ -2022,6 +2272,24 @@ npm -v</div>
             chatgpt: document.getElementById("chatgpt-guide"),
             omniroute: document.getElementById("omniroute-guide"),
         };
+        const themeButtons = document.querySelectorAll("[data-theme-choice]");
+
+        function applyTheme(theme) {
+            const nextTheme = theme === "dark" ? "dark" : "light";
+            document.documentElement.dataset.theme = nextTheme;
+            localStorage.setItem("instruction-theme", nextTheme);
+            themeButtons.forEach((button) => {
+                const isActive = button.dataset.themeChoice === nextTheme;
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+        }
+
+        themeButtons.forEach((button) => {
+            button.addEventListener("click", () => applyTheme(button.dataset.themeChoice));
+        });
+        applyTheme(document.documentElement.dataset.theme);
+
         const guideRoutes = {
             chatgpt: {
                 hash: "chatgpt-payment",
