@@ -2463,6 +2463,14 @@
             margin-top: 14px;
         }
 
+        #router-guide [data-router-panel] {
+            display: none;
+        }
+
+        #router-guide [data-router-panel].active {
+            display: block;
+        }
+
         .tab-title,
         .tab-desc {
             max-width: 100%;
@@ -2724,7 +2732,7 @@
                                 <img src="./assets/brands/vpn-badge.png?v=3" alt="VPN">
                             </span>
                             <span class="guide-row-main">
-                                <span class="guide-row-title">VPN через AmneziaVPN</span>
+                                <span class="guide-row-title">Свой VPN сервер</span>
                                 <span class="guide-row-copy">Сервер, SSH-доступ и self-hosted VPN.</span>
                             </span>
                             <span class="guide-row-badge">VPN</span>
@@ -2868,6 +2876,10 @@
                                         <div class="step-content">
                                             <h4>Выпустить карту для подписок</h4>
                                             <p>В мини-приложении выберите карту <strong>Для подписок</strong>, нажмите <strong>Выпустить карту</strong> и оплатите выпуск через СБП. После оплаты в кабинете появятся реквизиты карты.</p>
+                                            <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин карты для подписок Плати по миру">
+                                                <img src="./assets/platipomiru-chatgpt/subscription-card.png" alt="Экран карты для подписок в приложении Плати по миру" loading="lazy">
+                                                <span>Карта для подписок</span>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -3555,7 +3567,7 @@ npm -v</div>
 
                 </div>
             </section>
-            <section id="vpn-guide" class="guide-panel is-hidden" aria-label="VPN через AmneziaVPN">
+            <section id="vpn-guide" class="guide-panel is-hidden" aria-label="Свой VPN сервер">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
                     <div class="theme-toggle" role="group" aria-label="Тема сайта">
@@ -3566,7 +3578,7 @@ npm -v</div>
 
                 <article class="simple-guide">
                     <header>
-                        <h1>VPN через AmneziaVPN</h1>
+                        <h1>Свой VPN сервер</h1>
                     </header>
 
                     <div class="simple-content">
@@ -3835,7 +3847,18 @@ npm -v</div>
                     </header>
 
                     <div class="simple-content">
-                        <div class="instruction-stage active">
+                        <div class="tabs router-tabs" role="tablist" aria-label="Разделы инструкции VPN на роутере">
+                            <button class="tab-button active" type="button" data-router-tab="setup">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Настройка</span>
+                                <span class="tab-desc">Keenetic и OpenWrt</span>
+                            </button>
+                            <button class="tab-button" type="button" data-router-tab="compare">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Сравнение роутеров</span>
+                                <span class="tab-desc">Что выбрать</span>
+                            </button>
+                        </div>
+
+                        <div class="instruction-stage active" data-router-panel="setup">
                             <div class="stage-header">
                                 <div>
                                     <h2>Подключить VPN на роутере</h2>
@@ -3953,6 +3976,31 @@ oaiusercontent.com</code></div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="instruction-stage" data-router-panel="compare">
+                            <div class="stage-header">
+                                <div>
+                                    <h2>Сравнение роутеров</h2>
+                                    <p>Коротко: что удобнее для VPN дома и где меньше ручной настройки.</p>
+                                </div>
+                                <span class="stage-range">Выбор</span>
+                            </div>
+
+                            <div class="protocol-list">
+                                <div class="protocol-card">
+                                    <strong>Keenetic</strong>
+                                    <span>Проще для дома: понятный интерфейс, политики для устройств, DNS-профили и импорт конфига без лишней возни.</span>
+                                </div>
+                                <div class="protocol-card">
+                                    <strong>OpenWrt</strong>
+                                    <span>Гибче и мощнее, но требует SSH, пакетов и аккуратной настройки интерфейсов, firewall и маршрутов.</span>
+                                </div>
+                                <div class="protocol-card">
+                                    <strong>Что выбрать</strong>
+                                    <span>Для обычной настройки бери Keenetic. OpenWrt лучше, если нужен полный контроль и не пугает ручная конфигурация.</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -4007,7 +4055,7 @@ oaiusercontent.com</code></div>
             },
             vpn: {
                 hash: "vpn-server",
-                title: "VPN через AmneziaVPN | База инструкций",
+                title: "Свой VPN сервер | База инструкций",
             },
             router: {
                 hash: "vpn-router",
@@ -4069,7 +4117,17 @@ oaiusercontent.com</code></div>
             },
             issues: {
                 hash: "vpn-problems",
-                title: "Проблемы VPN через AmneziaVPN | База инструкций",
+                title: "Проблемы своего VPN сервера | База инструкций",
+            },
+        };
+        const routerTabs = {
+            setup: {
+                hash: "vpn-router",
+                title: "VPN на роутере | База инструкций",
+            },
+            compare: {
+                hash: "vpn-router-compare",
+                title: "Сравнение роутеров | База инструкций",
             },
         };
 
@@ -4117,6 +4175,9 @@ oaiusercontent.com</code></div>
             if (name === "vpn") {
                 activateVpnStage("server", false, false);
             }
+            if (name === "router") {
+                activateRouterTab("setup", false, false);
+            }
             if (shouldScroll) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             }
@@ -4130,13 +4191,20 @@ oaiusercontent.com</code></div>
             button.addEventListener("click", showPicker);
         });
 
+        const guideSearchIndex = {};
+        document.querySelectorAll("#guide-picker .guide-card").forEach((card) => {
+            const guideName = card.dataset.guide;
+            const articleText = guidePanels[guideName]?.textContent || "";
+            guideSearchIndex[guideName] = `${card.textContent} ${card.dataset.searchText || ""} ${articleText}`.toLowerCase();
+        });
+
         if (guideSearch) {
             guideSearch.addEventListener("input", () => {
-                const query = guideSearch.value.trim().toLowerCase();
+                const queryWords = guideSearch.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
                 let visibleCount = 0;
                 document.querySelectorAll("#guide-picker .guide-card").forEach((card) => {
-                    const haystack = `${card.textContent} ${card.dataset.searchText || ""}`.toLowerCase();
-                    const isVisible = !query || haystack.includes(query);
+                    const haystack = guideSearchIndex[card.dataset.guide] || "";
+                    const isVisible = queryWords.length === 0 || queryWords.every((word) => haystack.includes(word));
                     card.classList.toggle("is-hidden", !isVisible);
                     if (isVisible) visibleCount += 1;
                 });
@@ -4144,7 +4212,7 @@ oaiusercontent.com</code></div>
                     searchEmpty.classList.toggle("is-hidden", visibleCount > 0);
                 }
                 if (quickAi) {
-                    quickAi.classList.toggle("is-hidden", query.length > 0);
+                    quickAi.classList.toggle("is-hidden", queryWords.length > 0);
                 }
             });
         }
@@ -4169,6 +4237,13 @@ oaiusercontent.com</code></div>
             if (vpnRoute) {
                 openGuide("vpn", false, false);
                 activateVpnStage(vpnRoute[0], false, false);
+                return;
+            }
+
+            const routerRoute = Object.entries(routerTabs).find(([, value]) => value.hash === hash);
+            if (routerRoute) {
+                openGuide("router", false, false);
+                activateRouterTab(routerRoute[0], false, false);
                 return;
             }
 
@@ -4277,6 +4352,36 @@ oaiusercontent.com</code></div>
 
         document.querySelectorAll("[data-vpn-stage]").forEach((button) => {
             button.addEventListener("click", () => activateVpnStage(button.dataset.vpnStage));
+        });
+
+        function activateRouterTab(tabName, updateUrl = true, shouldScroll = true) {
+            const stages = document.querySelectorAll("#router-guide [data-router-panel]");
+            stages.forEach((stage) => stage.classList.remove("active"));
+
+            const buttons = document.querySelectorAll("#router-guide [data-router-tab]");
+            buttons.forEach((button) => button.classList.remove("active"));
+
+            const stage = document.querySelector(`#router-guide [data-router-panel="${tabName}"]`);
+            const button = document.querySelector(`#router-guide [data-router-tab="${tabName}"]`);
+            if (!stage || !button) return;
+
+            stage.classList.add("active");
+            button.classList.add("active");
+
+            const route = routerTabs[tabName];
+            if (route) {
+                document.title = route.title;
+                if (updateUrl) {
+                    history.pushState(null, "", `#${route.hash}`);
+                }
+            }
+            if (shouldScroll) {
+                document.querySelector("#router-guide .simple-guide").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        document.querySelectorAll("[data-router-tab]").forEach((button) => {
+            button.addEventListener("click", () => activateRouterTab(button.dataset.routerTab));
         });
 
         function switchTab(event, tabName) {
