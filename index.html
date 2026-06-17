@@ -268,6 +268,15 @@
             width: 17px;
         }
 
+        .nav-mark {
+            border-radius: 6px;
+            display: block;
+            flex: 0 0 auto;
+            height: 18px;
+            object-fit: cover;
+            width: 18px;
+        }
+
         .side-nav button:hover,
         .side-nav button:focus-visible {
             background: #f9fafb;
@@ -1533,6 +1542,1037 @@
                 width: 100%;
             }
         }
+
+        /* 2026 redesign: compact knowledge-base layout, tuned for reading. */
+        :root {
+            --bg: #f6f8fb;
+            --ink: #111827;
+            --muted: #667085;
+            --text-soft: #475467;
+            --line: #e4e7ec;
+            --line-strong: #cfd8e3;
+            --panel: #ffffff;
+            --panel-soft: #f8fafc;
+            --panel-muted: #f1f5f9;
+            --hover: #f1f6ff;
+            --active: #eaf1ff;
+            --active-line: #a9c4ff;
+            --shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 16px 32px rgba(16, 24, 40, 0.04);
+        }
+
+        body {
+            background:
+                linear-gradient(180deg, rgba(239, 246, 255, 0.72), rgba(246, 248, 251, 0) 340px),
+                var(--bg);
+            font-size: 15px;
+        }
+
+        .site-shell {
+            grid-template-columns: 246px minmax(0, 1fr);
+        }
+
+        .app-sidebar {
+            background: #ffffff;
+            gap: 20px;
+            padding: 20px 16px;
+        }
+
+        .app-brand {
+            align-items: center;
+            background: #0f172a;
+            border-radius: 14px;
+            display: inline-flex;
+            gap: 12px;
+            min-height: 56px;
+            padding: 10px 14px;
+        }
+
+        .app-brand::before {
+            content: none;
+        }
+
+        .app-brand-mark {
+            display: block;
+            flex: 0 0 auto;
+            height: 30px;
+            width: 30px;
+        }
+
+        .app-brand-mark img {
+            border-radius: 10px;
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .app-brand-copy {
+            display: grid;
+            gap: 1px;
+            line-height: 1.1;
+        }
+
+        .app-brand-copy strong {
+            color: #f8fafc;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .app-brand-copy small {
+            color: #98a2b3;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .side-nav {
+            gap: 6px;
+        }
+
+        .side-nav button {
+            border: 1px solid transparent;
+            border-radius: 10px;
+            color: var(--text-soft);
+            font-size: 14px;
+            gap: 10px;
+            justify-content: flex-start;
+            min-height: 44px;
+            padding: 0 12px;
+        }
+
+        .side-nav button.is-current {
+            background: var(--active);
+            border-color: var(--active-line);
+            box-shadow: inset 3px 0 0 var(--blue-800);
+        }
+
+        .site-hero {
+            background: transparent;
+            display: grid;
+            grid-template-columns: minmax(210px, 1fr) minmax(260px, 520px) auto;
+            gap: 20px;
+            min-height: auto;
+            padding: 28px 40px 10px;
+            position: static;
+        }
+
+        .site-hero h1 {
+            font-size: 38px;
+            letter-spacing: 0;
+        }
+
+        .search-control {
+            align-items: center;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+            color: var(--muted);
+            display: flex;
+            gap: 10px;
+            min-height: 46px;
+            padding: 0 14px;
+        }
+
+        .search-control:focus-within {
+            border-color: var(--active-line);
+            box-shadow: 0 0 0 4px rgba(11, 92, 255, 0.1);
+        }
+
+        .search-control input {
+            background: transparent;
+            border: 0;
+            color: var(--ink);
+            font: inherit;
+            min-width: 0;
+            outline: 0;
+            width: 100%;
+        }
+
+        .home-view {
+            display: block;
+            padding: 6px 40px 40px;
+        }
+
+        .home-main {
+            display: grid;
+            gap: 18px;
+            min-width: 0;
+        }
+
+        .section-heading {
+            align-items: center;
+            display: flex;
+            gap: 12px;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .section-heading h2 {
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .section-heading h2::before {
+            content: none;
+        }
+
+        .section-heading-compact {
+            margin-bottom: 10px;
+        }
+
+        .guide-picker {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            display: grid;
+            gap: 0;
+            grid-template-columns: 1fr;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .guide-card {
+            border-color: var(--line);
+        }
+
+        .guide-card-row {
+            align-items: center;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            display: grid;
+            gap: 18px;
+            grid-template-columns: 72px minmax(0, 1fr) auto 26px;
+            min-height: 118px;
+            padding: 18px 22px;
+            text-align: left;
+        }
+
+        .guide-picker .guide-card:last-of-type {
+            border-bottom: 0;
+        }
+
+        .guide-card-row:hover,
+        .guide-card-row:focus-visible {
+            background: var(--hover);
+            border-color: transparent;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .guide-row-icon {
+            align-items: center;
+            background: var(--panel-soft);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            display: flex;
+            height: 56px;
+            justify-content: center;
+            width: 56px;
+        }
+
+        .guide-row-icon img {
+            display: block;
+            height: 30px;
+            object-fit: contain;
+            width: 30px;
+        }
+
+        .guide-row-icon-text {
+            color: var(--blue-800);
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        .guide-row-main {
+            display: grid;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .guide-row-title {
+            color: var(--ink);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .guide-row-copy {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .guide-row-badge {
+            background: var(--panel-soft);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--blue-900);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 14px;
+            white-space: nowrap;
+        }
+
+        .guide-card[data-guide="chatgpt"] .guide-row-badge {
+            background: #edf9f2;
+            border-color: #cae8d7;
+            color: #12714b;
+        }
+
+        .guide-card[data-guide="omniroute"] .guide-row-badge {
+            background: #eef4ff;
+            border-color: #cfe0ff;
+            color: #275bca;
+        }
+
+        .guide-card[data-guide="vpn"] .guide-row-badge {
+            background: #eef5ff;
+            border-color: #c9dafd;
+            color: #0b5cff;
+        }
+
+        .guide-card[data-guide="router"] .guide-row-badge {
+            background: #f6efff;
+            border-color: #e2d2ff;
+            color: #7a3fd1;
+        }
+
+        .guide-row-arrow {
+            color: var(--muted);
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .search-empty {
+            background: var(--panel);
+            border: 1px dashed var(--line-strong);
+            border-radius: 8px;
+            color: var(--muted);
+            grid-column: 1 / -1;
+            margin: 0;
+            padding: 18px;
+        }
+
+        .quick-ai {
+            border: 0;
+            box-shadow: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quick-ai > p {
+            display: none;
+        }
+
+        .quick-ai-grid {
+            grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+        }
+
+        .quick-ai-link,
+        .link-card,
+        .info-row,
+        .protocol-card {
+            border: 1px solid var(--line);
+        }
+
+        .quick-ai-link {
+            min-height: 86px;
+        }
+
+        .quick-ai-head {
+            align-items: center;
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 28px minmax(0, 1fr) 16px;
+            margin-bottom: 8px;
+        }
+
+        .quick-ai-head > .icon {
+            height: 16px;
+            justify-self: end;
+            position: static;
+            vertical-align: 0;
+            width: 16px;
+        }
+
+        .quick-ai-logo {
+            border-radius: 8px;
+            display: block;
+            height: 28px;
+            object-fit: cover;
+            width: 28px;
+        }
+
+        .quick-ai-logo.icon-box {
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .quick-ai-title {
+            min-width: 0;
+        }
+
+        .quick-ai-link strong {
+            display: block;
+            font-size: 15px;
+        }
+
+        .quick-ai-domain {
+            color: var(--muted);
+            display: block;
+            font-size: 11px;
+            margin-top: 2px;
+            white-space: nowrap;
+        }
+
+        .quick-ai-link span {
+            display: none;
+        }
+
+        .container,
+        .simple-guide {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            margin: 16px 40px 40px;
+        }
+
+        .content,
+        .simple-content {
+            padding: 0;
+        }
+
+        .panel-topbar {
+            align-items: center;
+            background: transparent;
+            backdrop-filter: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px 0;
+            position: static;
+        }
+
+        .tabs {
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            gap: 0;
+            margin: 0 0 26px;
+            padding: 0 0 2px;
+            position: static;
+        }
+
+        .tab-button {
+            background: transparent;
+            border: 0;
+            border-bottom: 2px solid transparent;
+            border-radius: 0;
+            min-height: 60px;
+            padding: 0 12px 10px;
+        }
+
+        .tab-button:hover,
+        .tab-button:focus-visible,
+        .tab-button.active {
+            background: transparent;
+            border-color: var(--blue-800);
+            box-shadow: none;
+        }
+
+        .instruction-stage {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 26px 34px 28px;
+        }
+
+        .simple-guide header {
+            background: transparent;
+            border-bottom: 0;
+            padding: 0 0 18px;
+        }
+
+        .simple-guide header h1 {
+            font-size: 34px;
+            line-height: 1.08;
+            margin-bottom: 10px;
+        }
+
+        .simple-guide header p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.55;
+            max-width: 760px;
+        }
+
+        .stage-header {
+            align-items: start;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            gap: 16px;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 0 0 18px;
+        }
+
+        .stage-body {
+            gap: 0;
+            position: relative;
+        }
+
+        .step {
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            gap: 16px;
+            margin: 0;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .step:last-child {
+            border-bottom: 0;
+        }
+
+        .step-number {
+            border-radius: 8px;
+            box-shadow: 0 0 0 4px var(--active);
+            height: 30px;
+            width: 30px;
+        }
+
+        .step-content h4 {
+            font-size: 16px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--muted);
+        }
+
+        .code-block {
+            background: #0f172a;
+            border: 0;
+            color: #e5e7eb;
+        }
+
+        .code-block code {
+            color: #e5e7eb;
+        }
+
+        .code-block::before {
+            content: "Команда или код";
+        }
+
+        .step-media img {
+            border: 1px solid var(--line);
+        }
+
+        :root[data-theme="dark"] body {
+            background: var(--bg);
+        }
+
+        :root[data-theme="dark"] .app-sidebar {
+            background: rgba(23, 27, 36, 0.92);
+        }
+
+        :root[data-theme="dark"] .search-control,
+        :root[data-theme="dark"] .quick-ai,
+        :root[data-theme="dark"] .container,
+        :root[data-theme="dark"] .simple-guide,
+        :root[data-theme="dark"] .guide-picker,
+        :root[data-theme="dark"] .instruction-stage {
+            background: var(--panel);
+            border-color: var(--line);
+        }
+
+        :root[data-theme="dark"] .search-control input {
+            color: var(--ink);
+        }
+
+        :root[data-theme="dark"] .guide-card-row:hover,
+        :root[data-theme="dark"] .guide-card-row:focus-visible {
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        @media (max-width: 1180px) {
+            .site-shell {
+                grid-template-columns: 218px minmax(0, 1fr);
+            }
+
+            .site-hero {
+                grid-template-columns: 1fr minmax(240px, 420px);
+            }
+
+            .site-hero-actions {
+                grid-column: 2;
+                justify-self: end;
+            }
+
+            .guide-card-row {
+                grid-template-columns: 64px minmax(0, 1fr) auto 24px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .site-hero {
+                padding: 22px 20px 10px;
+            }
+
+            .home-view {
+                padding: 6px 20px 28px;
+            }
+
+            .container,
+            .simple-guide {
+                margin: 18px 20px 28px;
+            }
+
+            .panel-topbar {
+                padding: 18px 20px 0;
+            }
+
+            .instruction-stage {
+                padding: 22px 20px 24px;
+            }
+
+            .guide-card-row {
+                gap: 14px;
+                grid-template-columns: 56px minmax(0, 1fr) 24px;
+            }
+
+            .guide-row-badge {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .site-hero,
+            .panel-topbar {
+                position: static;
+            }
+
+            .home-view {
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .site-hero {
+                display: flex;
+            }
+
+            .search-control {
+                width: 100%;
+            }
+
+            .guide-picker {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .home-view {
+                padding: 14px 12px 18px;
+            }
+
+            .quick-ai-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-card {
+                min-height: auto;
+            }
+
+            .quick-ai-link {
+                min-height: auto;
+            }
+
+            .theme-toggle {
+                width: 100%;
+            }
+
+            .theme-toggle button {
+                min-width: 0;
+                width: 100%;
+            }
+        }
+
+        /* Reference alignment pass: quiet knowledge-base layout. */
+        body {
+            background: #ffffff;
+        }
+
+        .site-shell {
+            grid-template-columns: 286px minmax(0, 1fr);
+        }
+
+        .app-sidebar {
+            gap: 34px;
+            padding: 40px 34px;
+        }
+
+        .app-brand {
+            background: transparent;
+            border-radius: 0;
+            min-height: 40px;
+            padding: 0;
+        }
+
+        .app-brand-mark {
+            height: 34px;
+            width: 34px;
+        }
+
+        .app-brand-mark img {
+            border-radius: 11px;
+        }
+
+        .app-brand-copy strong {
+            color: var(--ink);
+            font-size: 17px;
+        }
+
+        .app-brand-copy small {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .side-nav {
+            gap: 18px;
+        }
+
+        .side-nav button {
+            border-radius: 8px;
+            min-height: 50px;
+            padding: 0 10px;
+        }
+
+        .side-nav button.is-current {
+            box-shadow: -34px 0 0 -30px var(--blue-800);
+        }
+
+        main,
+        .site-hero {
+            max-width: 1144px;
+            width: 100%;
+        }
+
+        .site-hero {
+            display: block;
+            padding: 42px 40px 28px;
+        }
+
+        .site-hero h1 {
+            font-size: 38px;
+            line-height: 1.12;
+            margin: 0 0 14px;
+        }
+
+        .site-hero p {
+            color: var(--muted);
+            display: block;
+            font-size: 18px;
+            line-height: 1.45;
+            margin: 0 0 30px;
+            max-width: 760px;
+        }
+
+        .search-control {
+            min-height: 52px;
+            width: 100%;
+        }
+
+        .site-hero-actions,
+        .panel-topbar .theme-toggle {
+            display: none;
+        }
+
+        .home-view {
+            padding: 14px 40px 54px;
+        }
+
+        .home-main {
+            gap: 0;
+        }
+
+        .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .section-heading h2 {
+            font-size: 22px;
+            line-height: 1.25;
+        }
+
+        .guide-picker {
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+            overflow: visible;
+        }
+
+        .guide-card {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .guide-card-row {
+            border-bottom: 1px solid var(--line);
+            box-shadow: none;
+            gap: 32px;
+            grid-template-columns: 80px minmax(0, 1fr) auto 24px;
+            min-height: 120px;
+            padding: 20px 0;
+        }
+
+        .guide-card-row:hover,
+        .guide-card-row:focus-visible {
+            background: transparent;
+        }
+
+        .guide-row-icon {
+            height: 80px;
+            width: 80px;
+        }
+
+        .guide-row-icon img {
+            height: 56px;
+            width: 56px;
+        }
+
+        .guide-row-title {
+            font-size: 20px;
+        }
+
+        .guide-row-copy {
+            font-size: 16px;
+        }
+
+        .guide-row-badge {
+            min-width: 72px;
+            padding: 7px 14px;
+            text-align: center;
+        }
+
+        .quick-ai-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        .quick-ai {
+            margin-top: 52px;
+        }
+
+        .quick-ai-link {
+            min-height: 88px;
+            padding: 18px;
+        }
+
+        .quick-ai-head {
+            grid-template-columns: 36px minmax(0, 1fr) 16px;
+            margin: 0;
+        }
+
+        .quick-ai-logo {
+            height: 36px;
+            width: 36px;
+        }
+
+        .quick-ai-link strong {
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        .quick-ai-domain {
+            font-size: 12px;
+        }
+
+        .container,
+        .simple-guide {
+            margin: 34px 40px 54px;
+            max-width: 980px;
+        }
+
+        .panel-topbar {
+            border-bottom: 0;
+            margin: 30px 40px 0;
+            max-width: 980px;
+            min-height: auto;
+            padding: 0;
+        }
+
+        .tabs {
+            align-items: stretch;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .tab-button {
+            align-content: start;
+            display: grid;
+            gap: 6px;
+            justify-items: start;
+            line-height: 1.25;
+            min-height: 78px;
+            overflow: visible;
+            padding: 12px 12px 14px;
+            text-align: left;
+        }
+
+        .guide-panel .container,
+        .guide-panel .simple-guide {
+            margin: 34px 40px 54px;
+            max-width: 980px;
+            width: calc(100% - 80px);
+        }
+
+        .guide-panel header h1,
+        .guide-panel .simple-guide header h1,
+        .guide-panel .container header h1 {
+            font-size: 34px;
+            line-height: 1.08;
+            margin: 0;
+        }
+
+        .guide-panel .container header,
+        .guide-panel .simple-guide header {
+            background: transparent;
+            border-bottom: 0;
+            padding: 0 0 18px;
+        }
+
+        .guide-panel .container .content,
+        .guide-panel .simple-guide .simple-content {
+            padding: 0;
+        }
+
+        .guide-panel .tabs {
+            margin-top: 28px;
+        }
+
+        #router-guide .instruction-stage {
+            margin-top: 14px;
+        }
+
+        .tab-title,
+        .tab-desc {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            white-space: normal;
+        }
+
+        .tab-title-row {
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .tab-title-row .icon {
+            margin-top: 1px;
+        }
+
+        .instruction-stage {
+            border-radius: 14px;
+        }
+
+        .guide-panel {
+            animation: none;
+        }
+
+        @media (max-width: 1180px) {
+            .site-shell {
+                grid-template-columns: 250px minmax(0, 1fr);
+            }
+
+            .app-sidebar {
+                padding: 28px 20px;
+            }
+
+            .quick-ai-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .site-shell {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .app-sidebar {
+                border-bottom: 1px solid var(--line);
+                border-right: 0;
+                display: flex;
+                grid-row: auto;
+                height: auto;
+                overflow: hidden;
+                padding: 16px;
+                position: static;
+            }
+
+            .site-hero,
+            main {
+                grid-column: 1;
+                max-width: 100%;
+            }
+
+            .side-nav {
+                display: flex;
+                gap: 8px;
+                max-width: 100%;
+                min-width: 0;
+                overflow-x: auto;
+                padding-bottom: 4px;
+            }
+
+            .side-nav button {
+                flex: 0 0 auto;
+            }
+
+            .site-hero,
+            .home-view,
+            .panel-topbar {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .guide-card-row {
+                grid-template-columns: 64px minmax(0, 1fr) 24px;
+            }
+
+            .guide-row-icon {
+                height: 64px;
+                width: 64px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .quick-ai-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-brand {
+                width: fit-content;
+            }
+
+            .site-hero h1 {
+                font-size: 32px;
+            }
+
+            .guide-card-row {
+                gap: 14px;
+                grid-template-columns: 80px minmax(0, 1fr) 20px;
+                min-height: 132px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1584,29 +2624,62 @@
             <path d="M10 14 21 3"></path>
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
         </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+        </symbol>
+        <symbol id="icon-home" viewBox="0 0 24 24" fill="none">
+            <path d="m3 11 9-8 9 8"></path>
+            <path d="M5 10v10h14V10"></path>
+            <path d="M9 20v-6h6v6"></path>
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3 19 6v5c0 4.63-2.8 8.82-7 10-4.2-1.18-7-5.37-7-10V6l7-3z"></path>
+            <path d="m9.75 12.25 1.75 1.75 3-3"></path>
+        </symbol>
     </svg>
     <div class="site-shell">
         <aside class="app-sidebar" aria-label="Навигация">
-            <a class="app-brand" href="./">База инструкций</a>
+            <a class="app-brand" href="./">
+                <span class="app-brand-mark" aria-hidden="true">
+                    <img src="./assets/brand-shield.png" alt="">
+                </span>
+                <span class="app-brand-copy">
+                    <strong>Инструкции</strong>
+                </span>
+            </a>
             <nav class="side-nav" aria-label="Инструкции">
+                <button type="button" data-back>
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-home"></use></svg></span>
+                    <span>Главная</span>
+                </button>
                 <button type="button" data-guide="chatgpt">
-                    <svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>
-                    Оплата ChatGPT
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg></span>
+                    <span>Оплата ChatGPT</span>
                 </button>
                 <button type="button" data-guide="omniroute">
-                    <svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>
-                    OmniRoute
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg></span>
+                    <span>OmniRoute</span>
                 </button>
                 <button type="button" data-guide="vpn">
-                    <svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>
-                    VPN на сервере
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span>
+                    <span>VPN на сервере</span>
+                </button>
+                <button type="button" data-guide="router">
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg></span>
+                    <span>VPN на роутере</span>
                 </button>
             </nav>
         </aside>
         <header id="site-hero" class="site-hero">
             <div>
-                <h1>Выберите инструкцию</h1>
+                <h1>База инструкций</h1>
+                <p>Практические руководства по оплате, ИИ, VPN и настройке роутеров.</p>
             </div>
+            <label class="search-control" aria-label="Поиск по инструкциям">
+                <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+                <input id="guide-search" type="search" placeholder="Поиск по инструкциям" autocomplete="off">
+            </label>
             <div class="site-hero-actions">
                 <div class="theme-toggle" role="group" aria-label="Тема сайта">
                     <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
@@ -1616,100 +2689,127 @@
         </header>
 
         <main>
-            <section id="guide-picker" class="guide-picker" aria-label="Выбор инструкции">
-                <button class="guide-card" type="button" data-guide="chatgpt">
-                    <div class="guide-card-top">
-                        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg></span>
-                        <span class="guide-badge">Оплата</span>
+            <div id="home-view" class="home-view">
+                <div class="home-main">
+                    <div class="section-heading">
+                        <h2>Инструкции</h2>
                     </div>
-                    <div>
-                        <h2>Оплата подписки ChatGPT</h2>
-                        <p>Как выпустить карту в @platipomiru_bot, пополнить её через СБП и оплатить подписку ChatGPT на сайте.</p>
-                    </div>
-                    <span class="guide-open">Открыть инструкцию <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
-                    <div class="guide-meta">
-                        <span>ChatGPT</span>
-                        <span>Плати по миру</span>
-                        <span>СБП</span>
-                    </div>
-                </button>
+                    <section id="guide-picker" class="guide-picker" aria-label="Выбор инструкции">
+                        <button class="guide-card guide-card-row" type="button" data-guide="chatgpt" data-search-text="оплата chatgpt платипомиру карта подписка сбп plus pro">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/chatgpt.png" alt="">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">Оплата ChatGPT</span>
+                                <span class="guide-row-copy">Карта, СБП и оплата подписки на сайте.</span>
+                            </span>
+                            <span class="guide-row-badge">Оплата</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
 
-                <button class="guide-card" type="button" data-guide="omniroute">
-                    <div class="guide-card-top">
-                        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span>
-                        <span class="guide-badge">Установка</span>
-                    </div>
-                    <div>
-                        <h2>OmniRoute и Claude Code</h2>
-                        <p>Полное руководство по настройке на Windows: зависимости, API ключ, провайдеры и проблемы запуска.</p>
-                    </div>
-                    <span class="guide-open">Открыть инструкцию <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
-                    <div class="guide-meta">
-                        <span>Windows</span>
-                        <span>Node.js</span>
-                        <span>Claude Code</span>
-                    </div>
-                </button>
+                        <button class="guide-card guide-card-row" type="button" data-guide="omniroute" data-search-text="omniroute claude code windows node api ключ провайдеры установка настройка">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/claude.png" alt="">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">OmniRoute и Claude Code</span>
+                                <span class="guide-row-copy">Windows, зависимости, API-ключ и запуск.</span>
+                            </span>
+                            <span class="guide-row-badge">AI</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
 
-                <button class="guide-card" type="button" data-guide="vpn">
-                    <div class="guide-card-top">
-                        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg></span>
-                        <span class="guide-badge">VPN</span>
-                    </div>
-                    <div>
-                        <h2>VPN через AmneziaVPN</h2>
-                        <p>Как купить виртуальный сервер, выбрать страну и установить self-hosted VPN через AmneziaVPN.</p>
-                    </div>
-                    <span class="guide-open">Открыть инструкцию <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
-                    <div class="guide-meta">
-                        <span>VDS</span>
-                        <span>AmneziaVPN</span>
-                        <span>Self-hosted</span>
-                    </div>
-                </button>
-            </section>
+                        <button class="guide-card guide-card-row" type="button" data-guide="vpn" data-search-text="vpn amneziavpn vds сервер ubuntu wireguard self-hosted протоколы">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/vpn-badge.png?v=3" alt="VPN">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">VPN через AmneziaVPN</span>
+                                <span class="guide-row-copy">Сервер, SSH-доступ и self-hosted VPN.</span>
+                            </span>
+                            <span class="guide-row-badge">VPN</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
 
-            <section id="quick-ai" class="quick-ai" aria-label="Бесплатные ИИ для быстрого использования">
-                <h2>Бесплатные ИИ для быстрого использования</h2>
-                <p>Сервисы, которые можно открыть сразу в браузере и использовать для поиска ответов, текста, кода и проверки идей.</p>
-                <div class="quick-ai-grid">
-                    <a class="quick-ai-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>DeepSeek Chat</strong>
-                        <span>Универсальный чат для вопросов, текста и кода.</span>
-                    </a>
-                    <a class="quick-ai-link" href="https://chat.qwen.ai/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>Qwen Chat</strong>
-                        <span>Хорошо подходит для кода, перевода и рабочих задач.</span>
-                    </a>
-                    <a class="quick-ai-link" href="https://gemini.google.com/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>Google Gemini</strong>
-                        <span>Поиск, документы, объяснения и быстрые ответы.</span>
-                    </a>
-                    <a class="quick-ai-link" href="https://www.kimi.com/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>Kimi</strong>
-                        <span>Работа с длинными текстами, файлами и вопросами.</span>
-                    </a>
-                    <a class="quick-ai-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>Perplexity</strong>
-                        <span>Быстрый поиск по интернету с краткими ответами.</span>
-                    </a>
-                    <a class="quick-ai-link" href="https://claude.ai/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>Claude</strong>
-                        <span>Тексты, анализ, объяснения и рабочие задачи.</span>
-                    </a>
-                    <a class="quick-ai-link" href="https://chatgpt.com/" target="_blank" rel="noopener">
-                        <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
-                        <strong>ChatGPT</strong>
-                        <span>Универсальный чат для быстрых задач и идей.</span>
-                    </a>
+                        <button class="guide-card guide-card-row" type="button" data-guide="router" data-search-text="amneziawg роутер router keenetic openwrt dns маршруты wireguard">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/wg-badge.png?v=3" alt="WG">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">VPN на роутере</span>
+                                <span class="guide-row-copy">Keenetic, OpenWrt, DNS и маршруты.</span>
+                            </span>
+                            <span class="guide-row-badge">Роутеры</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
+                        <p id="search-empty" class="search-empty is-hidden">Ничего не найдено. Попробуйте запрос вроде “VPN”, “ChatGPT” или “Claude”.</p>
+                    </section>
+
+                    <section id="quick-ai" class="quick-ai" aria-label="Бесплатные ИИ для быстрого использования">
+                        <div class="section-heading section-heading-compact">
+                            <h2>Быстрый доступ к ИИ</h2>
+                        </div>
+                        <p>Сервисы для поиска ответов, текста, кода и проверки идей прямо сейчас.</p>
+                        <div class="quick-ai-grid">
+                            <a class="quick-ai-link" href="https://chatgpt.com/" target="_blank" rel="noopener">
+                                <div class="quick-ai-head">
+                                    <img class="quick-ai-logo" src="./assets/brands/chatgpt.png" alt="">
+                                    <div class="quick-ai-title">
+                                        <strong>ChatGPT</strong>
+                                        <small class="quick-ai-domain">chat.openai.com</small>
+                                    </div>
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+                                </div>
+                                <span>Универсальный чат для быстрых задач и идей.</span>
+                            </a>
+                            <a class="quick-ai-link" href="https://claude.ai/" target="_blank" rel="noopener">
+                                <div class="quick-ai-head">
+                                    <img class="quick-ai-logo" src="./assets/brands/claude.png" alt="">
+                                    <div class="quick-ai-title">
+                                        <strong>Claude</strong>
+                                        <small class="quick-ai-domain">claude.ai</small>
+                                    </div>
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+                                </div>
+                                <span>Тексты, анализ, объяснения и рабочие задачи.</span>
+                            </a>
+                            <a class="quick-ai-link" href="https://gemini.google.com/" target="_blank" rel="noopener">
+                                <div class="quick-ai-head">
+                                    <img class="quick-ai-logo" src="./assets/brands/gemini.png" alt="">
+                                    <div class="quick-ai-title">
+                                        <strong>Gemini</strong>
+                                        <small class="quick-ai-domain">gemini.google.com</small>
+                                    </div>
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+                                </div>
+                                <span>Поиск, документы, объяснения и быстрые ответы.</span>
+                            </a>
+                            <a class="quick-ai-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+                                <div class="quick-ai-head">
+                                    <img class="quick-ai-logo" src="./assets/brands/perplexity.png" alt="">
+                                    <div class="quick-ai-title">
+                                        <strong>Perplexity</strong>
+                                        <small class="quick-ai-domain">perplexity.ai</small>
+                                    </div>
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+                                </div>
+                                <span>Быстрый поиск по интернету с краткими ответами.</span>
+                            </a>
+                            <a class="quick-ai-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener">
+                                <div class="quick-ai-head">
+                                    <img class="quick-ai-logo" src="./assets/brands/deepseek.png" alt="">
+                                    <div class="quick-ai-title">
+                                        <strong>DeepSeek</strong>
+                                        <small class="quick-ai-domain">deepseek.com</small>
+                                    </div>
+                                    <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
+                                </div>
+                                <span>Универсальный чат для вопросов, текста и кода.</span>
+                            </a>
+                        </div>
+                    </section>
                 </div>
-            </section>
+            </div>
 
             <section id="chatgpt-guide" class="guide-panel is-hidden" aria-label="Оплата подписки ChatGPT">
                 <div class="panel-topbar">
@@ -1723,22 +2823,21 @@
                 <article class="simple-guide">
                     <header>
                         <h1>Оплата ChatGPT через Плати по миру</h1>
-                        <p>Инструкция нужна, чтобы подготовить карту, выбрать подходящий способ оплаты и оплатить подписку ChatGPT без лишних ошибок.</p>
                     </header>
 
                     <div class="simple-content">
                         <div class="tabs chatgpt-stage-tabs" role="tablist" aria-label="Разделы инструкции оплаты ChatGPT">
                             <button class="tab-button active" type="button" data-chatgpt-stage="prep">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Подготовка</span>
-                                <span class="tab-desc">Карта, баланс и аккаунт ChatGPT</span>
+                                <span class="tab-desc">Карта и баланс</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="go">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-slash"></use></svg>Без комиссии</span>
-                                <span class="tab-desc">Нидерланды + регион без комиссии</span>
+                                <span class="tab-desc">Регион без комиссии</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="plus">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Официальный вариант</span>
-                                <span class="tab-desc">Новая Зеландия/Испания + billing</span>
+                                <span class="tab-desc">Оплата с комиссией</span>
                             </button>
                             <button class="tab-button" type="button" data-chatgpt-stage="issues">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
@@ -1750,8 +2849,7 @@
                             <div class="instruction-stage active" data-chatgpt-panel="prep">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>Подготовка перед оплатой</h2>
-                                        <p>Карта, баланс, аккаунт ChatGPT и важные ограничения перед выбором тарифа.</p>
+                                        <h2>Подготовка</h2>
                                     </div>
                                     <span class="stage-range">Шаги 1–4</span>
                                 </div>
@@ -2043,22 +3141,21 @@
                 <div class="container">
                     <header>
                         <h1>Установка OmniRoute и Claude Code</h1>
-                        <p>Инструкция нужна, чтобы установить Claude Code через OmniRoute, подключить провайдеров и проверить запуск на Windows.</p>
                     </header>
 
                     <div class="content">
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции OmniRoute">
                             <button class="tab-button active" type="button" data-omni-tab="installation">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>Установка</span>
-                                <span class="tab-desc">Терминал, Git, Node.js, Claude Code и OmniRoute</span>
+                                <span class="tab-desc">Git, Node.js, Claude</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="configuration">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Настройка</span>
-                                <span class="tab-desc">API ключ, settings.json и провайдеры</span>
+                                <span class="tab-desc">API ключ и провайдеры</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="troubleshooting">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
-                                <span class="tab-desc">Ошибки запуска, порт и подключение</span>
+                                <span class="tab-desc">Ошибки запуска</span>
                             </button>
                         </div>
 
@@ -2470,14 +3567,13 @@ npm -v</div>
                 <article class="simple-guide">
                     <header>
                         <h1>VPN через AmneziaVPN</h1>
-                        <p>Инструкция нужна, чтобы купить VDS, установить на него VPN через AmneziaVPN и выбрать подходящий протокол подключения.</p>
                     </header>
 
                     <div class="simple-content">
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции VPN">
                             <button class="tab-button active" type="button" data-vpn-stage="server">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Сервер</span>
-                                <span class="tab-desc">Покупка VDS, страна, тариф и Ubuntu</span>
+                                <span class="tab-desc">Покупка VDS</span>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="amnezia">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>AmneziaVPN</span>
@@ -2485,11 +3581,11 @@ npm -v</div>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="protocols">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Протоколы</span>
-                                <span class="tab-desc">Скорость, маскировка и совместимость</span>
+                                <span class="tab-desc">Скорость, маскировка</span>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="issues">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
-                                <span class="tab-desc">Если сервер или VPN не подключается</span>
+                                <span class="tab-desc">VPN не подключается</span>
                             </button>
                         </div>
 
@@ -2723,6 +3819,143 @@ npm -v</div>
                     </div>
                 </article>
             </section>
+
+            <section id="router-guide" class="guide-panel is-hidden" aria-label="VPN на роутере">
+                <div class="panel-topbar">
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
+                    </div>
+                </div>
+
+                <article class="simple-guide">
+                    <header>
+                        <h1>VPN на роутере</h1>
+                    </header>
+
+                    <div class="simple-content">
+                        <div class="instruction-stage active">
+                            <div class="stage-header">
+                                <div>
+                                    <h2>Подключить VPN на роутере</h2>
+                                    <p>Роутер сам поднимает туннель, а устройства за ним выходят через VPN без отдельного приложения.</p>
+                                </div>
+                                <span class="stage-range">Keenetic / OpenWrt</span>
+                            </div>
+
+                            <div class="stage-body">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h4>Сохранить конфиг AmneziaWG</h4>
+                                        <p>В AmneziaVPN откройте сервер, выберите экспорт по протоколу <strong>AmneziaWG</strong> и сохраните файл <code>.conf</code>. Если в конфиге есть <code>S3</code>, <code>S4</code> или <code>I1</code>, роутеру нужна свежая поддержка AmneziaWG.</p>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h4>Обновить систему</h4>
+                                        <p>На <strong>Keenetic</strong> обновите KeeneticOS и включите <strong>канал разработчика</strong> в разделе настроек системы. Для <strong>OpenWrt</strong> используйте версию <strong>24.10.3+</strong>.</p>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин настроек системы Keenetic">
+                                            <img src="./assets/vpn-amnezia/router-system-settings.png" alt="Настройки системы Keenetic с выбранным каналом разработчика" loading="lazy">
+                                            <span>Настройки системы</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h4>Поставить WireGuard VPN</h4>
+                                        <p>В Keenetic откройте <strong>Управление → Настройки системы → Изменить набор компонентов</strong> и установите компонент <strong>WireGuard VPN</strong>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">4</span>
+                                    <div class="step-content">
+                                        <h4>Импортировать конфиг</h4>
+                                        <p>Перейдите в <strong>Интернет → Другие подключения</strong>, нажмите <strong>Загрузить из файла</strong> и выберите свой <code>.conf</code>. Пока не делайте его основным выходом в интернет.</p>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин других подключений Keenetic">
+                                            <img src="./assets/vpn-amnezia/router-keenetic-connections.png" alt="Раздел Другие подключения в Keenetic с импортированным AmneziaWG" loading="lazy">
+                                            <span>Импортированный AmneziaWG</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">5</span>
+                                    <div class="step-content">
+                                        <h4>Добавить DNS-профили</h4>
+                                        <p>В <strong>Интернет-фильтры → Настройка DNS</strong> добавьте Google DNS: <strong>DoT</strong> с <code>8.8.8.8</code> и <code>dns.google</code>, а также <strong>DoH</strong> с <code>https://dns.google/dns-query</code>.</p>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин DNS-профилей в Keenetic">
+                                            <img src="./assets/vpn-amnezia/router-dns-profiles-v2.png" alt="Профили DNS в Keenetic с настройками DoT и DoH" loading="lazy">
+                                            <span>DoT и DoH</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">6</span>
+                                    <div class="step-content">
+                                        <h4>Отключить DNS провайдера</h4>
+                                        <p>В разделе <strong>Интернет → Кабель Ethernet</strong> включите <strong>Игнорировать DNSv4</strong> и <strong>Игнорировать DNSv6 интернет-провайдера</strong>.</p>
+                                        <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин игнорирования DNS провайдера">
+                                            <img src="./assets/vpn-amnezia/router-dns-ignore-v2.png" alt="Параметры IPv4 и IPv6 в Keenetic с включенным игнорированием DNS провайдера" loading="lazy">
+                                            <span>Игнорирование DNS провайдера</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">7</span>
+                                    <div class="step-content">
+                                        <h4>Выдать VPN устройствам</h4>
+                                        <p>Если VPN нужен отдельным устройствам, откройте <strong>Интернет → Приоритеты подключений</strong>, создайте политику и оставьте в ней только AmneziaWG.</p>
+                                        <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин приоритетов подключений Keenetic">
+                                            <img src="./assets/vpn-amnezia/router-priorities.png" alt="Раздел Приоритеты подключений в Keenetic с политикой для AmneziaWG" loading="lazy">
+                                            <span>Политика для устройств</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">8</span>
+                                    <div class="step-content">
+                                        <h4>Либо настроить выборочные сервисы</h4>
+                                        <p>Если нужен не весь трафик, а только сервисы, используйте <strong>Маршруты DNS</strong> и <strong>Пользовательские маршруты</strong> для нужных доменов и сетей.</p>
+                                        <div class="code-block"><code>openai.com
+api.openai.com
+chatgpt.com
+cdn.oaistatic.com
+oaistatic.com
+oaiusercontent.com</code></div>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">9</span>
+                                    <div class="step-content">
+                                        <h4>Включить и проверить туннель</h4>
+                                        <p>Вернитесь в <strong>Другие подключения</strong>, включите импортированный AmneziaWG и проверьте, что появился handshake и пошёл трафик. После правок в CLI Keenetic сохраните конфиг командой <code>system configuration save</code>.</p>
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <span class="step-number">10</span>
+                                    <div class="step-content">
+                                        <h4>Если роутер на OpenWrt</h4>
+                                        <p>Подключитесь по SSH, проверьте интернет командой <code>ping github.com</code>, установите пакеты AmneziaWG и импортируйте <code>.conf</code> в LuCI как интерфейс <strong>AmneziaWG VPN</strong>.</p>
+                                        <div class="code-block"><code>sh &lt;(wget -O - https://raw.githubusercontent.com/Slava-Shchipunov/awg-openwrt/refs/heads/master/amneziawg-install.sh)</code></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
         </main>
     </div>
 
@@ -2734,12 +3967,16 @@ npm -v</div>
 
     <script>
         const hero = document.getElementById("site-hero");
+        const homeView = document.getElementById("home-view");
         const picker = document.getElementById("guide-picker");
         const quickAi = document.getElementById("quick-ai");
+        const guideSearch = document.getElementById("guide-search");
+        const searchEmpty = document.getElementById("search-empty");
         const guidePanels = {
             chatgpt: document.getElementById("chatgpt-guide"),
             omniroute: document.getElementById("omniroute-guide"),
             vpn: document.getElementById("vpn-guide"),
+            router: document.getElementById("router-guide"),
         };
         const themeButtons = document.querySelectorAll("[data-theme-choice]");
 
@@ -2771,6 +4008,10 @@ npm -v</div>
             vpn: {
                 hash: "vpn-server",
                 title: "VPN через AmneziaVPN | База инструкций",
+            },
+            router: {
+                hash: "vpn-router",
+                title: "VPN на роутере | База инструкций",
             },
         };
 
@@ -2834,9 +4075,18 @@ npm -v</div>
 
         function showPicker(updateUrl = true) {
             hero.classList.remove("is-hidden");
-            picker.classList.remove("is-hidden");
-            quickAi.classList.remove("is-hidden");
+            homeView.classList.remove("is-hidden");
             Object.values(guidePanels).forEach((panel) => panel.classList.add("is-hidden"));
+            if (guideSearch) {
+                guideSearch.value = "";
+                document.querySelectorAll("#guide-picker .guide-card").forEach((card) => card.classList.remove("is-hidden"));
+            }
+            if (searchEmpty) {
+                searchEmpty.classList.add("is-hidden");
+            }
+            if (quickAi) {
+                quickAi.classList.remove("is-hidden");
+            }
             document.title = "База инструкций";
             setSideNavCurrent("home");
             if (updateUrl) {
@@ -2847,8 +4097,7 @@ npm -v</div>
 
         function openGuide(name, updateUrl = true, shouldScroll = true) {
             hero.classList.add("is-hidden");
-            picker.classList.add("is-hidden");
-            quickAi.classList.add("is-hidden");
+            homeView.classList.add("is-hidden");
             Object.entries(guidePanels).forEach(([key, panel]) => {
                 panel.classList.toggle("is-hidden", key !== name);
             });
@@ -2880,6 +4129,25 @@ npm -v</div>
         document.querySelectorAll("[data-back]").forEach((button) => {
             button.addEventListener("click", showPicker);
         });
+
+        if (guideSearch) {
+            guideSearch.addEventListener("input", () => {
+                const query = guideSearch.value.trim().toLowerCase();
+                let visibleCount = 0;
+                document.querySelectorAll("#guide-picker .guide-card").forEach((card) => {
+                    const haystack = `${card.textContent} ${card.dataset.searchText || ""}`.toLowerCase();
+                    const isVisible = !query || haystack.includes(query);
+                    card.classList.toggle("is-hidden", !isVisible);
+                    if (isVisible) visibleCount += 1;
+                });
+                if (searchEmpty) {
+                    searchEmpty.classList.toggle("is-hidden", visibleCount > 0);
+                }
+                if (quickAi) {
+                    quickAi.classList.toggle("is-hidden", query.length > 0);
+                }
+            });
+        }
 
         function openFromHash() {
             const hash = window.location.hash.slice(1);
