@@ -898,6 +898,12 @@
             font-size: 14px;
         }
 
+        .source-note {
+            color: var(--muted);
+            font-size: 13px;
+            margin: 2px 0 0;
+        }
+
         .step {
             align-items: flex-start;
             display: flex;
@@ -1225,6 +1231,7 @@
         :root[data-theme="dark"] .link-card span,
         :root[data-theme="dark"] .info-row span,
         :root[data-theme="dark"] .protocol-card span,
+        :root[data-theme="dark"] .source-note,
         :root[data-theme="dark"] .card p,
         :root[data-theme="dark"] small {
             color: var(--muted);
@@ -4038,26 +4045,40 @@ oaiusercontent.com</code></div>
                         <div class="instruction-stage" data-router-panel="compare">
                             <div class="stage-header">
                                 <div>
-                                    <h2>Роутеры</h2>
-                                    <p>Коротко: что удобнее для VPN дома и где меньше ручной настройки.</p>
+                                    <h2>Топ роутеров для VPN</h2>
+                                    <p>Модели до 15 000 ₽, которые есть в DNS и подходят для WireGuard / AmneziaWG-сценариев.</p>
                                 </div>
-                                <span class="stage-range">Выбор</span>
+                                <span class="stage-range">Топ-6</span>
                             </div>
 
                             <div class="protocol-list">
                                 <div class="protocol-card">
-                                    <strong>Keenetic</strong>
-                                    <span>Проще для дома: понятный интерфейс, политики для устройств, DNS-профили и импорт конфига без лишней возни.</span>
+                                    <strong>1. Netcraze Hopper NC-3811</strong>
+                                    <span>11 799 ₽. В наличии. Лучший вариант до 15 000 ₽: Wi‑Fi 6 AX3000, гигабитные порты, USB 3.2, WireGuard и хороший запас для домашнего VPN.</span>
                                 </div>
                                 <div class="protocol-card">
-                                    <strong>OpenWrt</strong>
-                                    <span>Гибче и мощнее, но требует SSH, пакетов и аккуратной настройки интерфейсов, firewall и маршрутов.</span>
+                                    <strong>2. Netcraze Sprinter NC-3711</strong>
+                                    <span>10 699 ₽. В наличии. Самый спокойный выбор для большинства: Wi‑Fi 6 AX3000, гигабитная сеть, без USB, но отлично подходит под VPN на роутере.</span>
                                 </div>
                                 <div class="protocol-card">
-                                    <strong>Что выбрать</strong>
-                                    <span>Для обычной настройки бери Keenetic. OpenWrt лучше, если нужен полный контроль и не пугает ручная конфигурация.</span>
+                                    <strong>3. Netcraze Challenger SE NC-3911</strong>
+                                    <span>10 999 ₽. В наличии. Хорош, если важен быстрый порт 2.5 Гбит/с. Минус: меньше обычных LAN-портов, поэтому не всем удобен как главный роутер.</span>
+                                </div>
+                                <div class="protocol-card">
+                                    <strong>4. Netcraze Hopper SE NC-3812</strong>
+                                    <span>Около 11 000–12 000 ₽. В наличии. Похож на Hopper, но SE проще: внутренние антенны. Брать можно, но обычный Hopper выше в приоритете.</span>
+                                </div>
+                                <div class="protocol-card">
+                                    <strong>5. Netcraze Racer NC-4010</strong>
+                                    <span>5 999 ₽. В наличии. Бюджетный Wi‑Fi 6 для VPN без переплаты. Подходит, если нужен недорогой роутер, а не максимум портов и функций.</span>
+                                </div>
+                                <div class="protocol-card">
+                                    <strong>6. Netcraze Extra NC-1714</strong>
+                                    <span>4 999 ₽. В наличии. Самый бюджетный вариант с USB, но Wi‑Fi 5 и порты до 100 Мбит/с. Только если скорость не критична.</span>
                                 </div>
                             </div>
+
+                            <p class="source-note">Цены и наличие проверены по DNS 18.06.2026. По городам цифры могут отличаться.</p>
                         </div>
                     </div>
                 </article>
