@@ -736,18 +736,18 @@
         }
 
         .code-block {
-            background: #f9fafb;
-            border: 1px solid #dde3ea;
-            border-left: 4px solid #0b5cff;
+            background: var(--code-bg);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--blue-800);
             border-radius: 8px;
             box-shadow: none;
-            color: #101828;
+            color: var(--code-fg);
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
             font-size: 13px;
             line-height: 1.8;
             margin: 12px 0 16px;
             overflow-x: auto;
-            padding: 38px 17px 15px;
+            padding: 15px 17px;
             position: relative;
             white-space: pre-wrap;
             word-break: break-word;
@@ -767,11 +767,12 @@
             padding: 6px 9px;
             position: absolute;
             top: 10px;
+            display: none;
         }
 
         .code-block code {
             background: transparent;
-            color: #101828;
+            color: inherit;
             padding: 0;
         }
 
@@ -1240,8 +1241,7 @@
         }
 
         :root[data-theme="dark"] .tab-button,
-        :root[data-theme="dark"] .back-button,
-        :root[data-theme="dark"] .code-block::before {
+        :root[data-theme="dark"] .back-button {
             background: var(--panel);
             color: var(--text-soft);
         }
@@ -1282,6 +1282,7 @@
             background: var(--code-bg);
             border-color: var(--line);
             border-left-color: var(--blue-800);
+            color: var(--code-fg);
         }
 
         :root[data-theme="dark"] .app-sidebar,
@@ -1293,8 +1294,7 @@
         :root[data-theme="dark"] .tab-button,
         :root[data-theme="dark"] .guide-card,
         :root[data-theme="dark"] .guide-meta span,
-        :root[data-theme="dark"] .back-button,
-        :root[data-theme="dark"] .code-block::before {
+        :root[data-theme="dark"] .back-button {
             border-color: var(--line);
         }
 
@@ -2071,17 +2071,23 @@
         }
 
         .code-block {
-            background: #0f172a;
-            border: 0;
-            color: #e5e7eb;
+            background: var(--code-bg);
+            border: 1px solid var(--line);
+            border-left: 4px solid var(--blue-800);
+            color: var(--code-fg);
         }
 
         .code-block code {
-            color: #e5e7eb;
+            color: inherit;
         }
 
         .code-block::before {
             content: "Команда или код";
+        }
+
+        .code-block::before {
+            content: none !important;
+            display: none !important;
         }
 
         .step-media img {
