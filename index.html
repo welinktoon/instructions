@@ -2965,18 +2965,6 @@
                     </header>
 
                     <div class="simple-content">
-                        <section class="glossary-block" aria-label="Словарь оплаты ChatGPT">
-                            <h2>Словарь</h2>
-                            <div class="glossary-grid">
-                                <div class="glossary-item"><strong>СБП</strong><span>Перевод по номеру телефона или QR-коду из банка.</span></div>
-                                <div class="glossary-item"><strong>Карта для подписок</strong><span>Виртуальная карта, которой оплачивают зарубежные сервисы.</span></div>
-                                <div class="glossary-item"><strong>Регион оплаты</strong><span>Страна, которую выбирают в форме оплаты ChatGPT.</span></div>
-                                <div class="glossary-item"><strong>Конвертация</strong><span>Перевод рублей в другую валюту при оплате.</span></div>
-                                <div class="glossary-item"><strong>Комиссия</strong><span>Доплата сервиса или банка сверх цены подписки.</span></div>
-                                <div class="glossary-item"><strong>Реквизиты</strong><span>Номер карты, срок действия и CVV для оплаты.</span></div>
-                            </div>
-                        </section>
-
                         <div class="tabs chatgpt-stage-tabs" role="tablist" aria-label="Разделы инструкции оплаты ChatGPT">
                             <button class="tab-button active" type="button" data-chatgpt-stage="prep">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Подготовка</span>
@@ -3312,19 +3300,27 @@
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
                                 <span class="tab-desc">Ошибки запуска</span>
                             </button>
+                            <button class="tab-button" type="button" data-omni-tab="omni-glossary">
+                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Словарь</span>
+                                <span class="tab-desc">Термины простыми словами</span>
+                            </button>
                         </div>
 
-                        <section class="glossary-block" aria-label="Словарь OmniRoute">
-                            <h2>Словарь</h2>
-                            <div class="glossary-grid">
-                                <div class="glossary-item"><strong>Терминал</strong><span>Окно, куда вводят команды: PowerShell или Windows Terminal.</span></div>
-                                <div class="glossary-item"><strong>Git</strong><span>Программа, которая помогает скачивать и обновлять код.</span></div>
-                                <div class="glossary-item"><strong>Node.js</strong><span>Среда, без которой не запускаются многие JS-инструменты.</span></div>
-                                <div class="glossary-item"><strong>npm</strong><span>Менеджер установки пакетов для Node.js.</span></div>
-                                <div class="glossary-item"><strong>API ключ</strong><span>Секретный ключ, по которому сервис понимает, что запрос ваш.</span></div>
-                                <div class="glossary-item"><strong>settings.json</strong><span>Файл с настройками Claude Code и провайдеров.</span></div>
-                            </div>
-                        </section>
+            <div id="omni-glossary" class="tab-content">
+                <section>
+                    <div class="glossary-block" aria-label="Словарь OmniRoute">
+                        <h2>Словарь</h2>
+                        <div class="glossary-grid">
+                            <div class="glossary-item"><strong>Терминал</strong><span>Окно, куда вводят команды: PowerShell или Windows Terminal.</span></div>
+                            <div class="glossary-item"><strong>Git</strong><span>Программа, которая помогает скачивать и обновлять код.</span></div>
+                            <div class="glossary-item"><strong>Node.js</strong><span>Среда, без которой не запускаются многие JS-инструменты.</span></div>
+                            <div class="glossary-item"><strong>npm</strong><span>Менеджер установки пакетов для Node.js.</span></div>
+                            <div class="glossary-item"><strong>API ключ</strong><span>Секретный ключ, по которому сервис понимает, что запрос ваш.</span></div>
+                            <div class="glossary-item"><strong>settings.json</strong><span>Файл с настройками Claude Code и провайдеров.</span></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
 <!-- TAB 1: INSTALLATION -->
             <div id="installation" class="tab-content active">
@@ -4279,6 +4275,10 @@ oaiusercontent.com</code></div>
             troubleshooting: {
                 hash: "omniroute-problems",
                 title: "OmniRoute проблемы | База инструкций",
+            },
+            "omni-glossary": {
+                hash: "omniroute-glossary",
+                title: "OmniRoute словарь | База инструкций",
             },
         };
         const chatgptStages = {
