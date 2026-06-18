@@ -904,50 +904,6 @@
             margin: 2px 0 0;
         }
 
-        .glossary-block {
-            background: #f8fbff;
-            border: 1px solid #e1e9f8;
-            border-radius: 12px;
-            margin: 0 0 18px;
-            padding: 16px;
-        }
-
-        .glossary-block h2 {
-            color: #101828;
-            font-size: 18px;
-            margin: 0 0 10px;
-        }
-
-        .glossary-grid {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        }
-
-        .glossary-item {
-            background: #ffffff;
-            border: 1px solid #e5edf8;
-            border-radius: 8px;
-            padding: 11px 12px;
-        }
-
-        .glossary-item strong,
-        .glossary-item span {
-            display: block;
-        }
-
-        .glossary-item strong {
-            color: #101828;
-            font-size: 14px;
-            margin-bottom: 3px;
-        }
-
-        .glossary-item span {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.35;
-        }
-
         .step {
             align-items: flex-start;
             display: flex;
@@ -1251,8 +1207,6 @@
         :root[data-theme="dark"] .guide-card h2,
         :root[data-theme="dark"] .info-row strong,
         :root[data-theme="dark"] .protocol-card strong,
-        :root[data-theme="dark"] .glossary-block h2,
-        :root[data-theme="dark"] .glossary-item strong,
         :root[data-theme="dark"] .container header h1,
         :root[data-theme="dark"] .simple-guide header h1,
         :root[data-theme="dark"] h2,
@@ -1277,7 +1231,6 @@
         :root[data-theme="dark"] .link-card span,
         :root[data-theme="dark"] .info-row span,
         :root[data-theme="dark"] .protocol-card span,
-        :root[data-theme="dark"] .glossary-item span,
         :root[data-theme="dark"] .source-note,
         :root[data-theme="dark"] .card p,
         :root[data-theme="dark"] small {
@@ -1288,16 +1241,10 @@
         :root[data-theme="dark"] .quick-ai-link,
         :root[data-theme="dark"] .guide-meta span,
         :root[data-theme="dark"] .guide-badge,
-        :root[data-theme="dark"] .glossary-block,
         :root[data-theme="dark"] .info-row,
         :root[data-theme="dark"] .protocol-card,
         :root[data-theme="dark"] .step-media img {
             background: var(--panel-soft);
-        }
-
-        :root[data-theme="dark"] .glossary-item {
-            background: var(--panel);
-            border-color: var(--border);
         }
 
         :root[data-theme="dark"] .tab-button,
@@ -2810,7 +2757,7 @@
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">Оплата ChatGPT</span>
-                                <span class="guide-row-copy">Карта, СБП и оплата подписки на сайте.</span>
+                                <span class="guide-row-copy">Карта и оплата подписки на сайте.</span>
                             </span>
                             <span class="guide-row-badge">Оплата</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
@@ -2834,7 +2781,7 @@
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">VPN сервер</span>
-                                <span class="guide-row-copy">Сервер, SSH-доступ и self-hosted VPN.</span>
+                                <span class="guide-row-copy">Сервер и доступ для своего VPN.</span>
                             </span>
                             <span class="guide-row-badge">VPN</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
@@ -3002,7 +2949,7 @@
                                         <span class="step-number">2</span>
                                         <div class="step-content">
                                             <h4>Выпустить карту для подписок</h4>
-                                            <p>В мини-приложении выберите карту <strong>Для подписок</strong>, нажмите <strong>Выпустить карту</strong> и оплатите выпуск через СБП. После оплаты в кабинете появятся реквизиты карты.</p>
+                                            <p>В мини-приложении выберите карту <strong>Для подписок</strong>, нажмите <strong>Выпустить карту</strong> и оплатите выпуск через СБП (перевод из банка по номеру или QR). После оплаты в кабинете появятся реквизиты карты.</p>
                                             <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин карты для подписок Плати по миру">
                                                 <img src="./assets/platipomiru-chatgpt/subscription-card.png" alt="Экран карты для подписок в приложении Плати по миру" loading="lazy">
                                                 <span>Карта для подписок</span>
@@ -3014,7 +2961,7 @@
                                         <span class="step-number">3</span>
                                         <div class="step-content">
                                             <h4>Пополнить карту с запасом</h4>
-                                            <p>Пополните карту рублями через СБП. Баланс карты «Для подписок» отображается в EUR, а оплата ChatGPT может списаться с конвертацией и комиссией сервиса, поэтому лучше держать небольшой запас сверх стоимости подписки.</p>
+                                            <p>Пополните карту рублями через СБП. Баланс карты «Для подписок» отображается в EUR (евро), а оплата ChatGPT может списаться с конвертацией (переводом рублей в валюту) и комиссией, поэтому лучше держать небольшой запас сверх стоимости подписки.</p>
                                         </div>
                                     </div>
 
@@ -3075,7 +3022,7 @@
                                         <span class="step-number">4</span>
                                         <div class="step-content">
                                             <h4>Ввести реквизиты карты</h4>
-                                            <p>На экране оплаты укажите номер карты, срок действия и CVV из мини-приложения «Плати по миру».</p>
+                                            <p>На экране оплаты укажите номер карты, срок действия и CVV (три цифры на карте) из мини-приложения «Плати по миру».</p>
                                         </div>
                                     </div>
 
@@ -3192,7 +3139,7 @@
                                 <div class="stage-body">
                                     <h3>Платёж отклоняется</h3>
                                     <p><strong>Проверка 1:</strong> Убедитесь, что на карте достаточно средств с учётом комиссии и конвертации.</p>
-                                    <p><strong>Проверка 2:</strong> Проверьте номер карты, срок действия, CVV и статус карты в мини-приложении.</p>
+                                    <p><strong>Проверка 2:</strong> Проверьте номер карты, срок действия, CVV (три цифры на карте) и статус карты в мини-приложении.</p>
                                     <p><strong>Проверка 3:</strong> Сверьте тариф, страну подключения и billing address.</p>
 
                                     <h3>Регион не подходит</h3>
@@ -3290,33 +3237,13 @@
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="configuration">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Настройка</span>
-                                <span class="tab-desc">API ключ и провайдеры</span>
+                                <span class="tab-desc">Ключ доступа и провайдеры</span>
                             </button>
                             <button class="tab-button" type="button" data-omni-tab="troubleshooting">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
                                 <span class="tab-desc">Ошибки запуска</span>
                             </button>
-                            <button class="tab-button" type="button" data-omni-tab="omni-glossary">
-                                <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Словарь</span>
-                                <span class="tab-desc">Термины простыми словами</span>
-                            </button>
                         </div>
-
-            <div id="omni-glossary" class="tab-content">
-                <section>
-                    <div class="glossary-block" aria-label="Словарь OmniRoute">
-                        <h2>Словарь</h2>
-                        <div class="glossary-grid">
-                            <div class="glossary-item"><strong>Терминал</strong><span>Окно, куда вводят команды: PowerShell или Windows Terminal.</span></div>
-                            <div class="glossary-item"><strong>Git</strong><span>Программа, которая помогает скачивать и обновлять код.</span></div>
-                            <div class="glossary-item"><strong>Node.js</strong><span>Среда, без которой не запускаются многие JS-инструменты.</span></div>
-                            <div class="glossary-item"><strong>npm</strong><span>Менеджер установки пакетов для Node.js.</span></div>
-                            <div class="glossary-item"><strong>API ключ</strong><span>Секретный ключ, по которому сервис понимает, что запрос ваш.</span></div>
-                            <div class="glossary-item"><strong>settings.json</strong><span>Файл с настройками Claude Code и провайдеров.</span></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
 
 <!-- TAB 1: INSTALLATION -->
             <div id="installation" class="tab-content active">
@@ -3350,7 +3277,7 @@
                                     <span class="step-number">2</span>
                                     <div class="step-content">
                                         <h4>Установить Git через winget</h4>
-                                        <p>В терминале администратора выполните команду установки Git.</p>
+                                        <p>В терминале администратора выполните команду установки Git (программа для скачивания и обновления кода).</p>
                                         <div class="code-block">winget install --id Git.Git -e --source winget</div>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин установки Git">
                                             <img src="./assets/Снимок экрана 2026-04-13 162247.png" alt="Установка Git через winget в терминале" loading="lazy">
@@ -3364,7 +3291,7 @@
                                     <span class="step-number">3</span>
                                     <div class="step-content">
                                         <h4>Скачать Node.js</h4>
-                                        <p>Откройте страницу загрузки Node.js и скачайте установщик для Windows. Рекомендуемая версия для этой инструкции: <strong>Node.js 22.22.2</strong>.</p>
+                                        <p>Откройте страницу загрузки Node.js (среда для запуска JS-инструментов) и скачайте установщик для Windows. Рекомендуемая версия для этой инструкции: <strong>Node.js 22.22.2</strong>.</p>
                                         <p><a href="https://nodejs.org/en/download" target="_blank" rel="noopener">https://nodejs.org/en/download</a></p>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин страницы загрузки Node.js">
                                             <img src="./assets/Снимок экрана 2026-04-13 162328.png" alt="Страница загрузки Node.js для Windows" loading="lazy">
@@ -3389,7 +3316,7 @@
                                     <span class="step-number">5</span>
                                     <div class="step-content">
                                         <h4>Проверить Git, Node.js и npm</h4>
-                                        <p>Закройте и заново откройте терминал, затем проверьте версии.</p>
+                                        <p>Закройте и заново откройте терминал, затем проверьте версии Git, Node.js и npm (установщика пакетов).</p>
                                         <div class="code-block">git --version
 node -v
 npm -v</div>
@@ -3407,7 +3334,7 @@ npm -v</div>
                             <div class="stage-header">
                                 <div>
                                     <h2>Claude Code</h2>
-                                    <p>Глобальная установка Claude Code через npm и проверка версии.</p>
+                                    <p>Установка Claude Code через npm (установщик пакетов) и проверка версии.</p>
                                 </div>
                                 <span class="stage-range">Шаги 6–7</span>
                             </div>
@@ -3456,7 +3383,7 @@ npm -v</div>
                                     <span class="step-number">8</span>
                                     <div class="step-content">
                                         <h4>Установить OmniRoute</h4>
-                                        <p>Установите OmniRoute глобально через npm.</p>
+                                        <p>Установите OmniRoute через npm (установщик пакетов).</p>
                                         <div class="code-block">npm install -g omniroute</div>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин установки OmniRoute">
                                             <img src="./assets/Снимок экрана 2026-04-13 162451.png" alt="Установка OmniRoute через npm" loading="lazy">
@@ -3491,7 +3418,7 @@ npm -v</div>
             <!-- TAB 2: CONFIGURATION -->
             <div id="configuration" class="tab-content">
                 <section>
-                    <h2>API ключ</h2>
+                    <h2>API ключ (ключ доступа)</h2>
 
                     <div class="step">
                         <div class="step-number">1</div>
@@ -3514,9 +3441,9 @@ npm -v</div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h4>Создать API ключ</h4>
+                            <h4>Создать API ключ (ключ доступа)</h4>
                             <p>Перейти в раздел <strong>Dashboard → Endpoints</strong></p>
-                            <p><small>Создайте новый API ключ для подключения</small></p>
+                            <p><small>Создайте новый API ключ (секретный ключ доступа) для подключения.</small></p>
                         </div>
                     </div>
 
@@ -3599,17 +3526,17 @@ npm -v</div>
                     <p>Бесплатный провайдер с поддержкой различных AI моделей для программирования.</p>
 
                     <h3>Gemini CLI</h3>
-                    <p>Инструмент командной строки для работы с моделями Gemini (устаревший, но все еще доступен).</p>
+                    <p>Инструмент командной строки Gemini. Он устаревший, но всё ещё доступен.</p>
 
-                    <p>Для большинства бесплатных провайдеров авторизация происходит через панель управления OmniRoute. После подключения они становятся доступны через единый API endpoint.</p>
-                    <p>Эти провайдеры входят в состав OmniRoute и не требуют дополнительных API ключей от вас.</p>
+                    <p>Для большинства бесплатных провайдеров вход происходит через панель управления OmniRoute. После подключения они становятся доступны через общий адрес API (единую ссылку для подключений).</p>
+                    <p>Эти провайдеры входят в состав OmniRoute и не требуют дополнительных API ключей (секретных ключей доступа) от вас.</p>
                 </section>
 
                 <section>
                     <h2>Claude Code</h2>
 
-                    <h3>Файл конфигурации</h3>
-                    <p>Файл <code>settings.json</code> находится в папке:</p>
+                    <h3>Файл настроек</h3>
+                    <p>Файл <code>settings.json</code> (файл настроек Claude Code) находится в папке:</p>
                     <div class="code-block">C:\Users\ВАШ_ПОЛЬЗОВАТЕЛЬ\.claude\</div>
 
                     <p><strong>Папка создается автоматически при установке Claude Code.</strong></p>
@@ -3631,15 +3558,15 @@ npm -v</div>
                     <p>В полях <code>ANTHROPIC_DEFAULT_HAIKU_MODEL</code>, <code>ANTHROPIC_DEFAULT_SONNET_MODEL</code> и <code>ANTHROPIC_DEFAULT_OPUS_MODEL</code> вы сами задаёте модели, которые вам нужны.</p>
                     <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин settings.json">
                         <img src="./assets/Снимок экрана 2026-04-13 162754.png" alt="Пример настройки settings.json для Claude Code" loading="lazy">
-                        <span>Настройка settings.json</span>
+                        <span>Настройка файла settings.json</span>
                     </button>
 
-                    <h3>Подтверждение API ключа при первом запуске</h3>
-                    <p>После настройки файла конфигурации при первом запуске Claude Code может появиться вопрос:</p>
+                    <h3>Подтверждение API ключа (ключа доступа) при первом запуске</h3>
+                    <p>После настройки файла при первом запуске Claude Code может появиться вопрос:</p>
                     <div class="code-block">Do you want to use this API key?</div>
                     <p>Необходимо подтвердить использование ключа:</p>
                     <div class="code-block">1. Yes</div>
-                    <p><small>Это действие подтверждает использование API ключа из настроек и позволяет Claude Code корректно подключиться к OmniRoute.</small></p>
+                    <p><small>Это подтверждает использование API ключа (секретного ключа доступа) и помогает Claude Code подключиться к OmniRoute.</small></p>
                     <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин подтверждения API ключа в Claude Code">
                         <img src="./assets/Снимок экрана 2026-04-13 193749.png" alt="Подтверждение API ключа при запуске Claude Code" loading="lazy">
                         <span>Подтверждение API ключа</span>
@@ -3694,7 +3621,7 @@ npm -v</div>
                     <p><strong>Решение 2:</strong> Запустить OmniRoute на другом порту</p>
                     <div class="code-block">omniroute --port 20129</div>
 
-                    <p><strong>Решение 3:</strong> Обновить ANTHROPIC_BASE_URL в settings.json</p>
+                    <p><strong>Решение 3:</strong> Обновить ANTHROPIC_BASE_URL в <code>settings.json</code> (файле настроек Claude Code)</p>
                     <div class="code-block">"ANTHROPIC_BASE_URL": "http://localhost:20129/v1"</div>
 
                     <h3>Claude Code не видит OmniRoute</h3>
@@ -3703,7 +3630,7 @@ npm -v</div>
                     <p><strong>Проверка 2:</strong> Проверить доступность в браузере</p>
                     <div class="code-block">http://localhost:20128</div>
 
-                    <p><strong>Проверка 3:</strong> Проверить правильность API ключа в settings.json</p>
+                    <p><strong>Проверка 3:</strong> Проверить API ключ (секретный ключ доступа) в <code>settings.json</code></p>
 
                     <p><strong>Проверка 4:</strong> Выполнить диагностику в Claude Code</p>
                     <div class="code-block">/doctor</div>
@@ -3729,28 +3656,14 @@ npm -v</div>
                     </header>
 
                     <div class="simple-content">
-                        <section class="glossary-block" aria-label="Словарь VPN сервера">
-                            <h2>Словарь</h2>
-                            <div class="glossary-grid">
-                                <div class="glossary-item"><strong>VDS</strong><span>Арендованный сервер в интернете. На нём будет работать ваш VPN.</span></div>
-                                <div class="glossary-item"><strong>Дата-центр</strong><span>Место, где физически стоит сервер: Финляндия, Польша, Нидерланды и так далее.</span></div>
-                                <div class="glossary-item"><strong>Ubuntu</strong><span>Операционная система для сервера. Её выбираем в панели заказа.</span></div>
-                                <div class="glossary-item"><strong>IP-адрес</strong><span>Адрес сервера, по которому к нему подключается AmneziaVPN.</span></div>
-                                <div class="glossary-item"><strong>root</strong><span>Главный пользователь сервера с полными правами.</span></div>
-                                <div class="glossary-item"><strong>SSH</strong><span>Способ безопасно зайти на сервер и настроить его.</span></div>
-                                <div class="glossary-item"><strong>Протокол</strong><span>Тип VPN-подключения: AmneziaWG, WireGuard, XRay или OpenVPN.</span></div>
-                                <div class="glossary-item"><strong>Конфиг</strong><span>Файл с настройками VPN, который можно импортировать в приложение или роутер.</span></div>
-                            </div>
-                        </section>
-
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции VPN">
                             <button class="tab-button active" type="button" data-vpn-stage="server">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Сервер</span>
-                                <span class="tab-desc">Покупка VDS</span>
+                                <span class="tab-desc">Покупка сервера</span>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="amnezia">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg>AmneziaVPN</span>
-                                <span class="tab-desc">Self-hosted VPN и SSH-доступ</span>
+                                <span class="tab-desc">Свой VPN и доступ</span>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="protocols">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Протоколы</span>
@@ -3851,7 +3764,7 @@ npm -v</div>
                                         <span class="step-number">7</span>
                                         <div class="step-content">
                                             <h4>Оплатить и дождаться доступа</h4>
-                                            <p>После оплаты дождитесь создания сервера. В карточке услуги появятся IP-адрес, логин <code>root</code> и пароль или данные для SSH.</p>
+                                            <p>После оплаты дождитесь создания сервера. В карточке услуги появятся IP-адрес, логин <code>root</code> и пароль или данные для SSH (безопасный вход на сервер).</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3861,7 +3774,7 @@ npm -v</div>
                                 <div class="stage-header">
                                     <div>
                                         <h2>Настроить AmneziaVPN</h2>
-                                        <p>AmneziaVPN сама подключится к серверу по SSH, установит нужные пакеты и настроит VPN.</p>
+                                        <p>AmneziaVPN сама подключится к серверу по SSH (безопасный вход на сервер), установит нужные файлы и настроит VPN.</p>
                                     </div>
                                     <span class="stage-range">Шаги 1–5</span>
                                 </div>
@@ -3870,11 +3783,11 @@ npm -v</div>
                                     <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Открыть Self-hosted VPN</h4>
-                                            <p>Запустите AmneziaVPN и выберите <strong>Self-hosted VPN</strong>. Это режим “свой VPN на своём сервере”.</p>
+                                            <h4>Открыть свой VPN</h4>
+                                            <p>Запустите AmneziaVPN и выберите <strong>Self-hosted VPN</strong> (свой VPN на своём сервере).</p>
                                             <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин Self-hosted VPN">
                                                 <img src="./assets/vpn-amnezia/self-hosted-vpn.png" alt="Плитка Self-hosted VPN в AmneziaVPN" loading="lazy">
-                                                <span>Self-hosted VPN</span>
+                                                <span>Свой VPN</span>
                                             </button>
                                         </div>
                                     </div>
@@ -3883,7 +3796,7 @@ npm -v</div>
                                         <span class="step-number">2</span>
                                         <div class="step-content">
                                             <h4>Ввести данные сервера</h4>
-                                            <p>Укажите IP-адрес сервера, имя пользователя <code>root</code> и пароль от сервера. Если SSH работает на нестандартном порту, укажите IP в формате <code>IP:порт</code>.</p>
+                                            <p>Укажите IP-адрес сервера, имя пользователя <code>root</code> и пароль от сервера. Если SSH (вход на сервер) работает на нестандартном порту, укажите IP в формате <code>IP:порт</code>.</p>
                                             <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин формы SSH в AmneziaVPN">
                                                 <img src="./assets/vpn-amnezia/ssh-form.png" alt="Форма ввода IP, root и пароля SSH в AmneziaVPN" loading="lazy">
                                                 <span>Данные сервера в AmneziaVPN</span>
@@ -3951,7 +3864,7 @@ npm -v</div>
                                         <span class="step-number">1</span>
                                         <div class="step-content">
                                             <h4>Проверить IP, логин и пароль</h4>
-                                            <p>Убедитесь, что IP сервера скопирован без пробелов, логин указан <code>root</code>, а пароль взят именно от созданного VDS.</p>
+                                            <p>Убедитесь, что IP сервера скопирован без пробелов, логин указан <code>root</code>, а пароль взят именно от созданного сервера.</p>
                                         </div>
                                     </div>
 
@@ -3966,8 +3879,8 @@ npm -v</div>
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Проверить SSH-доступ</h4>
-                                            <p>Если AmneziaVPN не подключается, попробуйте зайти на сервер через терминал командой <code>ssh root@IP_СЕРВЕРА</code>. Если SSH не пускает, проблема в доступах или сервере, а не в AmneziaVPN.</p>
+                                            <h4>Проверить вход на сервер</h4>
+                                            <p>Если AmneziaVPN не подключается, попробуйте зайти на сервер через терминал командой <code>ssh root@IP_СЕРВЕРА</code>. Если SSH (вход на сервер) не пускает, проблема в доступах или сервере, а не в AmneziaVPN.</p>
                                         </div>
                                     </div>
 
@@ -4019,20 +3932,6 @@ npm -v</div>
                             </button>
                         </div>
 
-                        <section class="glossary-block" aria-label="Словарь VPN на роутере">
-                            <h2>Словарь</h2>
-                            <div class="glossary-grid">
-                                <div class="glossary-item"><strong>.conf</strong><span>Файл с настройками VPN. Его экспортируют из AmneziaVPN и загружают в роутер.</span></div>
-                                <div class="glossary-item"><strong>Туннель</strong><span>VPN-соединение между роутером и сервером.</span></div>
-                                <div class="glossary-item"><strong>DNS</strong><span>Сервис, который переводит адрес сайта в технический IP-адрес.</span></div>
-                                <div class="glossary-item"><strong>DoH / DoT</strong><span>Защищённый DNS, чтобы запросы к сайтам не уходили обычным открытым способом.</span></div>
-                                <div class="glossary-item"><strong>Политика</strong><span>Правило в роутере: какие устройства или сайты идут через VPN.</span></div>
-                                <div class="glossary-item"><strong>Handshake</strong><span>Признак, что роутер и VPN-сервер увидели друг друга.</span></div>
-                                <div class="glossary-item"><strong>LuCI</strong><span>Веб-панель OpenWrt, где настраивают интерфейсы и подключения.</span></div>
-                                <div class="glossary-item"><strong>CLI</strong><span>Командная строка роутера для редких ручных правок.</span></div>
-                            </div>
-                        </section>
-
                         <div class="instruction-stage active" data-router-panel="setup">
                             <div class="stage-header">
                                 <div>
@@ -4046,8 +3945,8 @@ npm -v</div>
                                 <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Сохранить конфиг AmneziaWG</h4>
-                                            <p>В AmneziaVPN откройте сервер, выберите экспорт <strong>AmneziaWG</strong> и сохраните файл <code>.conf</code>. Если внутри есть <code>S3</code>, <code>S4</code> или <code>I1</code>, обновите роутер перед импортом.</p>
+                                            <h4>Сохранить файл настроек AmneziaWG</h4>
+                                            <p>В AmneziaVPN откройте сервер, выберите экспорт <strong>AmneziaWG</strong> и сохраните файл <code>.conf</code> (файл настроек VPN). Если внутри есть <code>S3</code>, <code>S4</code> или <code>I1</code>, обновите роутер перед импортом.</p>
                                     </div>
                                 </div>
 
@@ -4074,8 +3973,8 @@ npm -v</div>
                                 <div class="step">
                                     <span class="step-number">4</span>
                                     <div class="step-content">
-                                        <h4>Импортировать конфиг</h4>
-                                        <p>Перейдите в <strong>Интернет → Другие подключения</strong>, нажмите <strong>Загрузить из файла</strong> и выберите свой <code>.conf</code>. Пока не делайте его основным выходом в интернет.</p>
+                                        <h4>Загрузить файл настроек</h4>
+                                        <p>Перейдите в <strong>Интернет → Другие подключения</strong>, нажмите <strong>Загрузить из файла</strong> и выберите свой <code>.conf</code> (файл настроек VPN). Пока не делайте его основным выходом в интернет.</p>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин других подключений Keenetic">
                                             <img src="./assets/vpn-amnezia/router-keenetic-connections.png" alt="Раздел Другие подключения в Keenetic с импортированным AmneziaWG" loading="lazy">
                                             <span>Импортированный AmneziaWG</span>
@@ -4087,10 +3986,10 @@ npm -v</div>
                                     <span class="step-number">5</span>
                                     <div class="step-content">
                                             <h4>Добавить DNS-профили</h4>
-                                            <p>В <strong>Интернет-фильтры → Настройка DNS</strong> добавьте защищённый Google DNS: <strong>DoT</strong> с <code>8.8.8.8</code> и <code>dns.google</code>, а также <strong>DoH</strong> с <code>https://dns.google/dns-query</code>.</p>
+                                            <p>В <strong>Интернет-фильтры → Настройка DNS</strong> добавьте защищённый Google DNS (служба адресов сайтов): <strong>DoT</strong> с <code>8.8.8.8</code> и <code>dns.google</code>, а также <strong>DoH</strong> с <code>https://dns.google/dns-query</code>. DoT и DoH — это защищённые варианты DNS.</p>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин DNS-профилей в Keenetic">
                                             <img src="./assets/vpn-amnezia/router-dns-profiles-v2.png" alt="Профили DNS в Keenetic с настройками DoT и DoH" loading="lazy">
-                                            <span>DoT и DoH</span>
+                                            <span>Защищённый DNS</span>
                                         </button>
                                     </div>
                                 </div>
@@ -4099,7 +3998,7 @@ npm -v</div>
                                     <span class="step-number">6</span>
                                     <div class="step-content">
                                         <h4>Отключить DNS провайдера</h4>
-                                        <p>В разделе <strong>Интернет → Кабель Ethernet</strong> включите <strong>Игнорировать DNSv4</strong> и <strong>Игнорировать DNSv6 интернет-провайдера</strong>.</p>
+                                        <p>В разделе <strong>Интернет → Кабель Ethernet</strong> включите <strong>Игнорировать DNSv4</strong> и <strong>Игнорировать DNSv6 интернет-провайдера</strong>. Так роутер не будет брать DNS (адреса сайтов) у провайдера.</p>
                                         <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин игнорирования DNS провайдера">
                                             <img src="./assets/vpn-amnezia/router-dns-ignore-v2.png" alt="Параметры IPv4 и IPv6 в Keenetic с включенным игнорированием DNS провайдера" loading="lazy">
                                             <span>Игнорирование DNS провайдера</span>
@@ -4111,7 +4010,7 @@ npm -v</div>
                                     <span class="step-number">7</span>
                                     <div class="step-content">
                                         <h4>Выдать VPN устройствам</h4>
-                                        <p>Если VPN нужен отдельным устройствам, откройте <strong>Интернет → Приоритеты подключений</strong>, создайте политику и оставьте в ней только AmneziaWG.</p>
+                                        <p>Если VPN нужен отдельным устройствам, откройте <strong>Интернет → Приоритеты подключений</strong>, создайте политику (правило для выбранных устройств) и оставьте в ней только AmneziaWG.</p>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин приоритетов подключений Keenetic">
                                             <img src="./assets/vpn-amnezia/router-priorities.png" alt="Раздел Приоритеты подключений в Keenetic с политикой для AmneziaWG" loading="lazy">
                                             <span>Политика для устройств</span>
@@ -4137,7 +4036,7 @@ oaiusercontent.com</code></div>
                                     <span class="step-number">9</span>
                                     <div class="step-content">
                                             <h4>Включить и проверить туннель</h4>
-                                        <p>Вернитесь в <strong>Другие подключения</strong>, включите AmneziaWG и проверьте, что появился handshake и пошёл трафик. Если меняли настройки через CLI, сохраните их командой <code>system configuration save</code>.</p>
+                                        <p>Вернитесь в <strong>Другие подключения</strong>, включите AmneziaWG и проверьте, что появился handshake (роутер и сервер увидели друг друга) и пошёл трафик. Если меняли настройки через CLI (командную строку роутера), сохраните их командой <code>system configuration save</code>.</p>
                                     </div>
                                 </div>
 
@@ -4145,7 +4044,7 @@ oaiusercontent.com</code></div>
                                     <span class="step-number">10</span>
                                     <div class="step-content">
                                             <h4>Если роутер на OpenWrt</h4>
-                                        <p>Подключитесь по SSH, проверьте интернет командой <code>ping github.com</code>, установите AmneziaWG и загрузите <code>.conf</code> в LuCI как подключение <strong>AmneziaWG VPN</strong>.</p>
+                                        <p>Подключитесь по SSH (безопасный вход на роутер), проверьте интернет командой <code>ping github.com</code>, установите AmneziaWG и загрузите <code>.conf</code> в LuCI (веб-панель OpenWrt) как подключение <strong>AmneziaWG VPN</strong>.</p>
                                         <div class="code-block"><code>sh &lt;(wget -O - https://raw.githubusercontent.com/Slava-Shchipunov/awg-openwrt/refs/heads/master/amneziawg-install.sh)</code></div>
                                     </div>
                                 </div>
@@ -4271,10 +4170,6 @@ oaiusercontent.com</code></div>
             troubleshooting: {
                 hash: "omniroute-problems",
                 title: "OmniRoute проблемы | База инструкций",
-            },
-            "omni-glossary": {
-                hash: "omniroute-glossary",
-                title: "OmniRoute словарь | База инструкций",
             },
         };
         const chatgptStages = {
