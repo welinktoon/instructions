@@ -904,6 +904,50 @@
             margin: 2px 0 0;
         }
 
+        .glossary-block {
+            background: #f8fbff;
+            border: 1px solid #e1e9f8;
+            border-radius: 12px;
+            margin: 0 0 18px;
+            padding: 16px;
+        }
+
+        .glossary-block h2 {
+            color: #101828;
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+
+        .glossary-grid {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        }
+
+        .glossary-item {
+            background: #ffffff;
+            border: 1px solid #e5edf8;
+            border-radius: 8px;
+            padding: 11px 12px;
+        }
+
+        .glossary-item strong,
+        .glossary-item span {
+            display: block;
+        }
+
+        .glossary-item strong {
+            color: #101828;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .glossary-item span {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
         .step {
             align-items: flex-start;
             display: flex;
@@ -1207,6 +1251,8 @@
         :root[data-theme="dark"] .guide-card h2,
         :root[data-theme="dark"] .info-row strong,
         :root[data-theme="dark"] .protocol-card strong,
+        :root[data-theme="dark"] .glossary-block h2,
+        :root[data-theme="dark"] .glossary-item strong,
         :root[data-theme="dark"] .container header h1,
         :root[data-theme="dark"] .simple-guide header h1,
         :root[data-theme="dark"] h2,
@@ -1231,6 +1277,7 @@
         :root[data-theme="dark"] .link-card span,
         :root[data-theme="dark"] .info-row span,
         :root[data-theme="dark"] .protocol-card span,
+        :root[data-theme="dark"] .glossary-item span,
         :root[data-theme="dark"] .source-note,
         :root[data-theme="dark"] .card p,
         :root[data-theme="dark"] small {
@@ -1241,10 +1288,16 @@
         :root[data-theme="dark"] .quick-ai-link,
         :root[data-theme="dark"] .guide-meta span,
         :root[data-theme="dark"] .guide-badge,
+        :root[data-theme="dark"] .glossary-block,
         :root[data-theme="dark"] .info-row,
         :root[data-theme="dark"] .protocol-card,
         :root[data-theme="dark"] .step-media img {
             background: var(--panel-soft);
+        }
+
+        :root[data-theme="dark"] .glossary-item {
+            background: var(--panel);
+            border-color: var(--border);
         }
 
         :root[data-theme="dark"] .tab-button,
@@ -2899,6 +2952,18 @@
                     </header>
 
                     <div class="simple-content">
+                        <section class="glossary-block" aria-label="Словарь оплаты ChatGPT">
+                            <h2>Словарь</h2>
+                            <div class="glossary-grid">
+                                <div class="glossary-item"><strong>СБП</strong><span>Перевод по номеру телефона или QR-коду из банка.</span></div>
+                                <div class="glossary-item"><strong>Карта для подписок</strong><span>Виртуальная карта, которой оплачивают зарубежные сервисы.</span></div>
+                                <div class="glossary-item"><strong>Регион оплаты</strong><span>Страна, которую выбирают в форме оплаты ChatGPT.</span></div>
+                                <div class="glossary-item"><strong>Конвертация</strong><span>Перевод рублей в другую валюту при оплате.</span></div>
+                                <div class="glossary-item"><strong>Комиссия</strong><span>Доплата сервиса или банка сверх цены подписки.</span></div>
+                                <div class="glossary-item"><strong>Реквизиты</strong><span>Номер карты, срок действия и CVV для оплаты.</span></div>
+                            </div>
+                        </section>
+
                         <div class="tabs chatgpt-stage-tabs" role="tablist" aria-label="Разделы инструкции оплаты ChatGPT">
                             <button class="tab-button active" type="button" data-chatgpt-stage="prep">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>Подготовка</span>
@@ -3235,6 +3300,18 @@
                                 <span class="tab-desc">Ошибки запуска</span>
                             </button>
                         </div>
+
+                        <section class="glossary-block" aria-label="Словарь OmniRoute">
+                            <h2>Словарь</h2>
+                            <div class="glossary-grid">
+                                <div class="glossary-item"><strong>Терминал</strong><span>Окно, куда вводят команды: PowerShell или Windows Terminal.</span></div>
+                                <div class="glossary-item"><strong>Git</strong><span>Программа, которая помогает скачивать и обновлять код.</span></div>
+                                <div class="glossary-item"><strong>Node.js</strong><span>Среда, без которой не запускаются многие JS-инструменты.</span></div>
+                                <div class="glossary-item"><strong>npm</strong><span>Менеджер установки пакетов для Node.js.</span></div>
+                                <div class="glossary-item"><strong>API ключ</strong><span>Секретный ключ, по которому сервис понимает, что запрос ваш.</span></div>
+                                <div class="glossary-item"><strong>settings.json</strong><span>Файл с настройками Claude Code и провайдеров.</span></div>
+                            </div>
+                        </section>
 
 <!-- TAB 1: INSTALLATION -->
             <div id="installation" class="tab-content active">
@@ -3647,6 +3724,20 @@ npm -v</div>
                     </header>
 
                     <div class="simple-content">
+                        <section class="glossary-block" aria-label="Словарь VPN сервера">
+                            <h2>Словарь</h2>
+                            <div class="glossary-grid">
+                                <div class="glossary-item"><strong>VDS</strong><span>Арендованный сервер в интернете. На нём будет работать ваш VPN.</span></div>
+                                <div class="glossary-item"><strong>Дата-центр</strong><span>Место, где физически стоит сервер: Финляндия, Польша, Нидерланды и так далее.</span></div>
+                                <div class="glossary-item"><strong>Ubuntu</strong><span>Операционная система для сервера. Её выбираем в панели заказа.</span></div>
+                                <div class="glossary-item"><strong>IP-адрес</strong><span>Адрес сервера, по которому к нему подключается AmneziaVPN.</span></div>
+                                <div class="glossary-item"><strong>root</strong><span>Главный пользователь сервера с полными правами.</span></div>
+                                <div class="glossary-item"><strong>SSH</strong><span>Способ безопасно зайти на сервер и настроить его.</span></div>
+                                <div class="glossary-item"><strong>Протокол</strong><span>Тип VPN-подключения: AmneziaWG, WireGuard, XRay или OpenVPN.</span></div>
+                                <div class="glossary-item"><strong>Конфиг</strong><span>Файл с настройками VPN, который можно импортировать в приложение или роутер.</span></div>
+                            </div>
+                        </section>
+
                         <div class="tabs" role="tablist" aria-label="Разделы инструкции VPN">
                             <button class="tab-button active" type="button" data-vpn-stage="server">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg>Сервер</span>
@@ -3658,7 +3749,7 @@ npm -v</div>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="protocols">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg>Протоколы</span>
-                                <span class="tab-desc">Скорость, маскировка</span>
+                                <span class="tab-desc">Скорость и стабильность</span>
                             </button>
                             <button class="tab-button" type="button" data-vpn-stage="issues">
                                 <span class="tab-title tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-alert"></use></svg>Проблемы</span>
@@ -3671,7 +3762,7 @@ npm -v</div>
                                 <div class="stage-header">
                                     <div>
                                         <h2>Купить сервер</h2>
-                                        <p>Берём минимальный VDS, выбираем страну и устанавливаем Ubuntu 24.04 без предустановленного ПО.</p>
+                                        <p>Покупаем недорогой сервер, выбираем страну и ставим чистую Ubuntu 24.04.</p>
                                     </div>
                                     <span class="stage-range">Шаги 1–7</span>
                                 </div>
@@ -3693,7 +3784,7 @@ npm -v</div>
                                         <span class="step-number">2</span>
                                         <div class="step-content">
                                             <h4>Заказать новый сервер</h4>
-                                            <p>Нажмите <strong>Заказать</strong> или кнопку заказа новой услуги. Откроется форма выбора дата-центра, периода оплаты и параметров сервера.</p>
+                                            <p>Нажмите <strong>Заказать</strong>. Откроется форма, где выбирают страну, срок оплаты и размер сервера.</p>
                                             <button class="step-media tiny zoomable-media" type="button" aria-label="Увеличить скрин кнопки заказа сервера">
                                                 <img src="./assets/vpn-amnezia/order-button.png" alt="Кнопка заказа новой услуги в биллинге" loading="lazy">
                                                 <span>Кнопка заказа сервера</span>
@@ -3711,7 +3802,7 @@ npm -v</div>
                                                 <div class="info-row"><strong>Западная и Северная Европа</strong><span>Нидерланды, Норвегия, Чехия, Австрия, Дания, Италия, Бельгия, Швейцария, Швеция, Франция: примерно 45–90 мс.</span></div>
                                                 <div class="info-row"><strong>Северная Америка</strong><span>Канада и США: примерно 120–190 мс. Брать только если нужен именно американский или канадский IP.</span></div>
                                             </div>
-                                            <p>В списке на скрине доступны варианты AMD EPYC и AMD Ryzen для Нидерландов, Финляндии, Норвегии, Чехии, Австрии, Дании, Италии, Польши, Эстонии, Литвы, Латвии, Бельгии, Швейцарии, Швеции, Франции, Канады и США.</p>
+                                            <p>Если не знаете, что выбрать, начните с ближайшей Европы: обычно она даёт нормальную скорость и меньше задержек.</p>
                                         </div>
                                     </div>
 
@@ -3743,7 +3834,7 @@ npm -v</div>
                                         <span class="step-number">6</span>
                                         <div class="step-content">
                                             <h4>Оставить минимальные ресурсы</h4>
-                                            <p>Для личного VPN обычно достаточно минимального тарифа: <strong>25 ГБ диск</strong>, <strong>2 ГБ RAM</strong>, <strong>1 CPU</strong>, <strong>1 публичный IPv4</strong>. IPv6 можно оставить включённым, если он идёт бесплатно.</p>
+                                            <p>Для личного VPN обычно хватает самого маленького тарифа: <strong>25 ГБ диск</strong>, <strong>2 ГБ RAM</strong>, <strong>1 CPU</strong> и <strong>1 публичный IPv4</strong>. IPv6 можно оставить, если он бесплатный.</p>
                                             <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить скрин ресурсов сервера">
                                                 <img src="./assets/vpn-amnezia/server-resources.png" alt="Минимальные ресурсы VDS для VPN" loading="lazy">
                                                 <span>Ресурсы сервера</span>
@@ -3775,7 +3866,7 @@ npm -v</div>
                                         <span class="step-number">1</span>
                                         <div class="step-content">
                                             <h4>Открыть Self-hosted VPN</h4>
-                                            <p>Запустите AmneziaVPN и выберите плитку <strong>Self-hosted VPN</strong>. Это режим настройки VPN на собственном сервере.</p>
+                                            <p>Запустите AmneziaVPN и выберите <strong>Self-hosted VPN</strong>. Это режим “свой VPN на своём сервере”.</p>
                                             <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить скрин Self-hosted VPN">
                                                 <img src="./assets/vpn-amnezia/self-hosted-vpn.png" alt="Плитка Self-hosted VPN в AmneziaVPN" loading="lazy">
                                                 <span>Self-hosted VPN</span>
@@ -3799,7 +3890,7 @@ npm -v</div>
                                         <span class="step-number">3</span>
                                         <div class="step-content">
                                             <h4>Нажать «Продолжить»</h4>
-                                            <p>AmneziaVPN проверит доступ по SSH и начнёт подготовку сервера. Обычно дальше нужно просто ждать: приложение само установит компоненты и создаст конфигурацию.</p>
+                                            <p>AmneziaVPN проверит доступ к серверу и начнёт настройку. Обычно дальше нужно просто подождать: приложение само всё установит.</p>
                                         </div>
                                     </div>
 
@@ -3807,7 +3898,7 @@ npm -v</div>
                                         <span class="step-number">4</span>
                                         <div class="step-content">
                                             <h4>Выбрать VPN-протокол</h4>
-                                            <p>Если приложение предложит выбрать протокол, начните с <strong>AmneziaWG</strong> или <strong>WireGuard</strong> для скорости. Если важнее маскировка трафика, выберите <strong>XRay</strong> или <strong>OpenVPN over Cloak</strong>.</p>
+                                            <p>Если приложение спросит протокол, начните с <strong>AmneziaWG</strong> или <strong>WireGuard</strong>. Они быстрые и обычно подходят для личного VPN.</p>
                                         </div>
                                     </div>
 
@@ -3825,19 +3916,19 @@ npm -v</div>
                                 <div class="stage-header">
                                     <div>
                                         <h2>Протокол</h2>
-                                        <p>Протокол влияет на скорость, устойчивость к блокировкам и совместимость с устройствами.</p>
+                                        <p>Протокол — это способ, которым VPN передаёт трафик. От него зависят скорость и стабильность.</p>
                                     </div>
                                     <span class="stage-range">Список</span>
                                 </div>
 
                                 <div class="protocol-list">
-                                    <div class="protocol-card"><strong>AmneziaWG</strong><span>Оптимальный вариант для self-hosted VPN: быстрый, похож на WireGuard, но лучше маскирует трафик.</span></div>
-                                    <div class="protocol-card"><strong>WireGuard</strong><span>Очень быстрый и простой протокол. Хорош для скорости, но может легче определяться фильтрами.</span></div>
-                                    <div class="protocol-card"><strong>XRay VLESS Reality</strong><span>Хороший вариант, когда нужна маскировка под обычный веб-трафик и устойчивость к блокировкам.</span></div>
-                                    <div class="protocol-card"><strong>OpenVPN</strong><span>Классический протокол с широкой совместимостью, но обычно медленнее WireGuard.</span></div>
-                                    <div class="protocol-card"><strong>OpenVPN over Cloak</strong><span>OpenVPN с маскировкой трафика. Подходит, если обычные VPN-протоколы плохо проходят.</span></div>
-                                    <div class="protocol-card"><strong>OpenVPN over Shadowsocks</strong><span>Маскирует VPN-трафик через Shadowsocks. Может помочь, но не всегда устойчив к анализу трафика.</span></div>
-                                    <div class="protocol-card"><strong>IKEv2/IPsec</strong><span>Стабильный протокол, хорошо переживает смену сети, но на части устройств поддержка ограничена.</span></div>
+                                    <div class="protocol-card"><strong>AmneziaWG</strong><span>Лучший стартовый вариант: быстрый и обычно хорошо работает в сложных сетях.</span></div>
+                                    <div class="protocol-card"><strong>WireGuard</strong><span>Очень быстрый и простой. Хорош, если сеть не блокирует обычный VPN.</span></div>
+                                    <div class="protocol-card"><strong>XRay VLESS Reality</strong><span>Берите, если обычный VPN часто отваливается или плохо открывает сайты.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN</strong><span>Старый надёжный вариант. Работает почти везде, но часто медленнее.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN over Cloak</strong><span>OpenVPN с дополнительной защитой от блокировок. Полезен в строгих сетях.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN over Shadowsocks</strong><span>Ещё один вариант, если обычный VPN плохо проходит через сеть.</span></div>
+                                    <div class="protocol-card"><strong>IKEv2/IPsec</strong><span>Стабильный вариант для телефонов, но не всегда удобен на роутерах.</span></div>
                                 </div>
                             </div>
 
@@ -3879,7 +3970,7 @@ npm -v</div>
                                         <span class="step-number">4</span>
                                         <div class="step-content">
                                             <h4>Сменить протокол</h4>
-                                            <p>Если подключение создаётся, но плохо работает, попробуйте другой протокол. Для скорости — AmneziaWG или WireGuard, для маскировки — XRay или OpenVPN over Cloak.</p>
+                                            <p>Если подключение создаётся, но сайты открываются плохо, попробуйте другой протокол. Начните с AmneziaWG или WireGuard.</p>
                                         </div>
                                     </div>
 
@@ -3923,29 +4014,43 @@ npm -v</div>
                             </button>
                         </div>
 
+                        <section class="glossary-block" aria-label="Словарь VPN на роутере">
+                            <h2>Словарь</h2>
+                            <div class="glossary-grid">
+                                <div class="glossary-item"><strong>.conf</strong><span>Файл с настройками VPN. Его экспортируют из AmneziaVPN и загружают в роутер.</span></div>
+                                <div class="glossary-item"><strong>Туннель</strong><span>VPN-соединение между роутером и сервером.</span></div>
+                                <div class="glossary-item"><strong>DNS</strong><span>Сервис, который переводит адрес сайта в технический IP-адрес.</span></div>
+                                <div class="glossary-item"><strong>DoH / DoT</strong><span>Защищённый DNS, чтобы запросы к сайтам не уходили обычным открытым способом.</span></div>
+                                <div class="glossary-item"><strong>Политика</strong><span>Правило в роутере: какие устройства или сайты идут через VPN.</span></div>
+                                <div class="glossary-item"><strong>Handshake</strong><span>Признак, что роутер и VPN-сервер увидели друг друга.</span></div>
+                                <div class="glossary-item"><strong>LuCI</strong><span>Веб-панель OpenWrt, где настраивают интерфейсы и подключения.</span></div>
+                                <div class="glossary-item"><strong>CLI</strong><span>Командная строка роутера для редких ручных правок.</span></div>
+                            </div>
+                        </section>
+
                         <div class="instruction-stage active" data-router-panel="setup">
                             <div class="stage-header">
                                 <div>
                                     <h2>Подключить VPN</h2>
-                                    <p>Роутер сам поднимает туннель, а устройства за ним выходят через VPN без отдельного приложения.</p>
+                                    <p>Роутер включает VPN сам. Телефон, ноутбук и другие устройства выходят через него без отдельного приложения.</p>
                                 </div>
                                 <span class="stage-range">Keenetic / OpenWrt</span>
                             </div>
 
                             <div class="stage-body">
                                 <div class="step">
-                                    <span class="step-number">1</span>
-                                    <div class="step-content">
-                                        <h4>Сохранить конфиг AmneziaWG</h4>
-                                        <p>В AmneziaVPN откройте сервер, выберите экспорт по протоколу <strong>AmneziaWG</strong> и сохраните файл <code>.conf</code>. Если в конфиге есть <code>S3</code>, <code>S4</code> или <code>I1</code>, роутеру нужна свежая поддержка AmneziaWG.</p>
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Сохранить конфиг AmneziaWG</h4>
+                                            <p>В AmneziaVPN откройте сервер, выберите экспорт <strong>AmneziaWG</strong> и сохраните файл <code>.conf</code>. Если внутри есть <code>S3</code>, <code>S4</code> или <code>I1</code>, обновите роутер перед импортом.</p>
                                     </div>
                                 </div>
 
                                 <div class="step">
                                     <span class="step-number">2</span>
                                     <div class="step-content">
-                                        <h4>Обновить систему</h4>
-                                        <p>На <strong>Keenetic</strong> обновите KeeneticOS и включите <strong>канал разработчика</strong> в разделе настроек системы. Для <strong>OpenWrt</strong> используйте версию <strong>24.10.3+</strong>.</p>
+                                            <h4>Обновить систему</h4>
+                                            <p>На <strong>Keenetic</strong> обновите KeeneticOS. Если AmneziaWG не импортируется, включите <strong>канал разработчика</strong>. Для <strong>OpenWrt</strong> нужна версия <strong>24.10.3+</strong>.</p>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин настроек системы Keenetic">
                                             <img src="./assets/vpn-amnezia/router-system-settings.png" alt="Настройки системы Keenetic с выбранным каналом разработчика" loading="lazy">
                                             <span>Настройки системы</span>
@@ -3956,8 +4061,8 @@ npm -v</div>
                                 <div class="step">
                                     <span class="step-number">3</span>
                                     <div class="step-content">
-                                        <h4>Поставить WireGuard VPN</h4>
-                                        <p>В Keenetic откройте <strong>Управление → Настройки системы → Изменить набор компонентов</strong> и установите компонент <strong>WireGuard VPN</strong>.</p>
+                                            <h4>Поставить WireGuard VPN</h4>
+                                            <p>В Keenetic откройте <strong>Управление → Настройки системы → Изменить набор компонентов</strong> и включите <strong>WireGuard VPN</strong>.</p>
                                     </div>
                                 </div>
 
@@ -3976,8 +4081,8 @@ npm -v</div>
                                 <div class="step">
                                     <span class="step-number">5</span>
                                     <div class="step-content">
-                                        <h4>Добавить DNS-профили</h4>
-                                        <p>В <strong>Интернет-фильтры → Настройка DNS</strong> добавьте Google DNS: <strong>DoT</strong> с <code>8.8.8.8</code> и <code>dns.google</code>, а также <strong>DoH</strong> с <code>https://dns.google/dns-query</code>.</p>
+                                            <h4>Добавить DNS-профили</h4>
+                                            <p>В <strong>Интернет-фильтры → Настройка DNS</strong> добавьте защищённый Google DNS: <strong>DoT</strong> с <code>8.8.8.8</code> и <code>dns.google</code>, а также <strong>DoH</strong> с <code>https://dns.google/dns-query</code>.</p>
                                         <button class="step-media zoomable-media" type="button" aria-label="Увеличить скрин DNS-профилей в Keenetic">
                                             <img src="./assets/vpn-amnezia/router-dns-profiles-v2.png" alt="Профили DNS в Keenetic с настройками DoT и DoH" loading="lazy">
                                             <span>DoT и DoH</span>
@@ -4012,8 +4117,8 @@ npm -v</div>
                                 <div class="step">
                                     <span class="step-number">8</span>
                                     <div class="step-content">
-                                        <h4>Либо настроить выборочные сервисы</h4>
-                                        <p>Если нужен не весь трафик, а только сервисы, используйте <strong>Маршруты DNS</strong> и <strong>Пользовательские маршруты</strong> для нужных доменов и сетей.</p>
+                                            <h4>Либо настроить выборочные сервисы</h4>
+                                            <p>Если через VPN нужны только отдельные сайты, настройте маршруты для их доменов. Тогда весь остальной интернет пойдёт как обычно.</p>
                                         <div class="code-block"><code>openai.com
 api.openai.com
 chatgpt.com
@@ -4026,16 +4131,16 @@ oaiusercontent.com</code></div>
                                 <div class="step">
                                     <span class="step-number">9</span>
                                     <div class="step-content">
-                                        <h4>Включить и проверить туннель</h4>
-                                        <p>Вернитесь в <strong>Другие подключения</strong>, включите импортированный AmneziaWG и проверьте, что появился handshake и пошёл трафик. После правок в CLI Keenetic сохраните конфиг командой <code>system configuration save</code>.</p>
+                                            <h4>Включить и проверить туннель</h4>
+                                        <p>Вернитесь в <strong>Другие подключения</strong>, включите AmneziaWG и проверьте, что появился handshake и пошёл трафик. Если меняли настройки через CLI, сохраните их командой <code>system configuration save</code>.</p>
                                     </div>
                                 </div>
 
                                 <div class="step">
                                     <span class="step-number">10</span>
                                     <div class="step-content">
-                                        <h4>Если роутер на OpenWrt</h4>
-                                        <p>Подключитесь по SSH, проверьте интернет командой <code>ping github.com</code>, установите пакеты AmneziaWG и импортируйте <code>.conf</code> в LuCI как интерфейс <strong>AmneziaWG VPN</strong>.</p>
+                                            <h4>Если роутер на OpenWrt</h4>
+                                        <p>Подключитесь по SSH, проверьте интернет командой <code>ping github.com</code>, установите AmneziaWG и загрузите <code>.conf</code> в LuCI как подключение <strong>AmneziaWG VPN</strong>.</p>
                                         <div class="code-block"><code>sh &lt;(wget -O - https://raw.githubusercontent.com/Slava-Shchipunov/awg-openwrt/refs/heads/master/amneziawg-install.sh)</code></div>
                                     </div>
                                 </div>
