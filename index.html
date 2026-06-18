@@ -1931,6 +1931,8 @@
             display: block;
             font-size: 11px;
             margin-top: 2px;
+            overflow: hidden;
+            text-overflow: ellipsis;
             white-space: nowrap;
         }
 
@@ -1941,7 +1943,7 @@
             font-weight: 650;
             line-height: 1.25;
             margin-top: 4px;
-            white-space: nowrap;
+            overflow-wrap: anywhere;
         }
 
         .quick-ai-link span {
@@ -2394,12 +2396,21 @@
 
         .quick-ai-link {
             min-height: 88px;
-            padding: 18px;
+            padding: 18px 36px 18px 18px;
+            position: relative;
         }
 
         .quick-ai-head {
-            grid-template-columns: 36px minmax(0, 1fr) 16px;
+            gap: 10px;
+            grid-template-columns: 36px minmax(0, 1fr);
             margin: 0;
+        }
+
+        .quick-ai-head > .icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .quick-ai-logo {
@@ -2792,7 +2803,7 @@
                                     <div class="quick-ai-title">
                                         <strong>ChatGPT</strong>
                                         <small class="quick-ai-domain">chat.openai.com</small>
-                                        <small class="quick-ai-price">Бесплатно; от 590 ₽/мес.</small>
+                                        <small class="quick-ai-price">0 ₽; от 590 ₽</small>
                                     </div>
                                     <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                 </div>
@@ -2804,7 +2815,7 @@
                                     <div class="quick-ai-title">
                                         <strong>Claude</strong>
                                         <small class="quick-ai-domain">claude.ai</small>
-                                        <small class="quick-ai-price">Бесплатно; от 1 250 ₽/мес.</small>
+                                        <small class="quick-ai-price">0 ₽; от 1 250 ₽</small>
                                     </div>
                                     <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                 </div>
@@ -2816,7 +2827,7 @@
                                     <div class="quick-ai-title">
                                         <strong>Gemini</strong>
                                         <small class="quick-ai-domain">gemini.google.com</small>
-                                        <small class="quick-ai-price">Бесплатно; от 370 ₽/мес.</small>
+                                        <small class="quick-ai-price">0 ₽; от 370 ₽</small>
                                     </div>
                                     <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                 </div>
@@ -2828,7 +2839,7 @@
                                     <div class="quick-ai-title">
                                         <strong>Perplexity</strong>
                                         <small class="quick-ai-domain">perplexity.ai</small>
-                                        <small class="quick-ai-price">Бесплатно; от 1 250 ₽/мес.</small>
+                                        <small class="quick-ai-price">0 ₽; от 1 250 ₽</small>
                                     </div>
                                     <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                 </div>
@@ -2840,7 +2851,7 @@
                                     <div class="quick-ai-title">
                                         <strong>DeepSeek</strong>
                                         <small class="quick-ai-domain">deepseek.com</small>
-                                        <small class="quick-ai-price">Чат бесплатно; API от 5 ₽/1М</small>
+                                        <small class="quick-ai-price">0 ₽; API 5 ₽/1М</small>
                                     </div>
                                     <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg>
                                 </div>
