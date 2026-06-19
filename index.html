@@ -2737,7 +2737,7 @@
         <header id="site-hero" class="site-hero">
             <div>
                 <h1>База инструкций</h1>
-                <p>Практические руководства по оплате, ИИ, VPN и настройке роутеров.</p>
+                <p>Практические руководства по оплате, ИИ, защите соединения и настройке роутеров.</p>
             </div>
             <label class="search-control" aria-label="Поиск по инструкциям">
                 <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
@@ -2787,8 +2787,8 @@
                                 <img src="./assets/brands/vpn-badge.png?v=3" alt="VPN">
                             </span>
                             <span class="guide-row-main">
-                                <span class="guide-row-title">VPN сервер</span>
-                                <span class="guide-row-copy">Сервер и доступ для своего VPN.</span>
+                                <span class="guide-row-title">Личный сервер</span>
+                                <span class="guide-row-copy">Настройка защищённого подключения на своём сервере.</span>
                             </span>
                             <span class="guide-row-badge">VPN</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
@@ -2799,8 +2799,8 @@
                                 <img src="./assets/brands/wg-badge.png?v=3" alt="WG">
                             </span>
                             <span class="guide-row-main">
-                                <span class="guide-row-title">VPN роутер</span>
-                                <span class="guide-row-copy">Keenetic, OpenWrt, DNS и маршруты.</span>
+                                <span class="guide-row-title">Роутер и туннель</span>
+                                <span class="guide-row-copy">Keenetic, OpenWrt, DNS и пользовательские правила.</span>
                             </span>
                             <span class="guide-row-badge">Роутеры</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
@@ -2808,7 +2808,7 @@
                         <p id="search-empty" class="search-empty is-hidden">Ничего не найдено. Попробуйте запрос вроде “VPN”, “ChatGPT” или “Claude”.</p>
                     </section>
 
-                    <p class="legal-disclaimer">Материалы предназначены для законного личного использования, защиты соединения и администрирования собственных устройств; не являются рекомендацией обходить ограничения доступа или нарушать правила сервисов.</p>
+                    <p class="legal-disclaimer">Материалы предназначены для законного личного использования, защиты соединения и администрирования собственных устройств; не являются рекомендацией нарушать законодательство или правила сервисов.</p>
 
                     <section id="quick-ai" class="quick-ai" aria-label="Бесплатные ИИ для быстрого использования">
                         <div class="section-heading section-heading-compact">
@@ -3643,7 +3643,7 @@ npm -v</div>
 
                 </div>
             </section>
-            <section id="vpn-guide" class="guide-panel is-hidden" aria-label="Свой VPN сервер">
+            <section id="vpn-guide" class="guide-panel is-hidden" aria-label="Личный сервер">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
                     <div class="theme-toggle" role="group" aria-label="Тема сайта">
@@ -3654,7 +3654,7 @@ npm -v</div>
 
                 <article class="simple-guide">
                     <header>
-                        <h1>VPN сервер</h1>
+                        <h1>Личный сервер</h1>
                     </header>
 
                     <div class="simple-content">
@@ -3843,11 +3843,11 @@ npm -v</div>
 
                                 <div class="protocol-list">
                                     <div class="protocol-card"><strong>AmneziaWG</strong><span>Лучший стартовый вариант: быстрый и обычно хорошо работает в сложных сетях.</span></div>
-                                    <div class="protocol-card"><strong>WireGuard</strong><span>Очень быстрый и простой. Хорош, если сеть не блокирует обычный VPN.</span></div>
-                                    <div class="protocol-card"><strong>XRay VLESS Reality</strong><span>Берите, если обычный VPN часто отваливается или плохо открывает сайты.</span></div>
+                                    <div class="protocol-card"><strong>WireGuard</strong><span>Очень быстрый и простой. Хорош для сетей, где стандартное подключение работает стабильно.</span></div>
+                                    <div class="protocol-card"><strong>XRay VLESS Reality</strong><span>Подходит, если стандартное подключение работает нестабильно.</span></div>
                                     <div class="protocol-card"><strong>OpenVPN</strong><span>Старый надёжный вариант. Работает почти везде, но часто медленнее.</span></div>
-                                    <div class="protocol-card"><strong>OpenVPN over Cloak</strong><span>OpenVPN с дополнительной защитой от блокировок. Полезен в строгих сетях.</span></div>
-                                    <div class="protocol-card"><strong>OpenVPN over Shadowsocks</strong><span>Ещё один вариант, если обычный VPN плохо проходит через сеть.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN over Cloak</strong><span>OpenVPN с дополнительным транспортным слоем. Полезен в сетях с жёсткими правилами фильтрации.</span></div>
+                                    <div class="protocol-card"><strong>OpenVPN over Shadowsocks</strong><span>Ещё один вариант, если стандартное подключение работает нестабильно.</span></div>
                                     <div class="protocol-card"><strong>IKEv2/IPsec</strong><span>Стабильный вариант для телефонов, но не всегда удобен на роутерах.</span></div>
                                 </div>
                             </div>
@@ -3919,7 +3919,7 @@ npm -v</div>
 
                 <article class="simple-guide">
                     <header>
-                        <h1>VPN роутер</h1>
+                        <h1>Роутер и туннель</h1>
                     </header>
 
                     <div class="simple-content">
@@ -4024,7 +4024,7 @@ npm -v</div>
                                     <span class="step-number">8</span>
                                     <div class="step-content">
                                             <h4>Либо настроить выборочные сервисы</h4>
-                                            <p>Если через VPN нужны только отдельные сайты, настройте маршруты для их доменов. Тогда весь остальной интернет пойдёт как обычно.</p>
+                                            <p>Если нужно распределять трафик по отдельным доменным группам, настройте пользовательские правила роутера. Тогда остальной интернет будет работать как обычно.</p>
                                         <div class="code-block"><code>openai.com
 api.openai.com
 chatgpt.com
@@ -4033,9 +4033,9 @@ oaistatic.com
 oaiusercontent.com</code></div>
                                         <p>Справочные доменные группы для пользовательских правил роутера и администрирования домашней сети:</p>
                                         <ul>
-                                            <li><a href="./assets/vpn-router-domains/google-youtube.txt" download>Google и YouTube</a></li>
-                                            <li><a href="./assets/vpn-router-domains/games.txt" download>Игры</a></li>
-                                            <li><a href="./assets/vpn-router-domains/ai-work-tools-adobe.txt" download>AI, рабочие сервисы и Adobe</a></li>
+                                            <li><a href="./assets/router-domain-groups/google-youtube.txt" download>Google и YouTube</a></li>
+                                            <li><a href="./assets/router-domain-groups/games.txt" download>Игры</a></li>
+                                            <li><a href="./assets/router-domain-groups/ai-work-tools-adobe.txt" download>AI, рабочие сервисы и Adobe</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -4151,11 +4151,11 @@ oaiusercontent.com</code></div>
             },
             vpn: {
                 hash: "vpn-server",
-                title: "VPN сервер | База инструкций",
+                title: "Личный сервер | База инструкций",
             },
             router: {
                 hash: "vpn-router",
-                title: "VPN роутер | База инструкций",
+                title: "Роутер и туннель | База инструкций",
             },
         };
 
@@ -4201,7 +4201,7 @@ oaiusercontent.com</code></div>
         const vpnStages = {
             server: {
                 hash: "vpn-server",
-                title: "VPN сервер | База инструкций",
+                title: "Личный сервер | База инструкций",
             },
             amnezia: {
                 hash: "vpn-amnezia",
@@ -4219,7 +4219,7 @@ oaiusercontent.com</code></div>
         const routerTabs = {
             setup: {
                 hash: "vpn-router",
-                title: "VPN роутер | База инструкций",
+                title: "Роутер и туннель | База инструкций",
             },
             compare: {
                 hash: "vpn-router-compare",
