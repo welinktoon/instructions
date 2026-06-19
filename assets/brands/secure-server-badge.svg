@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Личный сервер">
+  <defs>
+    <linearGradient id="serverBg" x1="18" y1="10" x2="78" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eff6ff"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+    <linearGradient id="shieldFill" x1="42" y1="31" x2="67" y2="73" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="22" fill="url(#serverBg)"/>
+  <rect x="23" y="24" width="42" height="14" rx="5" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+  <rect x="23" y="43" width="42" height="14" rx="5" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+  <rect x="23" y="62" width="42" height="14" rx="5" fill="#ffffff" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="33" cy="31" r="3" fill="#16a34a"/>
+  <circle cx="33" cy="50" r="3" fill="#16a34a"/>
+  <circle cx="33" cy="69" r="3" fill="#16a34a"/>
+  <path d="M61 37l15 5v12c0 12-7 20-15 24-8-4-15-12-15-24V42l15-5z" fill="url(#shieldFill)" stroke="#1e40af" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M54 56l5 5 10-12" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
