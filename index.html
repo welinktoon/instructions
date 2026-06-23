@@ -2738,6 +2738,21 @@
                 right: 20px;
                 width: auto;
             }
+
+            .guide-panel .panel-topbar {
+                margin-left: 20px;
+                margin-right: 20px;
+                padding-left: 0;
+                padding-right: 0;
+                width: calc(100% - 40px);
+            }
+
+            .guide-panel .container,
+            .guide-panel .simple-guide {
+                margin-left: 20px;
+                margin-right: 20px;
+                width: calc(100% - 40px);
+            }
         }
 
         @media (max-width: 520px) {
@@ -2747,6 +2762,56 @@
 
             .menu-toggle {
                 padding: 0 12px;
+            }
+        }
+
+        @media (min-width: 901px) {
+            .site-shell {
+                display: grid;
+                grid-template-columns: 246px minmax(0, 1fr);
+                grid-template-rows: auto 1fr;
+                min-height: 100vh;
+            }
+
+            .app-sidebar {
+                align-items: stretch;
+                border-bottom: 0;
+                border-right: 1px solid var(--line);
+                flex-direction: column;
+                gap: 34px;
+                grid-row: 1 / span 2;
+                height: 100vh;
+                justify-content: flex-start;
+                overflow: visible;
+                padding: 40px 34px;
+                position: sticky;
+                top: 0;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .app-sidebar .side-nav {
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                display: grid;
+                gap: 14px;
+                max-width: none;
+                min-width: 0;
+                padding: 0;
+                position: static;
+            }
+
+            .app-sidebar .side-nav button {
+                min-height: 44px;
+                width: auto;
+            }
+
+            .app-sidebar .side-nav button.is-current {
+                box-shadow: -34px 0 0 -30px var(--blue-800);
             }
         }
 
@@ -2818,6 +2883,31 @@
             background: #eef4ff;
             border-color: #084bd8;
         }
+
+        #ai-plugins-guide .guide-panel .simple-guide,
+        #ai-plugins-guide .simple-guide {
+            margin-top: 26px;
+        }
+
+        #ai-plugins-guide .instruction-stage {
+            margin-top: 10px;
+        }
+
+        #ai-plugins-guide .stage-header {
+            padding: 12px 0;
+        }
+
+        #ai-plugins-guide .stage-body {
+            padding: 0;
+        }
+
+        #ai-plugins-guide .step {
+            padding: 8px 0;
+        }
+
+        #ai-plugins-guide .step-content p {
+            margin-top: 3px;
+        }
     </style>
 </head>
 <body>
@@ -2855,6 +2945,22 @@
         <symbol id="icon-list" viewBox="0 0 24 24" fill="none">
             <path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path>
             <path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path>
+        </symbol>
+        <symbol id="icon-plug" viewBox="0 0 24 24" fill="none">
+            <path d="M9 7V3"></path>
+            <path d="M15 7V3"></path>
+            <path d="M7 7h10v4a5 5 0 0 1-5 5 5 5 0 0 1-5-5V7Z"></path>
+            <path d="M12 16v5"></path>
+            <path d="M8 21h8"></path>
+        </symbol>
+        <symbol id="icon-router" viewBox="0 0 24 24" fill="none">
+            <path d="M5 15h14a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2Z"></path>
+            <path d="M8 18h.01"></path>
+            <path d="M12 18h.01"></path>
+            <path d="M16 18h.01"></path>
+            <path d="M8 10a6 6 0 0 1 8 0"></path>
+            <path d="M5 7a10 10 0 0 1 14 0"></path>
+            <path d="M12 13h.01"></path>
         </symbol>
         <symbol id="icon-slash" viewBox="0 0 24 24" fill="none">
             <circle cx="12" cy="12" r="9"></circle>
@@ -2915,12 +3021,12 @@
                     <span>Личный сервер</span>
                 </button>
                 <button type="button" data-guide="router">
-                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg></span>
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-router"></use></svg></span>
                     <span>Роутер и туннель</span>
                 </button>
                 <button type="button" data-guide="ai-plugins">
-                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg></span>
-                    <span>Плагины AI</span>
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span>Плагины</span>
                 </button>
             </nav>
         </aside>
@@ -2996,13 +3102,13 @@
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
                         </button>
 
-                        <button class="guide-card guide-card-row" type="button" data-guide="ai-plugins" data-search-text="chatgpt claude плагины apps connectors коннекторы google drive gmail calendar github chrome vscode mcp skills">
+                        <button class="guide-card guide-card-row" type="button" data-guide="ai-plugins" data-search-text="chatgpt claude плагины apps connectors коннекторы google drive gmail calendar github chrome vscode mcp skills навыки">
                             <span class="guide-row-icon">
                                 <img src="./assets/brands/custom-plugins.png" alt="">
                             </span>
                             <span class="guide-row-main">
-                                <span class="guide-row-title">Плагины для ChatGPT и Claude</span>
-                                <span class="guide-row-copy">Что подключить в первую очередь: документы, почта, GitHub, браузер и код.</span>
+                                <span class="guide-row-title">Плагины</span>
+                                <span class="guide-row-copy">Apps, коннекторы, MCP и навыки для ChatGPT, Claude и Claude Code.</span>
                             </span>
                             <span class="guide-row-badge">Подборка</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
@@ -3091,7 +3197,7 @@
                 </div>
             </div>
 
-            <section id="ai-plugins-guide" class="guide-panel is-hidden" aria-label="Плагины для ChatGPT и Claude">
+            <section id="ai-plugins-guide" class="guide-panel is-hidden" aria-label="Плагины">
                 <div class="panel-topbar">
                     <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
                     <div class="theme-toggle" role="group" aria-label="Тема сайта">
@@ -3102,8 +3208,8 @@
 
                 <article class="simple-guide">
                     <header>
-                        <h1>Базовые плагины для ChatGPT и Claude</h1>
-                        <p>Минимальный набор, который реально нужен большинству пользователей.</p>
+                        <h1>Плагины</h1>
+                        <p>Что подключить в ChatGPT, Claude и Claude Code: Apps, коннекторы, MCP и навыки.</p>
                     </header>
 
                     <div class="simple-content">
@@ -3111,31 +3217,38 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>ChatGPT</h2>
-                                        <p>Откройте <strong>Settings → Apps</strong> и подключите только нужное.</p>
+                                        <h2>Минимальный набор</h2>
+                                        <p>Подключите сначала только то, что даёт пользу сразу.</p>
                                     </div>
-                                    <span class="stage-range">3 пункта</span>
+                                    <span class="stage-range">4 пункта</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Google Drive</h4>
-                                            <p>Документы, таблицы, презентации и PDF.</p>
+                                            <h4>ChatGPT: Google Drive</h4>
+                                            <p>Документы, таблицы, презентации и PDF через Apps / Connectors.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">2</span>
                                         <div class="step-content">
-                                            <h4>Gmail и Google Calendar</h4>
-                                            <p>Письма, встречи, подготовка ответов и план дня.</p>
+                                            <h4>Claude: Google Drive</h4>
+                                            <p>Длинные документы, конспекты, PDF и рабочие файлы.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>GitHub</h4>
-                                            <p>Код, репозитории, задачи и pull request.</p>
+                                            <h4>Claude Code: GitHub</h4>
+                                            <p>Репозитории, задачи, pull request и контекст проекта.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Codex / Claude Code: Filesystem MCP</h4>
+                                            <p>Работа с локальными файлами проекта без копирования текста вручную.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3146,38 +3259,115 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>Claude</h2>
-                                        <p>Откройте <strong>Search and tools → Add connectors</strong>.</p>
+                                        <h2>Часто используемый набор</h2>
+                                        <p>Добавляйте, если это реально есть в ежедневной работе.</p>
                                     </div>
-                                    <span class="stage-range">4 пункта</span>
+                                    <span class="stage-range">6 пунктов</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Google Drive / Gmail / Calendar</h4>
-                                            <p>Документы, почта и календарь.</p>
+                                            <h4>Gmail / Outlook</h4>
+                                            <p>Поиск писем, черновики ответов, разбор переписок.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">2</span>
                                         <div class="step-content">
-                                            <h4>GitHub</h4>
-                                            <p>Для работы с кодом и репозиториями.</p>
+                                            <h4>Google Calendar</h4>
+                                            <p>Подготовка к встречам, расписание, план дня.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Claude in Chrome</h4>
-                                            <p>Помощь прямо на открытой странице сайта.</p>
+                                            <h4>Notion / Slack / Linear</h4>
+                                            <p>База знаний, обсуждения, задачи и продуктовый контекст.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">4</span>
                                         <div class="step-content">
                                             <h4>Claude Code for VS Code</h4>
-                                            <p>Если пишете код в VS Code.</p>
+                                            <p>Правки, обзор файлов и работа с проектом прямо в редакторе.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Browser / Chrome MCP</h4>
+                                            <p>Проверка сайта, интерфейса, ошибок в браузере и локальных страниц.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Postgres / Supabase MCP</h4>
+                                            <p>Чтение схемы, запросы, диагностика данных и отчёты.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Рекомендованные плагины, MCP и навыки</h2>
+                                        <p>Набор для тех, кто часто работает с кодом, документами и автоматизацией.</p>
+                                    </div>
+                                    <span class="stage-range">7 пунктов</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>GitHub MCP / приложение GitHub</h4>
+                                            <p>Issues, PR, review comments, Actions и публикация изменений.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Google Drive / Docs / Sheets</h4>
+                                            <p>Файлы, документы, таблицы, инструкции и отчёты.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Browser MCP</h4>
+                                            <p>Локальная проверка сайта, скриншоты, клики, формы и ошибки UI.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Filesystem / Memory / Sequential Thinking</h4>
+                                            <p>Базовые MCP для файлов, устойчивого контекста и сложных задач.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Навыки для кода</h4>
+                                            <p>React, shadcn, Supabase/Postgres, Stripe, OpenAI API troubleshooting.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Навыки для документов</h4>
+                                            <p>PDF, Word, презентации, таблицы и аналитические отчёты.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">7</span>
+                                        <div class="step-content">
+                                            <h4>Свои навыки</h4>
+                                            <p>Повторяемые инструкции проекта: стиль, команды, проверки, публикация.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3186,7 +3376,7 @@
 
                         <section>
                             <div class="warning">
-                                <p><strong>Не подключайте всё подряд.</strong> Начните с Google Drive. Потом добавляйте почту, календарь и GitHub только если они реально нужны.</p>
+                                <p><strong>Не подключайте всё подряд.</strong> Почту, календарь, GitHub, базы и браузер добавляйте только если понимаете, какие данные открываете модели.</p>
                             </div>
                         </section>
                     </div>
@@ -4477,7 +4667,7 @@ oaiusercontent.com</code></div>
             },
             "ai-plugins": {
                 hash: "ai-plugins",
-                title: "Плагины для ChatGPT и Claude | База инструкций",
+                title: "Плагины | База инструкций",
             },
             vpn: {
                 hash: "vpn-server",
