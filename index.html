@@ -2905,6 +2905,15 @@
             padding: 8px 0;
         }
 
+        #ai-plugins-guide .step-number {
+            display: none;
+        }
+
+        #ai-plugins-guide .step {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
         #ai-plugins-guide .step-content p {
             margin-top: 3px;
         }
@@ -3217,6 +3226,49 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
+                                        <h2>Что такое MCP</h2>
+                                        <p>MCP — общий протокол, через который AI-приложение подключает внешние данные и инструменты.</p>
+                                    </div>
+                                    <span class="stage-range">Коротко</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Host</h4>
+                                            <p>Приложение с моделью: Claude Desktop, Codex, Cursor или другой AI-клиент.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Client</h4>
+                                            <p>Соединение между AI-приложением и конкретным MCP-сервером.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Server</h4>
+                                            <p>Лёгкий сервер, который отдаёт модели ресурсы, промпты или инструменты.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Зачем нужен</h4>
+                                            <p>Чтобы не писать отдельную интеграцию под каждый сервис: файлы, базы, GitHub, браузер и дизайн подключаются единым способом.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="source-note">Кратко по материалу: <a href="https://habr.com/ru/articles/893822/" target="_blank" rel="noopener">обзор MCP на Habr</a>.</p>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
                                         <h2>Минимальный набор</h2>
                                         <p>Подключите сначала только то, что даёт пользу сразу.</p>
                                     </div>
@@ -3240,8 +3292,8 @@
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Claude Code: GitHub</h4>
-                                            <p>Репозитории, задачи, pull request и контекст проекта.</p>
+                                            <h4>Claude Code: проект в редакторе</h4>
+                                            <p>Работа с файлами проекта, правками и локальным контекстом.</p>
                                         </div>
                                     </div>
                                     <div class="step">
@@ -3296,15 +3348,15 @@
                                     <div class="step">
                                         <span class="step-number">5</span>
                                         <div class="step-content">
-                                            <h4>Browser / Chrome MCP</h4>
-                                            <p>Проверка сайта, интерфейса, ошибок в браузере и локальных страниц.</p>
+                                            <h4>Claude in Chrome</h4>
+                                            <p>Помощь на открытых страницах, разбор интерфейса и текста сайта.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">6</span>
                                         <div class="step-content">
-                                            <h4>Postgres / Supabase MCP</h4>
-                                            <p>Чтение схемы, запросы, диагностика данных и отчёты.</p>
+                                            <h4>API-клиенты и тестовые окружения</h4>
+                                            <p>Postman, Swagger, staging-сайты и внутренние панели для проверки задач.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3318,53 +3370,39 @@
                                         <h2>Рекомендованные плагины, MCP и навыки</h2>
                                         <p>Набор для тех, кто часто работает с кодом, документами и автоматизацией.</p>
                                     </div>
-                                    <span class="stage-range">7 пунктов</span>
+                                    <span class="stage-range">5 пунктов</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
                                         <span class="step-number">1</span>
-                                        <div class="step-content">
-                                            <h4>GitHub MCP / приложение GitHub</h4>
-                                            <p>Issues, PR, review comments, Actions и публикация изменений.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">2</span>
-                                        <div class="step-content">
-                                            <h4>Google Drive / Docs / Sheets</h4>
-                                            <p>Файлы, документы, таблицы, инструкции и отчёты.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">3</span>
-                                        <div class="step-content">
-                                            <h4>Browser MCP</h4>
-                                            <p>Локальная проверка сайта, скриншоты, клики, формы и ошибки UI.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <div class="step-content">
-                                            <h4>Filesystem / Memory / Sequential Thinking</h4>
-                                            <p>Базовые MCP для файлов, устойчивого контекста и сложных задач.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">5</span>
                                         <div class="step-content">
                                             <h4>Навыки для кода</h4>
                                             <p>React, shadcn, Supabase/Postgres, Stripe, OpenAI API troubleshooting.</p>
                                         </div>
                                     </div>
                                     <div class="step">
-                                        <span class="step-number">6</span>
+                                        <span class="step-number">2</span>
                                         <div class="step-content">
                                             <h4>Навыки для документов</h4>
                                             <p>PDF, Word, презентации, таблицы и аналитические отчёты.</p>
                                         </div>
                                     </div>
                                     <div class="step">
-                                        <span class="step-number">7</span>
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Навыки для дизайна</h4>
+                                            <p>Figma, product design, image-to-code, moodboard и визуальная проверка UI.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Навыки для аналитики</h4>
+                                            <p>KPI, dashboards, reports, metric diagnostics и визуализация данных.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
                                         <div class="step-content">
                                             <h4>Свои навыки</h4>
                                             <p>Повторяемые инструкции проекта: стиль, команды, проверки, публикация.</p>
@@ -3375,8 +3413,86 @@
                         </section>
 
                         <section>
-                            <div class="warning">
-                                <p><strong>Не подключайте всё подряд.</strong> Почту, календарь, GitHub, базы и браузер добавляйте только если понимаете, какие данные открываете модели.</p>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>MCP с GitHub</h2>
+                                        <p>Для выбора удобно использовать каталог <a href="https://mcpservers.org/" target="_blank" rel="noopener">mcpservers.org</a>: там есть Featured, Official и категории по задачам.</p>
+                                    </div>
+                                    <span class="stage-range">10 MCP</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Кодинг: GitHub MCP</h4>
+                                            <p>Работа с issues, pull request, файлами репозитория, review comments и GitHub Actions.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Браузер: Chrome DevTools MCP / Playwright MCP</h4>
+                                            <p>Проверка интерфейса, клики, формы, console errors, screenshots и локальные сайты.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Документация: Context7 MCP</h4>
+                                            <p>Актуальная документация библиотек и фреймворков прямо в промптах для кодинга.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Базы и аналитика: Supabase MCP</h4>
+                                            <p>Проекты Supabase, SQL, auth, storage, edge functions и работа с данными.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Web scraping: Firecrawl MCP</h4>
+                                            <p>Поиск, краулинг страниц и извлечение структурированных данных из сайтов.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Поиск: Exa MCP</h4>
+                                            <p>Поисковый MCP для AI-агентов: быстро находить страницы, источники и контекст.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">7</span>
+                                        <div class="step-content">
+                                            <h4>Инфраструктура: Cloudflare MCP</h4>
+                                            <p>Workers, KV, R2, D1 и другие ресурсы Cloudflare из AI-клиента.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">8</span>
+                                        <div class="step-content">
+                                            <h4>Кодовая база: DeepWiki by Devin</h4>
+                                            <p>Быстро получать ответы по репозиторию и понимать чужой код без долгого ручного разбора.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">9</span>
+                                        <div class="step-content">
+                                            <h4>Дизайн: Figma MCP</h4>
+                                            <p>Для макетов, компонентов, размеров, стилей и передачи контекста из дизайна в код.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">10</span>
+                                        <div class="step-content">
+                                            <h4>Файлы: Filesystem MCP</h4>
+                                            <p>Базовый сервер для локальных файлов проекта: читать, искать и готовить правки.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
