@@ -1781,8 +1781,8 @@
 
         .guide-row-icon {
             align-items: center;
-            background: var(--panel-soft);
-            border: 1px solid var(--line);
+            background: transparent;
+            border: 0;
             border-radius: 12px;
             display: flex;
             height: 56px;
@@ -1792,9 +1792,9 @@
 
         .guide-row-icon img {
             display: block;
-            height: 30px;
+            height: 64px;
             object-fit: contain;
-            width: 30px;
+            width: 64px;
         }
 
         .guide-row-icon-text {
@@ -2390,8 +2390,8 @@
         }
 
         .guide-row-icon img {
-            height: 56px;
-            width: 56px;
+            height: 76px;
+            width: 76px;
         }
 
         .guide-row-title {
@@ -2612,8 +2612,13 @@
             }
 
             .guide-row-icon {
-                height: 64px;
-                width: 64px;
+                height: 76px;
+                width: 76px;
+            }
+
+            .guide-row-icon img {
+                height: 72px;
+                width: 72px;
             }
         }
 
@@ -2635,6 +2640,183 @@
                 grid-template-columns: 80px minmax(0, 1fr) 20px;
                 min-height: 132px;
             }
+        }
+
+        .site-shell {
+            display: block;
+        }
+
+        main,
+        .site-hero {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-sidebar {
+            align-items: center;
+            background: var(--panel);
+            border-bottom: 1px solid var(--line);
+            border-right: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            height: auto;
+            justify-content: space-between;
+            overflow: visible;
+            padding: 14px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 30;
+        }
+
+        .menu-toggle {
+            align-items: center;
+            background: var(--panel-soft);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            color: var(--ink);
+            cursor: pointer;
+            display: inline-flex;
+            font-size: 14px;
+            font-weight: 700;
+            gap: 8px;
+            min-height: 42px;
+            padding: 0 14px;
+        }
+
+        .menu-toggle .icon {
+            color: var(--blue-800);
+            height: 18px;
+            width: 18px;
+        }
+
+        .menu-toggle:hover,
+        .menu-toggle:focus-visible,
+        .menu-toggle[aria-expanded="true"] {
+            background: var(--active);
+            border-color: var(--active-line);
+            color: var(--blue-800);
+            outline: none;
+        }
+
+        .app-sidebar .side-nav {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            display: none;
+            gap: 4px;
+            max-width: calc(100vw - 32px);
+            min-width: 260px;
+            padding: 8px;
+            position: absolute;
+            right: 40px;
+            top: calc(100% + 8px);
+        }
+
+        .app-sidebar.menu-open .side-nav {
+            display: grid;
+        }
+
+        .app-sidebar .side-nav button {
+            border-radius: 10px;
+            min-height: 44px;
+            width: 100%;
+        }
+
+        .app-sidebar .side-nav button.is-current {
+            box-shadow: none;
+        }
+
+        @media (max-width: 900px) {
+            .app-sidebar {
+                padding: 12px 20px;
+            }
+
+            .app-sidebar .side-nav {
+                left: 20px;
+                right: 20px;
+                width: auto;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .menu-toggle span {
+                display: none;
+            }
+
+            .menu-toggle {
+                padding: 0 12px;
+            }
+        }
+
+        .quick-ai-grid {
+            gap: 12px;
+        }
+
+        .quick-ai-link {
+            min-height: 82px;
+            padding: 12px 34px 12px 14px;
+        }
+
+        .quick-ai-head {
+            gap: 10px;
+            grid-template-columns: 32px minmax(0, 1fr);
+        }
+
+        .quick-ai-logo {
+            height: 32px;
+            width: 32px;
+        }
+
+        .quick-ai-link strong {
+            font-size: 14px;
+        }
+
+        .quick-ai-price,
+        .quick-ai-limit {
+            font-size: 11px;
+            line-height: 1.25;
+        }
+
+        .quick-ai-link > span {
+            display: none;
+        }
+
+        .tab-button {
+            transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+        }
+
+        .tab-button:hover,
+        .tab-button:focus-visible {
+            background: #f3f7ff;
+            border-color: #7aa7ff;
+            color: var(--blue-800);
+            outline: none;
+            transform: translateY(-1px);
+        }
+
+        .tab-button:hover .tab-title,
+        .tab-button:focus-visible .tab-title {
+            color: var(--blue-800);
+        }
+
+        .tab-button:hover .tab-desc,
+        .tab-button:focus-visible .tab-desc {
+            color: #275bca;
+        }
+
+        .tab-button.active {
+            background: transparent;
+            border-color: var(--blue-800);
+            color: var(--blue-800);
+            transform: none;
+        }
+
+        .tab-button.active:hover,
+        .tab-button.active:focus-visible {
+            background: #eef4ff;
+            border-color: #084bd8;
         }
     </style>
 </head>
@@ -2711,7 +2893,11 @@
                     <strong>Инструкции</strong>
                 </span>
             </a>
-            <nav class="side-nav" aria-label="Инструкции">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                <svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg>
+                <span>Меню</span>
+            </button>
+            <nav id="site-menu" class="side-nav" aria-label="Инструкции">
                 <button type="button" data-back>
                     <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-home"></use></svg></span>
                     <span>Главная</span>
@@ -2731,6 +2917,10 @@
                 <button type="button" data-guide="router">
                     <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg></span>
                     <span>Роутер и туннель</span>
+                </button>
+                <button type="button" data-guide="ai-plugins">
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg></span>
+                    <span>Плагины AI</span>
                 </button>
             </nav>
         </aside>
@@ -2760,7 +2950,7 @@
                     <section id="guide-picker" class="guide-picker" aria-label="Выбор инструкции">
                         <button class="guide-card guide-card-row" type="button" data-guide="chatgpt" data-search-text="оплата chatgpt платипомиру карта подписка сбп plus pro">
                             <span class="guide-row-icon">
-                                <img src="./assets/brands/chatgpt.png" alt="">
+                                <img src="./assets/brands/custom-ai-chat.png" alt="">
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">Оплата ChatGPT</span>
@@ -2772,7 +2962,7 @@
 
                         <button class="guide-card guide-card-row" type="button" data-guide="omniroute" data-search-text="omniroute claude code windows node api ключ провайдеры установка настройка">
                             <span class="guide-row-icon">
-                                <img src="./assets/brands/claude.png" alt="">
+                                <img src="./assets/brands/custom-claude.png" alt="">
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">OmniRoute</span>
@@ -2784,7 +2974,7 @@
 
                         <button class="guide-card guide-card-row" type="button" data-guide="vpn" data-search-text="защищённое подключение amnezia vds сервер ubuntu wireguard self-hosted протоколы">
                             <span class="guide-row-icon">
-                                <img src="./assets/brands/secure-server-badge.svg?v=1" alt="">
+                                <img src="./assets/brands/custom-server.png" alt="">
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">Личный сервер</span>
@@ -2796,13 +2986,25 @@
 
                         <button class="guide-card guide-card-row" type="button" data-guide="router" data-search-text="amneziawg роутер router keenetic openwrt dns маршруты wireguard">
                             <span class="guide-row-icon">
-                                <img src="./assets/brands/router-tunnel-badge.svg?v=1" alt="">
+                                <img src="./assets/brands/custom-router.png" alt="">
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">Роутер и туннель</span>
                                 <span class="guide-row-copy">Keenetic, OpenWrt, DNS и пользовательские правила.</span>
                             </span>
                             <span class="guide-row-badge">Роутеры</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
+
+                        <button class="guide-card guide-card-row" type="button" data-guide="ai-plugins" data-search-text="chatgpt claude плагины apps connectors коннекторы google drive gmail calendar github chrome vscode mcp skills">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/custom-plugins.png" alt="">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">Плагины для ChatGPT и Claude</span>
+                                <span class="guide-row-copy">Что подключить в первую очередь: документы, почта, GitHub, браузер и код.</span>
+                            </span>
+                            <span class="guide-row-badge">Подборка</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
                         </button>
                         <p id="search-empty" class="search-empty is-hidden">Ничего не найдено. Попробуйте запрос вроде “роутер”, “ChatGPT” или “Claude”.</p>
@@ -2888,6 +3090,108 @@
                     </section>
                 </div>
             </div>
+
+            <section id="ai-plugins-guide" class="guide-panel is-hidden" aria-label="Плагины для ChatGPT и Claude">
+                <div class="panel-topbar">
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
+                    </div>
+                </div>
+
+                <article class="simple-guide">
+                    <header>
+                        <h1>Базовые плагины для ChatGPT и Claude</h1>
+                        <p>Минимальный набор, который реально нужен большинству пользователей.</p>
+                    </header>
+
+                    <div class="simple-content">
+                        <section>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>ChatGPT</h2>
+                                        <p>Откройте <strong>Settings → Apps</strong> и подключите только нужное.</p>
+                                    </div>
+                                    <span class="stage-range">3 пункта</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Google Drive</h4>
+                                            <p>Документы, таблицы, презентации и PDF.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Gmail и Google Calendar</h4>
+                                            <p>Письма, встречи, подготовка ответов и план дня.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>GitHub</h4>
+                                            <p>Код, репозитории, задачи и pull request.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Claude</h2>
+                                        <p>Откройте <strong>Search and tools → Add connectors</strong>.</p>
+                                    </div>
+                                    <span class="stage-range">4 пункта</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Google Drive / Gmail / Calendar</h4>
+                                            <p>Документы, почта и календарь.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>GitHub</h4>
+                                            <p>Для работы с кодом и репозиториями.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Claude in Chrome</h4>
+                                            <p>Помощь прямо на открытой странице сайта.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Claude Code for VS Code</h4>
+                                            <p>Если пишете код в VS Code.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <div class="warning">
+                                <p><strong>Не подключайте всё подряд.</strong> Начните с Google Drive. Потом добавляйте почту, календарь и GitHub только если они реально нужны.</p>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </section>
 
             <section id="chatgpt-guide" class="guide-panel is-hidden" aria-label="Оплата подписки ChatGPT">
                 <div class="panel-topbar">
@@ -3244,8 +3548,6 @@
 <!-- TAB 1: INSTALLATION -->
             <div id="installation" class="tab-content active">
                 <section>
-                    <h2>Установка</h2>
-
                     <div class="chatgpt-steps">
                         <div class="instruction-stage">
                             <div class="stage-header">
@@ -4111,10 +4413,42 @@ oaiusercontent.com</code></div>
         const guidePanels = {
             chatgpt: document.getElementById("chatgpt-guide"),
             omniroute: document.getElementById("omniroute-guide"),
+            "ai-plugins": document.getElementById("ai-plugins-guide"),
             vpn: document.getElementById("vpn-guide"),
             router: document.getElementById("router-guide"),
         };
         const themeButtons = document.querySelectorAll("[data-theme-choice]");
+        const appSidebar = document.querySelector(".app-sidebar");
+        const menuToggle = document.querySelector(".menu-toggle");
+
+        function closeMenu() {
+            if (!appSidebar || !menuToggle) return;
+            appSidebar.classList.remove("menu-open");
+            menuToggle.setAttribute("aria-expanded", "false");
+        }
+
+        function toggleMenu() {
+            if (!appSidebar || !menuToggle) return;
+            const isOpen = appSidebar.classList.toggle("menu-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener("click", (event) => {
+                event.stopPropagation();
+                toggleMenu();
+            });
+        }
+
+        document.addEventListener("click", (event) => {
+            if (!appSidebar?.classList.contains("menu-open")) return;
+            if (appSidebar.contains(event.target)) return;
+            closeMenu();
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeMenu();
+        });
 
         function applyTheme(theme) {
             const nextTheme = theme === "dark" ? "dark" : "light";
@@ -4140,6 +4474,10 @@ oaiusercontent.com</code></div>
             omniroute: {
                 hash: "omniroute-install",
                 title: "OmniRoute | База инструкций",
+            },
+            "ai-plugins": {
+                hash: "ai-plugins",
+                title: "Плагины для ChatGPT и Claude | База инструкций",
             },
             vpn: {
                 hash: "vpn-server",
@@ -4220,6 +4558,7 @@ oaiusercontent.com</code></div>
         };
 
         function showPicker(updateUrl = true) {
+            closeMenu();
             hero.classList.remove("is-hidden");
             homeView.classList.remove("is-hidden");
             Object.values(guidePanels).forEach((panel) => panel.classList.add("is-hidden"));
@@ -4242,6 +4581,7 @@ oaiusercontent.com</code></div>
         }
 
         function openGuide(name, updateUrl = true, shouldScroll = true) {
+            closeMenu();
             hero.classList.add("is-hidden");
             homeView.classList.add("is-hidden");
             Object.entries(guidePanels).forEach(([key, panel]) => {
