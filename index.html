@@ -2897,6 +2897,18 @@
             padding: 0;
         }
 
+        #ai-plugins-guide .plugin-columns {
+            display: grid;
+            gap: 28px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        #ai-plugins-guide .plugin-column h3 {
+            color: var(--ink);
+            font-size: 1.05rem;
+            margin: 0 0 10px;
+        }
+
         #ai-plugins-guide .step {
             padding: 8px 0;
         }
@@ -2912,6 +2924,13 @@
 
         #ai-plugins-guide .step-content p {
             margin-top: 3px;
+        }
+
+        @media (max-width: 760px) {
+            #ai-plugins-guide .plugin-columns {
+                gap: 14px;
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -3266,37 +3285,57 @@
                                 <div class="stage-header">
                                     <div>
                                         <h2>Минимальный набор</h2>
-                                        <p>Подключите сначала только то, что даёт пользу сразу.</p>
+                                        <p>Подключите сначала только то, что даёт пользу сразу. Для ChatGPT/Codex и Claude наборы лучше держать отдельно.</p>
                                     </div>
-                                    <span class="stage-range">4 пункта</span>
+                                    <span class="stage-range">2 колонки</span>
                                 </div>
-                                <div class="stage-body">
-                                    <div class="step">
-                                        <span class="step-number">1</span>
-                                        <div class="step-content">
-                                            <h4>ChatGPT: Google Drive</h4>
-                                            <p>Документы, таблицы, презентации и PDF через Apps / Connectors.</p>
+                                <div class="stage-body plugin-columns">
+                                    <div class="plugin-column">
+                                        <h3>ChatGPT / Codex</h3>
+                                        <div class="step">
+                                            <span class="step-number">1</span>
+                                            <div class="step-content">
+                                                <h4>Google Drive</h4>
+                                                <p>Документы, таблицы, презентации и PDF через Apps / Connectors.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <span class="step-number">2</span>
+                                            <div class="step-content">
+                                                <h4>GitHub</h4>
+                                                <p>Issues, pull requests, review comments, Actions и работа с репозиториями.</p>
+                                            </div>
+                                        </div>
+                                        <div class="step">
+                                            <span class="step-number">3</span>
+                                            <div class="step-content">
+                                                <h4>Filesystem MCP</h4>
+                                                <p>Локальные файлы проекта для Codex без копирования текста вручную.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="step">
-                                        <span class="step-number">2</span>
-                                        <div class="step-content">
-                                            <h4>Claude: Google Drive</h4>
-                                            <p>Длинные документы, конспекты, PDF и рабочие файлы.</p>
+                                    <div class="plugin-column">
+                                        <h3>Claude</h3>
+                                        <div class="step">
+                                            <span class="step-number">1</span>
+                                            <div class="step-content">
+                                                <h4>Google Drive</h4>
+                                                <p>Длинные документы, конспекты, PDF и рабочие файлы.</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">3</span>
-                                        <div class="step-content">
-                                            <h4>Claude Code: проект в редакторе</h4>
-                                            <p>Работа с файлами проекта, правками и локальным контекстом.</p>
+                                        <div class="step">
+                                            <span class="step-number">2</span>
+                                            <div class="step-content">
+                                                <h4>Claude Code в редакторе</h4>
+                                                <p>Работа с файлами проекта, правками и локальным контекстом.</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <div class="step-content">
-                                            <h4>Codex / Claude Code: Filesystem MCP</h4>
-                                            <p>Работа с локальными файлами проекта без копирования текста вручную.</p>
+                                        <div class="step">
+                                            <span class="step-number">3</span>
+                                            <div class="step-content">
+                                                <h4>Filesystem MCP</h4>
+                                                <p>Локальные файлы проекта для Claude Code без ручного переноса контекста.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
