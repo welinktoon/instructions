@@ -3052,6 +3052,14 @@
                     <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
                     <span>Плагины</span>
                 </button>
+                <button type="button" data-guide="yandex-mcp">
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span>Подключение Яндекса</span>
+                </button>
+                <button type="button" data-guide="google-mcp">
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span>Подключение Google</span>
+                </button>
             </nav>
         </aside>
         <header id="site-hero" class="site-hero">
@@ -3135,6 +3143,30 @@
                                 <span class="guide-row-copy">Apps, коннекторы, MCP и навыки для ChatGPT, Claude и Claude Code.</span>
                             </span>
                             <span class="guide-row-badge">Подборка</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
+
+                        <button class="guide-card guide-card-row" type="button" data-guide="yandex-mcp" data-search-text="яндекс tracker трекер почта диск календарь метрика директ oauth token токен mcp codex chatgpt claude cloud">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/mcp-yandex-connect.png" alt="">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">Подключение Яндекса</span>
+                                <span class="guide-row-copy">Трекер, Почта, Диск, Календарь и другие сервисы через MCP.</span>
+                            </span>
+                            <span class="guide-row-badge">Подключение</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
+
+                        <button class="guide-card guide-card-row" type="button" data-guide="google-mcp" data-search-text="google drive gmail calendar workspace oauth cloud console token токен mcp codex chatgpt claude">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/mcp-google-connect.png" alt="">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">Подключение Google</span>
+                                <span class="guide-row-copy">Google Drive, Gmail и Calendar через готовый коннектор или OAuth.</span>
+                            </span>
+                            <span class="guide-row-badge">Подключение</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
                         </button>
                         <p id="search-empty" class="search-empty is-hidden">Ничего не найдено. Попробуйте запрос вроде “роутер”, “ChatGPT” или “Claude”.</p>
@@ -3241,42 +3273,25 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>Что такое MCP</h2>
-                                        <p>MCP — общий протокол, через который AI-приложение подключает внешние данные и инструменты.</p>
+                                        <h2>Универсальные наборы</h2>
+                                        <p>Выберите набор по рабочим сервисам и подключайте только то, чем пользуетесь.</p>
                                     </div>
-                                    <span class="stage-range">Коротко</span>
+                                    <span class="stage-range">Старт</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
-                                        <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Host</h4>
-                                            <p>Приложение с моделью: Claude Desktop, Codex, Cursor или другой AI-клиент.</p>
+                                            <h4>Google или Яндекс</h4>
+                                            <p>Почта, календарь, файлы и таблицы — базовый набор для большинства задач.</p>
                                         </div>
                                     </div>
                                     <div class="step">
-                                        <span class="step-number">2</span>
                                         <div class="step-content">
-                                            <h4>Client</h4>
-                                            <p>Соединение между AI-приложением и конкретным MCP-сервером.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">3</span>
-                                        <div class="step-content">
-                                            <h4>Server</h4>
-                                            <p>Лёгкий сервер, который отдаёт модели ресурсы, промпты или инструменты.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <div class="step-content">
-                                            <h4>Зачем нужен</h4>
-                                            <p>Чтобы не писать отдельную интеграцию под каждый сервис: файлы, базы, GitHub, браузер и дизайн подключаются единым способом.</p>
+                                            <h4>Для разработки</h4>
+                                            <p>Добавьте GitHub и инструменты для проверки сайта.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="source-note">Кратко по материалу: <a href="https://habr.com/ru/articles/893822/" target="_blank" rel="noopener">обзор MCP на Habr</a>.</p>
                             </div>
                         </section>
 
@@ -3284,57 +3299,57 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>Минимальный набор</h2>
-                                        <p>Подключите сначала только то, что даёт пользу сразу. Для ChatGPT/Codex и Claude наборы лучше держать отдельно.</p>
+                                        <h2>Работа с сервисами</h2>
+                                        <p>Готовые наборы для ежедневной работы.</p>
                                     </div>
-                                    <span class="stage-range">2 колонки</span>
+                                    <span class="stage-range">Google + Яндекс</span>
                                 </div>
                                 <div class="stage-body plugin-columns">
                                     <div class="plugin-column">
-                                        <h3>ChatGPT / Codex</h3>
+                                        <h3>Google</h3>
                                         <div class="step">
                                             <span class="step-number">1</span>
                                             <div class="step-content">
-                                                <h4>Google Drive</h4>
-                                                <p>Документы, таблицы, презентации и PDF через Apps / Connectors.</p>
+                                                <h4>Gmail</h4>
+                                                <p>Письма и черновики ответов.</p>
                                             </div>
                                         </div>
                                         <div class="step">
                                             <span class="step-number">2</span>
                                             <div class="step-content">
-                                                <h4>GitHub</h4>
-                                                <p>Issues, pull requests, review comments, Actions и работа с репозиториями.</p>
+                                                <h4>Google Calendar</h4>
+                                                <p>Встречи и расписание.</p>
                                             </div>
                                         </div>
                                         <div class="step">
                                             <span class="step-number">3</span>
                                             <div class="step-content">
-                                                <h4>Filesystem MCP</h4>
-                                                <p>Локальные файлы проекта для Codex без копирования текста вручную.</p>
+                                                <h4>Google Drive и Sheets</h4>
+                                                <p>Файлы, документы и таблицы.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="plugin-column">
-                                        <h3>Claude</h3>
+                                        <h3>Яндекс</h3>
                                         <div class="step">
                                             <span class="step-number">1</span>
                                             <div class="step-content">
-                                                <h4>Google Drive</h4>
-                                                <p>Длинные документы, конспекты, PDF и рабочие файлы.</p>
+                                                <h4>Яндекс Почта</h4>
+                                                <p>Письма и черновики.</p>
                                             </div>
                                         </div>
                                         <div class="step">
                                             <span class="step-number">2</span>
                                             <div class="step-content">
-                                                <h4>Claude Code в редакторе</h4>
-                                                <p>Работа с файлами проекта, правками и локальным контекстом.</p>
+                                                <h4>Яндекс Календарь и Диск</h4>
+                                                <p>Встречи и рабочие файлы.</p>
                                             </div>
                                         </div>
                                         <div class="step">
                                             <span class="step-number">3</span>
                                             <div class="step-content">
-                                                <h4>Filesystem MCP</h4>
-                                                <p>Локальные файлы проекта для Claude Code без ручного переноса контекста.</p>
+                                                <h4>Яндекс Трекер</h4>
+                                                <p>Задачи, очереди и комментарии.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -3346,54 +3361,66 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>Часто используемый набор</h2>
-                                        <p>Добавляйте, если это реально есть в ежедневной работе.</p>
+                                        <h2>Разработка и тесты</h2>
+                                        <p>Короткий набор для кода и проверки сайта. Ещё варианты — в <a href="https://mcpservers.org/ru/" target="_blank" rel="noopener">каталоге MCP</a>.</p>
                                     </div>
-                                    <span class="stage-range">6 пунктов</span>
+                                    <span class="stage-range">3 MCP</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Gmail / Outlook</h4>
-                                            <p>Поиск писем, черновики ответов, разбор переписок.</p>
+                                            <h4>GitHub</h4>
+                                            <p>Код, задачи и pull request.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">2</span>
                                         <div class="step-content">
-                                            <h4>Google Calendar</h4>
-                                            <p>Подготовка к встречам, расписание, план дня.</p>
+                                            <h4>Browser / Playwright MCP</h4>
+                                            <p>Клики, формы, скриншоты и ошибки в консоли.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Notion / Slack / Linear</h4>
-                                            <p>База знаний, обсуждения, задачи и продуктовый контекст.</p>
+                                            <h4>Context7 MCP</h4>
+                                            <p>Актуальная документация библиотек прямо во время работы с кодом.</p>
                                         </div>
                                     </div>
-                                    <div class="step">
-                                        <span class="step-number">4</span>
-                                        <div class="step-content">
-                                            <h4>Claude Code for VS Code</h4>
-                                            <p>Правки, обзор файлов и работа с проектом прямо в редакторе.</p>
-                                        </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                    </div>
+                </article>
+            </section>
+
+            <section id="yandex-mcp-guide" class="guide-panel is-hidden" aria-label="Подключение Яндекса">
+                <div class="panel-topbar">
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
+                    </div>
+                </div>
+
+                <article class="simple-guide">
+                    <header>
+                        <h1>Подключение Яндекса</h1>
+                        <p>Яндекс Трекер, Почта, Диск, Календарь и другие сервисы Яндекса через MCP.</p>
+                    </header>
+
+                    <div class="simple-content">
+                        <section>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Перед началом</h2>
+                                        <p>MCP-сервер — это «мост» между AI-приложением и сервисом. Настройки ниже подойдут для Codex, Claude, Cursor и другого клиента, если в выбранном сервере есть поля для токена или OAuth.</p>
                                     </div>
-                                    <div class="step">
-                                        <span class="step-number">5</span>
-                                        <div class="step-content">
-                                            <h4>Claude in Chrome</h4>
-                                            <p>Помощь на открытых страницах, разбор интерфейса и текста сайта.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">6</span>
-                                        <div class="step-content">
-                                            <h4>API-клиенты и тестовые окружения</h4>
-                                            <p>Postman, Swagger, staging-сайты и внутренние панели для проверки задач.</p>
-                                        </div>
-                                    </div>
+                                    <span class="stage-range">Важно</span>
                                 </div>
                             </div>
                         </section>
@@ -3402,48 +3429,77 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>Рекомендованные плагины, MCP и навыки</h2>
-                                        <p>Набор для тех, кто часто работает с кодом, документами и автоматизацией.</p>
+                                        <h2>Яндекс Трекер</h2>
+                                        <p>Для API нужен OAuth-токен и идентификатор организации. Сам Трекер предоставляет API; MCP-сервер вы выбираете или запускаете отдельно.</p>
                                     </div>
-                                    <span class="stage-range">5 пунктов</span>
+                                    <span class="stage-range">5 шагов</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Навыки для кода</h4>
-                                            <p>React, shadcn, Supabase/Postgres, Stripe, OpenAI API troubleshooting.</p>
+                                            <h4>Создать OAuth-приложение</h4>
+                                            <p>Откройте <a href="https://oauth.yandex.ru/" target="_blank" rel="noopener">Яндекс ID OAuth</a>, нажмите <strong>Создать</strong>, затем выберите <strong>Для доступа к API или отладки</strong> → <strong>Перейти к созданию</strong>.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить обезличенный экран Яндекс OAuth">
+                                                <img src="./assets/mcp/yandex-oauth-cropped.png" alt="Обезличенный экран Яндекс ID OAuth с кнопкой Создать" loading="lazy">
+                                            </button>
+                                            <p>В открывшемся окне отметьте <strong>Для доступа к API или отладки</strong> и нажмите <strong>Перейти к созданию</strong>.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить окно выбора приложения Яндекс OAuth">
+                                                <img src="./assets/mcp/yandex-create-modal-cropped.png" alt="Обезличенное окно Яндекс OAuth с выбранным вариантом Для доступа к API или отладки" loading="lazy">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">2</span>
                                         <div class="step-content">
-                                            <h4>Навыки для документов</h4>
-                                            <p>PDF, Word, презентации, таблицы и аналитические отчёты.</p>
+                                            <h4>Выбрать права</h4>
+                                            <p>Укажите название, например <code>MCP Яндекс</code>, и контактный email. В поле доступа добавьте только сервисы, которые должен видеть MCP:</p>
+                                            <ul>
+                                                <li><code>tracker:read</code> — только чтение задач, очередей и пользователей;</li>
+                                                <li><code>tracker:write</code> — создание и изменение задач. Берите его, только если AI должен что-то менять.</li>
+                                                <li>Почта — доступ на чтение писем; доступ на отправку и изменение писем добавляйте, только если он действительно нужен.</li>
+                                                <li>Яндекс Диск — чтение файлов; запись добавляйте, только если AI должен загружать, перемещать или менять файлы.</li>
+                                                <li>Календарь — чтение событий; запись добавляйте, только если AI должен создавать или менять встречи.</li>
+                                                <li>Метрика, Директ и другие сервисы — ищите название сервиса в поле доступа и выбирайте минимальный уровень прав, который требует конкретный MCP-сервер.</li>
+                                            </ul>
+                                            <p>Названия и доступность прав зависят от подключённого сервиса. Не добавляйте почту, Диск или Календарь «на всякий случай». Затем нажмите <strong>Создать приложение</strong>.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Навыки для дизайна</h4>
-                                            <p>Figma, product design, image-to-code, moodboard и визуальная проверка UI.</p>
+                                            <h4>Получить OAuth-токен</h4>
+                                            <p>Откройте созданное приложение и скопируйте <code>ClientID</code>. Подставьте его в ссылку, откройте её в браузере и войдите именно в тот аккаунт, от имени которого AI будет работать с задачами:</p>
+                                            <div class="code-block">https://oauth.yandex.ru/authorize?response_type=token&amp;client_id=ВАШ_CLIENT_ID</div>
+                                            <p>На следующей странице появится OAuth-токен. Он понадобится при настройке MCP на следующем шаге.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">4</span>
                                         <div class="step-content">
-                                            <h4>Навыки для аналитики</h4>
-                                            <p>KPI, dashboards, reports, metric diagnostics и визуализация данных.</p>
+                                            <h4>Узнать ID организации</h4>
+                                            <p>В Яндекс Трекере откройте <strong>Администрирование → Организации</strong> и скопируйте значение поля «Идентификатор».</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить экран Яндекс Трекера с идентификатором организации">
+                                                <img src="./assets/mcp/yandex-tracker-organization.png" alt="Экран Администрирование — Организации в Яндекс Трекере с выделенным идентификатором организации" loading="lazy">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">5</span>
                                         <div class="step-content">
-                                            <h4>Свои навыки</h4>
-                                            <p>Повторяемые инструкции проекта: стиль, команды, проверки, публикация.</p>
+                                            <h4>Заполнить секреты MCP и проверить доступ</h4>
+                                            <p>Названия полей могут немного отличаться у конкретного MCP-сервера. Обычно ему нужны такие значения:</p>
+                                            <div class="code-block">YANDEX_TRACKER_TOKEN=ваш_OAuth_токен
+YANDEX_TRACKER_ORG_ID=ID_организации
+YANDEX_TRACKER_ORG_HEADER=X-Org-ID</div>
+                                            <p>Проверка без MCP: в PowerShell подставьте реальные значения локально. Ответ с профилем означает, что доступ работает.</p>
+                                            <div class="code-block">curl.exe -X GET "https://api.tracker.yandex.net/v3/myself" ^
+  -H "Authorization: OAuth ВАШ_ТОКЕН" ^
+  -H "X-Org-ID: ID_ОРГАНИЗАЦИИ"</div>
                                         </div>
                                     </div>
                                 </div>
+                                <p class="source-note">Официально: <a href="https://yandex.ru/support/tracker/ru/api-ref/access" target="_blank" rel="noopener">доступ к API Яндекс Трекера</a> и <a href="https://yandex.ru/support/tracker/ru/api-ref/common-format" target="_blank" rel="noopener">формат запросов и заголовки</a>.</p>
                             </div>
                         </section>
 
@@ -3451,83 +3507,117 @@
                             <div class="instruction-stage active">
                                 <div class="stage-header">
                                     <div>
-                                        <h2>MCP с GitHub</h2>
-                                        <p>Для выбора удобно использовать каталог <a href="https://mcpservers.org/" target="_blank" rel="noopener">mcpservers.org</a>: там есть Featured, Official и категории по задачам.</p>
+                                        <h2>Готовый промпт для AI</h2>
+                                        <p>Вставьте текст в AI-клиент и подставьте два значения. После этого AI сам настраивает и проверяет подключение.</p>
                                     </div>
-                                    <span class="stage-range">10 MCP</span>
+                                    <span class="stage-range">Копировать</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="code-block">Подключи Яндекс Трекер к этому AI-приложению через MCP и выполни всю техническую настройку сам.
+
+OAuth-токен: ВСТАВЬТЕ_СЮДА
+ID организации: ВСТАВЬТЕ_СЮДА
+
+Дальше всё сделай сам: найди подходящий MCP-коннектор, настрой его локально, проверь доступ и включи режим только чтения. Не создавай, не меняй и не удаляй задачи, комментарии, очереди, права или пользователей. В конце напиши, что подключение работает и какие данные доступны.</div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+            </section>
+
+            <section id="google-mcp-guide" class="guide-panel is-hidden" aria-label="Подключение Google">
+                <div class="panel-topbar">
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
+                    </div>
+                </div>
+
+                <article class="simple-guide">
+                    <header>
+                        <h1>Подключение Google</h1>
+                        <p>Google Drive, Gmail и Google Calendar через готовый коннектор или собственный MCP с OAuth.</p>
+                    </header>
+
+                    <div class="simple-content">
+                        <section>
+                            <div class="instruction-stage active">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Google Workspace</h2>
+                                        <p>Для Google Drive, Gmail и Calendar сначала проверьте, есть ли в AI-клиенте готовый коннектор. Только для стороннего MCP-сервера с собственным OAuth нужен Google Cloud.</p>
+                                    </div>
+                                    <span class="stage-range">6 шагов</span>
                                 </div>
                                 <div class="stage-body">
                                     <div class="step">
                                         <span class="step-number">1</span>
                                         <div class="step-content">
-                                            <h4>Кодинг: GitHub MCP</h4>
-                                            <p>Работа с issues, pull request, файлами репозитория, review comments и GitHub Actions.</p>
+                                            <h4>Если есть готовый коннектор — используйте его</h4>
+                                            <p>В настройках AI-приложения найдите <strong>Google Drive</strong>, <strong>Gmail</strong> или <strong>Google Calendar</strong>, нажмите «Подключить» и подтвердите доступ в Google. В этом варианте не нужно создавать OAuth-клиент, получать токен вручную или передавать пароль.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">2</span>
                                         <div class="step-content">
-                                            <h4>Браузер: Chrome DevTools MCP / Playwright MCP</h4>
-                                            <p>Проверка интерфейса, клики, формы, console errors, screenshots и локальные сайты.</p>
+                                            <h4>Включить нужные API</h4>
+                                            <p>В <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a> откройте <strong>APIs &amp; Services → Library</strong>, найдите нужный API и нажмите <strong>Enable</strong>. Для Gmail и Calendar повторите то же самое, если они нужны вашему MCP.</p>
+                                            <button class="step-media phone zoomable-media" type="button" aria-label="Увеличить меню Google Cloud с разделом APIs and Services">
+                                                <img src="./assets/mcp/google-api-menu-annotated.png" alt="APIs and Services и Library отмечены красными рамками" loading="lazy">
+                                            </button>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить поиск Google Drive API в библиотеке">
+                                                <img src="./assets/mcp/google-drive-api-library-annotated.png" alt="Поиск и карточка Google Drive API отмечены красными рамками" loading="lazy">
+                                            </button>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить страницу Google Drive API с кнопкой Enable">
+                                                <img src="./assets/mcp/google-drive-api-enable-annotated.png" alt="Кнопка Enable отмечена красной рамкой" loading="lazy">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Документация: Context7 MCP</h4>
-                                            <p>Актуальная документация библиотек и фреймворков прямо в промптах для кодинга.</p>
+                                            <h4>Настроить экран согласия OAuth</h4>
+                                            <p>В <strong>Branding</strong> заполните имя приложения и email поддержки, затем сохраните. В <strong>Audience</strong> оставьте <strong>External</strong> и добавьте себя в <strong>Test users</strong>. В <strong>Data access</strong> выберите только scopes из документации MCP-сервера.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить страницу Branding в Google Auth Platform">
+                                                <img src="./assets/mcp/google-oauth-branding-annotated.png" alt="Поля имени приложения и email поддержки отмечены красными рамками" loading="lazy">
+                                            </button>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить настройки Audience и Test users в Google Auth Platform">
+                                                <img src="./assets/mcp/google-oauth-audience-annotated.png" alt="Кнопка Add users отмечена красной рамкой" loading="lazy">
+                                            </button>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить страницу Data access в Google Auth Platform">
+                                                <img src="./assets/mcp/google-oauth-data-access-annotated.png" alt="Кнопка Add or remove scopes отмечена красной рамкой" loading="lazy">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">4</span>
                                         <div class="step-content">
-                                            <h4>Базы и аналитика: Supabase MCP</h4>
-                                            <p>Проекты Supabase, SQL, auth, storage, edge functions и работа с данными.</p>
+                                            <h4>Создать OAuth-клиент</h4>
+                                            <p>Откройте <strong>Clients → Create client</strong>. Тип приложения и Redirect URI возьмите из документации выбранного MCP-сервера, затем нажмите <strong>Create</strong>.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить вкладку Clients и кнопку Create client">
+                                                <img src="./assets/mcp/google-oauth-clients-annotated.png" alt="Clients и Create client отмечены красными рамками" loading="lazy">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">5</span>
                                         <div class="step-content">
-                                            <h4>Web scraping: Firecrawl MCP</h4>
-                                            <p>Поиск, краулинг страниц и извлечение структурированных данных из сайтов.</p>
+                                            <h4>Подключить MCP и проверить</h4>
+                                            <p>Передайте <code>Client ID</code> и <code>Client secret</code> в настройки MCP-сервера. При первом запуске он откроет страницу Google: войдите в нужный аккаунт и подтвердите запрошенные права.</p>
                                         </div>
                                     </div>
                                     <div class="step">
                                         <span class="step-number">6</span>
                                         <div class="step-content">
-                                            <h4>Поиск: Exa MCP</h4>
-                                            <p>Поисковый MCP для AI-агентов: быстро находить страницы, источники и контекст.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">7</span>
-                                        <div class="step-content">
-                                            <h4>Инфраструктура: Cloudflare MCP</h4>
-                                            <p>Workers, KV, R2, D1 и другие ресурсы Cloudflare из AI-клиента.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">8</span>
-                                        <div class="step-content">
-                                            <h4>Кодовая база: DeepWiki by Devin</h4>
-                                            <p>Быстро получать ответы по репозиторию и понимать чужой код без долгого ручного разбора.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">9</span>
-                                        <div class="step-content">
-                                            <h4>Дизайн: Figma MCP</h4>
-                                            <p>Для макетов, компонентов, размеров, стилей и передачи контекста из дизайна в код.</p>
-                                        </div>
-                                    </div>
-                                    <div class="step">
-                                        <span class="step-number">10</span>
-                                        <div class="step-content">
-                                            <h4>Файлы: Filesystem MCP</h4>
-                                            <p>Базовый сервер для локальных файлов проекта: читать, искать и готовить правки.</p>
+                                            <h4>Типичные проблемы</h4>
+                                            <p><code>Access blocked</code> — добавьте себя в Test users или попросите администратора Google Workspace разрешить приложение. Ошибка redirect URI — сверяйте URI с инструкцией MCP-сервера символ в символ. После перехода приложения в Production Google может потребовать верификацию для чувствительных прав.</p>
                                         </div>
                                     </div>
                                 </div>
+                                <p class="source-note">Официально: <a href="https://developers.google.com/identity/protocols/oauth2/native-app" target="_blank" rel="noopener">OAuth для desktop-приложений</a>, <a href="https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid" target="_blank" rel="noopener">настройка OAuth consent screen</a> и <a href="https://developers.google.com/identity/protocols/oauth2/policies" target="_blank" rel="noopener">политики OAuth</a>.</p>
                             </div>
                         </section>
                     </div>
@@ -4776,6 +4866,8 @@ oaiusercontent.com</code></div>
             chatgpt: document.getElementById("chatgpt-guide"),
             omniroute: document.getElementById("omniroute-guide"),
             "ai-plugins": document.getElementById("ai-plugins-guide"),
+            "yandex-mcp": document.getElementById("yandex-mcp-guide"),
+            "google-mcp": document.getElementById("google-mcp-guide"),
             vpn: document.getElementById("vpn-guide"),
             router: document.getElementById("router-guide"),
         };
@@ -4840,6 +4932,14 @@ oaiusercontent.com</code></div>
             "ai-plugins": {
                 hash: "ai-plugins",
                 title: "Плагины | База инструкций",
+            },
+            "yandex-mcp": {
+                hash: "mcp-yandex",
+                title: "Подключение Яндекса | База инструкций",
+            },
+            "google-mcp": {
+                hash: "mcp-google",
+                title: "Подключение Google | База инструкций",
             },
             vpn: {
                 hash: "vpn-server",
