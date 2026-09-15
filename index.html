@@ -3732,7 +3732,7 @@ ID организации: ВСТАВЬТЕ_СЮДА
                                         <span class="step-number">2</span>
                                         <div class="step-content">
                                             <h4>Если появляется ERROR</h4>
-                                            <p>Иногда из РФ страница открывается, но создание приложения заканчивается ошибкой. Для этого способа VPN нужно временно выключить: отключите VPN для выхода в интернет и маршруты Telegram через VPN, затем откройте сайт по правилу из <code>hosts</code>. Telegram proxy внутри приложения помогает самому Telegram, но не открывает сайт в Chrome.</p>
+                                            <p>Если появляется ошибка, отредактируйте файл <code>hosts</code> и временно выключите VPN. Сайт должен открываться через строку из <code>hosts</code>, а не через VPN-маршрут.</p>
                                             <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить ошибку my.telegram.org">
                                                 <img src="./assets/telegram-gpt/my-telegram-error.png" alt="Ошибка ERROR на my.telegram.org" loading="lazy">
                                             </button>
@@ -3741,7 +3741,7 @@ ID организации: ВСТАВЬТЕ_СЮДА
                                     <div class="step">
                                         <span class="step-number">3</span>
                                         <div class="step-content">
-                                            <h4>Разрешить редактирование hosts</h4>
+                                            <h4>Отредактировать файл hosts</h4>
                                             <p>Откройте папку <code>C:\Windows\System32\drivers\etc</code>, найдите файл <code>hosts</code> и выберите редактирование в Блокноте. Если Windows не даёт сохранить изменения, откройте свойства файла или папки и временно разрешите изменение.</p>
                                             <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить папку etc и файл hosts">
                                                 <img src="./assets/telegram-gpt/hosts-open-notepad.png" alt="Папка etc с выбранным файлом hosts и пунктом Изменить в Блокноте" loading="lazy">
@@ -3790,7 +3790,7 @@ ID организации: ВСТАВЬТЕ_СЮДА
                                             <p>Откройте раздел API development tools и заполните форму. Пример на английском:</p>
                                             <div class="code-block">App title: PersonalClientApp
 Short name: personalclient26
-URL: leave empty
+URL: пустое
 Platform: Desktop
 Description: Personal client application for working with Telegram data.</div>
                                             <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить форму создания приложения Telegram">
