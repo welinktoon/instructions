@@ -1858,6 +1858,12 @@
             color: #7a3fd1;
         }
 
+        .guide-card[data-guide="telegram-gpt"] .guide-row-badge {
+            background: #f0f9ff;
+            border-color: #bde7ff;
+            color: #0369a1;
+        }
+
         .guide-row-arrow {
             color: var(--muted);
             display: flex;
@@ -2528,6 +2534,18 @@
             display: block;
         }
 
+        #telegram-gpt-guide .tabs {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        #telegram-gpt-guide [data-telegram-panel] {
+            display: none;
+        }
+
+        #telegram-gpt-guide [data-telegram-panel].active {
+            display: block;
+        }
+
         .tab-title,
         .tab-desc {
             max-width: 100%;
@@ -3066,6 +3084,10 @@
                     <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
                     <span>Подключение Google</span>
                 </button>
+                <button type="button" data-guide="telegram-gpt">
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span>Telegram + GPT</span>
+                </button>
             </nav>
         </aside>
         <header id="site-hero" class="site-hero">
@@ -3154,7 +3176,7 @@
 
                         <button class="guide-card guide-card-row" type="button" data-guide="yandex-mcp" data-search-text="яндекс tracker трекер почта диск календарь метрика директ oauth token токен mcp codex chatgpt claude cloud">
                             <span class="guide-row-icon">
-                                <img src="./assets/brands/mcp-yandex-connect.png" alt="">
+                                <img src="./assets/brands/custom-yandex-gpt.png" alt="">
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">Подключение Яндекса</span>
@@ -3166,13 +3188,25 @@
 
                         <button class="guide-card guide-card-row" type="button" data-guide="google-mcp" data-search-text="google drive gmail calendar workspace oauth cloud console token токен mcp codex chatgpt claude">
                             <span class="guide-row-icon">
-                                <img src="./assets/brands/mcp-google-connect.png" alt="">
+                                <img src="./assets/brands/custom-google-gpt.png" alt="">
                             </span>
                             <span class="guide-row-main">
                                 <span class="guide-row-title">Подключение Google</span>
                                 <span class="guide-row-copy">Google Drive, Gmail и Calendar через готовый коннектор или OAuth.</span>
                             </span>
                             <span class="guide-row-badge">Подключение</span>
+                            <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
+                        </button>
+
+                        <button class="guide-card guide-card-row" type="button" data-guide="telegram-gpt" data-search-text="telegram gpt телеграм chat чат группа канал api app api_id api_hash automation автоматизация ежедневная утренняя сводка осаго продажи партнеры">
+                            <span class="guide-row-icon">
+                                <img src="./assets/brands/custom-telegram-gpt-osago.png" alt="">
+                            </span>
+                            <span class="guide-row-main">
+                                <span class="guide-row-title">Telegram + GPT</span>
+                                <span class="guide-row-copy">Подключение Telegram и ежедневная сводка по ОСАГО.</span>
+                            </span>
+                            <span class="guide-row-badge">Автоотчёт</span>
                             <span class="guide-row-arrow"><svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></span>
                         </button>
                         <p id="search-empty" class="search-empty is-hidden">Ничего не найдено. Попробуйте запрос вроде “роутер”, “ChatGPT” или “Claude”.</p>
@@ -3624,6 +3658,357 @@ ID организации: ВСТАВЬТЕ_СЮДА
                                     </div>
                                 </div>
                                 <p class="source-note">Официально: <a href="https://developers.google.com/identity/protocols/oauth2/native-app" target="_blank" rel="noopener">OAuth для desktop-приложений</a>, <a href="https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid" target="_blank" rel="noopener">настройка OAuth consent screen</a> и <a href="https://developers.google.com/identity/protocols/oauth2/policies" target="_blank" rel="noopener">политики OAuth</a>.</p>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </section>
+
+            <section id="telegram-gpt-guide" class="guide-panel is-hidden" aria-label="Telegram + GPT">
+                <div class="panel-topbar">
+                    <button class="back-button" type="button" data-back><svg class="icon" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>Назад к выбору</button>
+                    <div class="theme-toggle" role="group" aria-label="Тема сайта">
+                        <button type="button" data-theme-choice="light"><svg class="icon" aria-hidden="true"><use href="#icon-sun"></use></svg>Светлая</button>
+                        <button type="button" data-theme-choice="dark"><svg class="icon" aria-hidden="true"><use href="#icon-moon"></use></svg>Тёмная</button>
+                    </div>
+                </div>
+
+                <article class="simple-guide">
+                    <header>
+                        <h1>Telegram + GPT</h1>
+                        <p>Как подключить Telegram к AI и настроить ежедневную сводку по продажам ОСАГО в нужный чат, группу или канал.</p>
+                    </header>
+
+                    <div class="tabs" role="tablist" aria-label="Разделы инструкции Telegram + GPT">
+                        <button class="tab-button active" type="button" data-telegram-tab="telegram">
+                            <span class="tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg><span class="tab-title">Подключить Telegram</span></span>
+                            <span class="tab-desc">Получить данные приложения и открыть доступ AI-клиенту.</span>
+                        </button>
+                        <button class="tab-button" type="button" data-telegram-tab="summary">
+                            <span class="tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-card"></use></svg><span class="tab-title">Сделать сводку</span></span>
+                            <span class="tab-desc">Настроить ежедневный отчёт по партнёрам и динамике.</span>
+                        </button>
+                        <button class="tab-button" type="button" data-telegram-tab="prompts">
+                            <span class="tab-title-row"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg><span class="tab-title">Готовые промпты</span></span>
+                            <span class="tab-desc">Идеи отчетов для Telegram по такому же шаблону.</span>
+                        </button>
+                    </div>
+
+                    <div class="simple-content">
+                        <section>
+                            <div class="instruction-stage active" data-telegram-panel="telegram">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Подключить Telegram</h2>
+                                        <p>Нужны номер Telegram, код подтверждения и данные приложения с my.telegram.org.</p>
+                                    </div>
+                                    <span class="stage-range">8 шагов</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Открыть my.telegram.org</h4>
+                                            <p>Перейдите на <a href="https://my.telegram.org/" target="_blank" rel="noopener">my.telegram.org</a> и введите номер в международном формате: с кодом страны и без пробелов.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить экран входа my.telegram.org">
+                                                <img src="./assets/telegram-gpt/my-telegram-phone.png" alt="Экран my.telegram.org с полем для номера телефона" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Если появляется ERROR</h4>
+                                            <p>Иногда из РФ страница открывается, но создание приложения заканчивается ошибкой. Для этого способа VPN нужно временно выключить: отключите VPN для выхода в интернет и маршруты Telegram через VPN, затем откройте сайт по правилу из <code>hosts</code>. Telegram proxy внутри приложения помогает самому Telegram, но не открывает сайт в Chrome.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить ошибку my.telegram.org">
+                                                <img src="./assets/telegram-gpt/my-telegram-error.png" alt="Ошибка ERROR на my.telegram.org" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Разрешить редактирование hosts</h4>
+                                            <p>Откройте папку <code>C:\Windows\System32\drivers\etc</code>, найдите файл <code>hosts</code> и выберите редактирование в Блокноте. Если Windows не даёт сохранить изменения, откройте свойства файла или папки и временно разрешите изменение.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить папку etc и файл hosts">
+                                                <img src="./assets/telegram-gpt/hosts-open-notepad.png" alt="Папка etc с выбранным файлом hosts и пунктом Изменить в Блокноте" loading="lazy">
+                                            </button>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить свойства папки etc">
+                                                <img src="./assets/telegram-gpt/etc-readonly.png" alt="Свойства папки etc с настройкой Только для чтения" loading="lazy">
+                                            </button>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить разрешения файла hosts">
+                                                <img src="./assets/telegram-gpt/hosts-permissions.png" alt="Окно разрешений hosts с разрешениями на изменение и запись" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Добавить рабочие строки</h4>
+                                            <p>В <code>hosts</code> пишется не ваш IP-адрес, а IP сервера Telegram и домен, который должен открываться через него. Итоговый вариант для <code>my.telegram.org</code>:</p>
+                                            <div class="code-block">149.154.167.220 my.telegram.org</div>
+                                            <p>После сохранения откройте PowerShell и очистите DNS-кэш, чтобы Windows сразу увидела новое правило:</p>
+                                            <div class="code-block">ipconfig /flushdns</div>
+                                            <p>Эта строка нужна как временный обход ошибки с доменом. Для создания нового API-ключа VPN должен быть выключен: если на роутере есть DNS-маршрут для Telegram, временно отключите это правило или исключите <code>my.telegram.org</code> из маршрутизации через VPN. После создания Telegram-приложения строку лучше убрать из <code>hosts</code>, потому что IP у сервиса может измениться.</p>
+                                            <p>Если способ не сработал, проверьте DNS на устройстве и на роутере. Для этой проверки DNS не должен быть принудительно задан через Google DNS, DoH или DoT: временно используйте DNS провайдера или обычный системный DNS.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Открыть инкогнито</h4>
+                                            <p>Откройте новое окно браузера в режиме инкогнито и снова перейдите на <a href="https://my.telegram.org/" target="_blank" rel="noopener">my.telegram.org</a>. Это помогает избежать старых cookies и кэша после ошибки.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить меню Chrome с режимом инкогнито">
+                                                <img src="./assets/telegram-gpt/chrome-incognito.png" alt="Меню Chrome с пунктом Новое окно в режиме инкогнито" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Ввести код из Telegram</h4>
+                                            <p>Код придёт в Telegram от служебного аккаунта. Введите его на сайте. Никому не пересылайте этот код: он подтверждает вход в управление приложениями Telegram.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить сообщение Telegram с кодом">
+                                                <img src="./assets/telegram-gpt/telegram-code-message.png" alt="Сообщение Telegram с кодом подтверждения для my.telegram.org" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">7</span>
+                                        <div class="step-content">
+                                            <h4>Создать приложение</h4>
+                                            <p>Откройте раздел API development tools и заполните форму. Пример на английском:</p>
+                                            <div class="code-block">App title: PersonalClientApp
+Short name: personalclient26
+URL: leave empty
+Platform: Desktop
+Description: Personal client application for working with Telegram data.</div>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить форму создания приложения Telegram">
+                                                <img src="./assets/telegram-gpt/create-app-form.png" alt="Форма Create new application на my.telegram.org" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">8</span>
+                                        <div class="step-content">
+                                            <h4>Сохранить api_id и api_hash</h4>
+                                            <p>После создания Telegram покажет <code>api_id</code> и <code>api_hash</code>. Сохраните их в безопасном месте и передавайте только тому AI-клиенту или скрипту, которому доверяете. После этого верните VPN и DNS как было, а временную строку <code>149.154.167.220 my.telegram.org</code> удалите из <code>hosts</code>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="instruction-stage" data-telegram-panel="summary">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Создать утреннюю сводку</h2>
+                                        <p>Правило каждый день собирает продажи ОСАГО по партнёрам, сравнивает с предыдущим днём и отправляет сообщение в Telegram.</p>
+                                    </div>
+                                    <span class="stage-range">6 шагов</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Создать ежедневное правило</h4>
+                                            <p>В AI-клиенте откройте автоматизации или расписание задач и создайте новое ежедневное правило на утро.</p>
+                                            <button class="step-media zoomable-media" type="button" aria-label="Увеличить экран ежедневной сводки в расписании ChatGPT">
+                                                <img src="./assets/telegram-gpt/scheduled-summary-view.png" alt="Экран запланированной ежедневной сводки в ChatGPT" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Указать источник продаж</h4>
+                                            <p>Дайте AI доступ к источнику, где есть продажи ОСАГО: базе, таблице или отчёту. Важно, чтобы там были партнёр, дата продажи и признак успешной оплаты.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Описать расчёт</h4>
+                                            <p>Попросите брать продажи за вчера и сравнивать их с днём до этого: количество продаж, динамику по каждому партнёру и общий итог.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Настроить отправку в Telegram</h4>
+                                            <p>Укажите, куда отправлять результат: личный чат, группу или канал. Для группы и канала заранее добавьте туда аккаунт или бота, через который выполняется отправка.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Вставить промпт</h4>
+                                            <p>Можно использовать такой текст и заменить <code>@тутчат</code> на нужный чат, группу или канал:</p>
+                                            <div class="code-block">Подготовь утреннюю сводку по продажам по продукту ОСАГО и отправь результат в Telegram чат @тутчат.
+Используй завершенный предыдущий день как отчетный период и сравни его с днем до него.
+
+Формат сообщения:
+🚗 ОСАГО | утро {дата}
+
+🏁 Всего продаж: {N}
+📊 К предыдущему дню: {+/-N} ({+/-X}%)
+
+Партнеры:
+🟢 {Партнер 1} — {N} / {+/-N} к вчера
+🟢 {Партнер 2} — {N} / {+/-N} к вчера
+🔴 {Партнер 3} — {N} / {+/-N} к вчера
+⚪ {Партнер 4} — {N} / без изменений
+
+💡 Главное: {короткий вывод одной строкой}
+
+Используй тематические эмодзи. Будь кратким и телеграмным. Не отправляй дубли, если сводка за тот же отчетный день уже была отправлена этим процессом.</div>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Запустить тест</h4>
+                                            <p>Сначала выполните правило вручную и проверьте, что сообщение ушло в правильное место, числа похожи на реальный отчёт, а динамика считается от предыдущего дня.</p>
+                                            <button class="step-media compact zoomable-media" type="button" aria-label="Увеличить меню запуска ежедневной сводки">
+                                                <img src="./assets/telegram-gpt/scheduled-summary-run.png" alt="Меню запланированной задачи с кнопкой Запустить" loading="lazy">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="instruction-stage" data-telegram-panel="prompts">
+                                <div class="stage-header">
+                                    <div>
+                                        <h2>Готовые промпты для отчетов</h2>
+                                        <p>Эти тексты можно вставлять в расписание задач и менять только чат, продукт, период или источник данных.</p>
+                                    </div>
+                                    <span class="stage-range">6 промптов</span>
+                                </div>
+                                <div class="stage-body">
+                                    <div class="step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h4>Продажи и выручка за день</h4>
+                                            <p>Подходит для ежедневного контроля общего результата, количества продаж и суммы премии.</p>
+                                            <div class="code-block">Подготовь ежедневную сводку по продажам ОСАГО и отправь результат в Telegram чат @тутчат.
+Используй завершенный предыдущий день как отчетный период и сравни его с днем до него.
+
+Покажи:
+🚗 количество оплаченных продаж;
+💰 сумму премии ОСАГО без допродаж;
+📊 динамику к предыдущему дню в штуках и процентах;
+🏆 топ-5 партнеров по продажам;
+💡 главный вывод одной строкой.
+
+Формат сделай коротким, телеграмным и со смайликами по теме. Не отправляй дубли, если отчет за этот день уже был отправлен этим процессом.</div>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h4>Просадки партнеров</h4>
+                                            <p>Помогает быстро увидеть, у кого вчера стало меньше продаж и где нужен разбор.</p>
+                                            <div class="code-block">Каждое утро подготовь отчет по партнерам ОСАГО с падением продаж и отправь результат в Telegram чат @тутчат.
+Сравни завершенный предыдущий день с днем до него.
+
+Покажи только партнеров, у которых продажи снизились.
+
+Формат:
+📉 ОСАГО | просадки {дата}
+
+🔴 {Партнер} — {N} продаж / {−N} к вчера ({−X}%)
+🔴 {Партнер} — {N} продаж / {−N} к вчера ({−X}%)
+
+💡 Главное: {у кого самая заметная просадка и насколько она влияет на общий итог}
+
+Если просадок нет, напиши коротко: «Просадок по партнерам нет, день прошел ровно». Не отправляй дубли за один и тот же отчетный день.</div>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h4>Неоплаченные заявки</h4>
+                                            <p>Полезно для контроля брошенных оформлений и точек, где можно дожимать продажи.</p>
+                                            <div class="code-block">Подготовь утренний отчет по неоплаченным заявкам ОСАГО и отправь результат в Telegram чат @тутчат.
+Возьми заявки за завершенный предыдущий день и сравни с днем до него.
+
+Покажи:
+🧾 всего заявок ОСАГО;
+✅ оплачено;
+⏳ не оплачено;
+📊 долю неоплаченных;
+🔎 топ-5 партнеров по количеству неоплаченных заявок;
+💡 короткий вывод, где самый большой резерв.
+
+Пиши кратко, в стиле Telegram. Используй тематические эмодзи. Не отправляй дубль, если отчет за этот день уже был отправлен этим процессом.</div>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h4>Лидеры роста</h4>
+                                            <p>Хороший позитивный отчет: показывает, кто дал прирост и за счет кого вырос общий день.</p>
+                                            <div class="code-block">Подготовь отчет «Лидеры роста ОСАГО» и отправь результат в Telegram чат @тутчат.
+Сравни продажи за завершенный предыдущий день с днем до него.
+
+Покажи партнеров, у которых был рост продаж.
+
+Формат:
+🚀 ОСАГО | лидеры роста {дата}
+
+🟢 {Партнер} — {N} продаж / +{N} к вчера (+{X}%)
+🟢 {Партнер} — {N} продаж / +{N} к вчера (+{X}%)
+
+🏁 Всего прирост: +{N} продаж
+💡 Главное: {кто внес самый большой вклад в рост}
+
+Если роста нет, напиши коротко и без воды. Не отправляй дубли за один и тот же день.</div>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">5</span>
+                                        <div class="step-content">
+                                            <h4>Допродажи и кроссы</h4>
+                                            <p>Отдельный контроль мини-КАСКО, НС и других допродаж рядом с ОСАГО.</p>
+                                            <div class="code-block">Подготовь ежедневный отчет по допродажам к ОСАГО и отправь результат в Telegram чат @тутчат.
+Используй завершенный предыдущий день и сравни его с днем до него.
+
+Покажи:
+🎁 количество ОСАГО с допродажей;
+💰 сумму допродаж;
+📊 долю продаж ОСАГО с допродажей;
+🏆 топ партнеров по допродажам;
+🔴 партнеров, у которых допродажи просели;
+💡 главный вывод одной строкой.
+
+Формат короткий, телеграмный, со смайликами. Не отправляй дубли за тот же отчетный день.</div>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <span class="step-number">6</span>
+                                        <div class="step-content">
+                                            <h4>Недельный итог</h4>
+                                            <p>Удобно отправлять по понедельникам: видно неделю целиком, лидеров и слабые места.</p>
+                                            <div class="code-block">Каждый понедельник подготовь недельную сводку по продажам ОСАГО и отправь результат в Telegram чат @тутчат.
+Используй прошлую полную неделю с понедельника по воскресенье и сравни ее с неделей до этого.
+
+Формат:
+🚗 ОСАГО | неделя {даты}
+
+🏁 Всего продаж: {N}
+📊 К прошлой неделе: {+/-N} ({+/-X}%)
+💰 Премия ОСАГО: {сумма}
+
+Партнеры:
+🟢 {Партнер} — {N} / {+/-N} к прошлой неделе
+🔴 {Партнер} — {N} / {+/-N} к прошлой неделе
+⚪ {Партнер} — {N} / без изменений
+
+💡 Главное: {короткий вывод по неделе}
+
+Будь кратким и телеграмным. Используй тематические эмодзи. Не отправляй дубли, если недельная сводка за этот период уже была отправлена этим процессом.</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -4977,6 +5362,7 @@ oaiusercontent.com</code></div>
             "ai-plugins": document.getElementById("ai-plugins-guide"),
             "yandex-mcp": document.getElementById("yandex-mcp-guide"),
             "google-mcp": document.getElementById("google-mcp-guide"),
+            "telegram-gpt": document.getElementById("telegram-gpt-guide"),
             vpn: document.getElementById("vpn-guide"),
             router: document.getElementById("router-guide"),
         };
@@ -5049,6 +5435,10 @@ oaiusercontent.com</code></div>
             "google-mcp": {
                 hash: "mcp-google",
                 title: "Подключение Google | База инструкций",
+            },
+            "telegram-gpt": {
+                hash: "telegram-gpt",
+                title: "Telegram + GPT | База инструкций",
             },
             vpn: {
                 hash: "vpn-server",
@@ -5127,6 +5517,20 @@ oaiusercontent.com</code></div>
                 title: "Роутеры | База инструкций",
             },
         };
+        const telegramTabs = {
+            telegram: {
+                hash: "telegram-gpt",
+                title: "Telegram + GPT | База инструкций",
+            },
+            summary: {
+                hash: "telegram-gpt-osago-summary",
+                title: "Сводка ОСАГО в Telegram | База инструкций",
+            },
+            prompts: {
+                hash: "telegram-gpt-prompts",
+                title: "Готовые промпты Telegram | База инструкций",
+            },
+        };
 
         function showPicker(updateUrl = true) {
             closeMenu();
@@ -5176,6 +5580,9 @@ oaiusercontent.com</code></div>
             }
             if (name === "router") {
                 activateRouterTab("setup", false, false);
+            }
+            if (name === "telegram-gpt") {
+                activateTelegramTab("telegram", false, false);
             }
             if (shouldScroll) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
@@ -5243,6 +5650,13 @@ oaiusercontent.com</code></div>
             if (routerRoute) {
                 openGuide("router", false, false);
                 activateRouterTab(routerRoute[0], false, false);
+                return;
+            }
+
+            const telegramRoute = Object.entries(telegramTabs).find(([, value]) => value.hash === hash);
+            if (telegramRoute) {
+                openGuide("telegram-gpt", false, false);
+                activateTelegramTab(telegramRoute[0], false, false);
                 return;
             }
 
@@ -5351,6 +5765,36 @@ oaiusercontent.com</code></div>
 
         document.querySelectorAll("[data-vpn-stage]").forEach((button) => {
             button.addEventListener("click", () => activateVpnStage(button.dataset.vpnStage));
+        });
+
+        function activateTelegramTab(tabName, updateUrl = true, shouldScroll = true) {
+            const stages = document.querySelectorAll("#telegram-gpt-guide [data-telegram-panel]");
+            stages.forEach((stage) => stage.classList.remove("active"));
+
+            const buttons = document.querySelectorAll("#telegram-gpt-guide [data-telegram-tab]");
+            buttons.forEach((button) => button.classList.remove("active"));
+
+            const stage = document.querySelector(`#telegram-gpt-guide [data-telegram-panel="${tabName}"]`);
+            const button = document.querySelector(`#telegram-gpt-guide [data-telegram-tab="${tabName}"]`);
+            if (!stage || !button) return;
+
+            stage.classList.add("active");
+            button.classList.add("active");
+
+            const route = telegramTabs[tabName];
+            if (route) {
+                document.title = route.title;
+                if (updateUrl) {
+                    history.pushState(null, "", `#${route.hash}`);
+                }
+            }
+            if (shouldScroll) {
+                document.querySelector("#telegram-gpt-guide .simple-guide").scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        document.querySelectorAll("[data-telegram-tab]").forEach((button) => {
+            button.addEventListener("click", () => activateTelegramTab(button.dataset.telegramTab));
         });
 
         function activateRouterTab(tabName, updateUrl = true, shouldScroll = true) {
