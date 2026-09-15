@@ -535,9 +535,11 @@
         }
 
         .back-button {
-            background: #ffffff;
-            border: 1px solid #cfd8e3;
-            color: #344054;
+            background: transparent;
+            border: 0;
+            color: var(--muted);
+            min-height: 32px;
+            padding: 0 4px;
         }
 
         .primary-action {
@@ -551,6 +553,13 @@
             box-shadow: 0 2px 6px rgba(16, 24, 40, 0.12);
             text-decoration: none;
             transform: none;
+        }
+
+        .back-button:hover,
+        .back-button:focus-visible {
+            background: var(--hover);
+            box-shadow: none;
+            color: var(--blue-700);
         }
 
         .container,
@@ -1254,10 +1263,14 @@
             background: var(--panel-soft);
         }
 
-        :root[data-theme="dark"] .tab-button,
-        :root[data-theme="dark"] .back-button {
+        :root[data-theme="dark"] .tab-button {
             background: var(--panel);
             color: var(--text-soft);
+        }
+
+        :root[data-theme="dark"] .back-button {
+            background: transparent;
+            color: var(--text-muted);
         }
 
         :root[data-theme="dark"] .side-nav button {
@@ -1272,7 +1285,9 @@
         :root[data-theme="dark"] .guide-card:focus-visible,
         :root[data-theme="dark"] .link-card:hover,
         :root[data-theme="dark"] .tab-button:hover,
-        :root[data-theme="dark"] .tab-button:focus-visible {
+        :root[data-theme="dark"] .tab-button:focus-visible,
+        :root[data-theme="dark"] .back-button:hover,
+        :root[data-theme="dark"] .back-button:focus-visible {
             background: var(--hover);
             color: var(--ink);
         }
@@ -1307,8 +1322,7 @@
         :root[data-theme="dark"] .tabs,
         :root[data-theme="dark"] .tab-button,
         :root[data-theme="dark"] .guide-card,
-        :root[data-theme="dark"] .guide-meta span,
-        :root[data-theme="dark"] .back-button {
+        :root[data-theme="dark"] .guide-meta span {
             border-color: var(--line);
         }
 
@@ -1555,7 +1569,6 @@
                 width: 100%;
             }
 
-            .back-button,
             .primary-action {
                 width: 100%;
             }
@@ -3077,15 +3090,15 @@
                     <span>Плагины</span>
                 </button>
                 <button type="button" data-guide="yandex-mcp">
-                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-tool"></use></svg></span>
                     <span>Подключение Яндекса</span>
                 </button>
                 <button type="button" data-guide="google-mcp">
-                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-list"></use></svg></span>
                     <span>Подключение Google</span>
                 </button>
                 <button type="button" data-guide="telegram-gpt">
-                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-plug"></use></svg></span>
+                    <span class="nav-mark nav-mark-box"><svg class="icon" aria-hidden="true"><use href="#icon-route"></use></svg></span>
                     <span>Telegram + GPT</span>
                 </button>
             </nav>
